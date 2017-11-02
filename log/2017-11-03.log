@@ -1,0 +1,213 @@
+02:24:48.545 [main] INFO  edu.gzhu.its.ItsApplication - Starting ItsApplication on USERCHI-RRDBCTT with PID 6680 (started by Administrator in H:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+02:24:48.547 [main] INFO  edu.gzhu.its.ItsApplication - No active profile set, falling back to default profiles: default
+02:24:48.625 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1534f01b: startup date [Fri Nov 03 02:24:48 CST 2017]; root of context hierarchy
+02:24:48.885 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+02:24:49.952 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+02:24:49.975 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+02:24:49.976 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+02:24:50.100 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+02:24:50.100 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1475 ms
+02:24:50.195 [localhost-startStop-1] INFO  o.s.b.w.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+02:24:50.198 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+02:24:50.198 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+02:24:50.198 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+02:24:50.198 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+02:24:50.896 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+02:24:50.914 [main] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+02:24:50.994 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+02:24:50.995 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+02:24:50.996 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+02:24:51.082 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+02:24:51.961 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+02:24:52.019 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+02:24:52.514 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+02:24:52.851 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02:24:53.309 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1534f01b: startup date [Fri Nov 03 02:24:48 CST 2017]; root of context hierarchy
+02:24:53.430 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.controller.IndexController.index()
+02:24:53.433 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user],methods=[GET]}" onto public java.lang.String edu.gzhu.its.controller.UserController.getUsers()
+02:24:53.434 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+02:24:53.435 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+02:24:53.471 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:24:53.472 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:24:53.499 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:24:53.748 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+02:24:53.749 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+02:24:53.751 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+02:24:53.759 [main] INFO  o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+02:24:53.845 [main] INFO  o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+02:24:54.014 [main] INFO  o.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+02:24:54.028 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9090 (http)
+02:24:54.031 [main] INFO  edu.gzhu.its.ItsApplication - Started ItsApplication in 6.267 seconds (JVM running for 7.493)
+02:25:32.846 [RMI TCP Connection(2)-210.31.78.3] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+02:25:32.846 [RMI TCP Connection(2)-210.31.78.3] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1534f01b: startup date [Fri Nov 03 02:24:48 CST 2017]; root of context hierarchy
+02:25:32.847 [RMI TCP Connection(2)-210.31.78.3] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+02:25:32.847 [RMI TCP Connection(2)-210.31.78.3] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+02:25:32.848 [RMI TCP Connection(2)-210.31.78.3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02:25:32.866 [RMI TCP Connection(2)-210.31.78.3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+02:34:45.592 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - Starting ItsApplicationTests on USERCHI-RRDBCTT with PID 7124 (started by Administrator in H:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+02:34:45.593 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - No active profile set, falling back to default profiles: default
+02:34:45.615 [main] INFO  o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@15bbf42f: startup date [Fri Nov 03 02:34:45 CST 2017]; root of context hierarchy
+02:34:45.830 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+02:34:46.823 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+02:34:46.835 [main] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+02:34:46.892 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+02:34:46.893 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+02:34:46.894 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+02:34:46.927 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+02:34:47.215 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+02:34:47.226 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+02:34:47.686 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+02:34:47.766 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02:34:48.231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@15bbf42f: startup date [Fri Nov 03 02:34:45 CST 2017]; root of context hierarchy
+02:34:48.303 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.controller.IndexController.index()
+02:34:48.305 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user],methods=[GET]}" onto public java.lang.String edu.gzhu.its.controller.UserController.getUsers()
+02:34:48.307 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+02:34:48.308 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+02:34:48.344 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:34:48.344 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:34:48.375 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:34:48.590 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - Started ItsApplicationTests in 3.247 seconds (JVM running for 3.769)
+02:34:48.748 [Thread-2] INFO  o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@15bbf42f: startup date [Fri Nov 03 02:34:45 CST 2017]; root of context hierarchy
+02:34:48.749 [Thread-2] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02:34:48.754 [Thread-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+02:36:20.612 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - Starting ItsApplicationTests on USERCHI-RRDBCTT with PID 4008 (started by Administrator in H:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+02:36:20.613 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - No active profile set, falling back to default profiles: default
+02:36:20.632 [main] INFO  o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@48974e45: startup date [Fri Nov 03 02:36:20 CST 2017]; root of context hierarchy
+02:36:20.847 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+02:36:21.878 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+02:36:21.889 [main] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+02:36:21.941 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+02:36:21.942 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+02:36:21.944 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+02:36:21.972 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+02:36:22.247 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+02:36:22.259 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+02:36:22.765 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+02:36:22.843 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02:36:23.296 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@48974e45: startup date [Fri Nov 03 02:36:20 CST 2017]; root of context hierarchy
+02:36:23.358 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.controller.IndexController.index()
+02:36:23.360 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user],methods=[GET]}" onto public java.lang.String edu.gzhu.its.controller.UserController.getUsers()
+02:36:23.362 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+02:36:23.362 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+02:36:23.396 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:36:23.397 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:36:23.433 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:36:23.639 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - Started ItsApplicationTests in 3.268 seconds (JVM running for 3.735)
+02:36:23.810 [Thread-2] INFO  o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@48974e45: startup date [Fri Nov 03 02:36:20 CST 2017]; root of context hierarchy
+02:36:23.812 [Thread-2] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02:36:23.815 [Thread-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+02:36:35.361 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - Starting ItsApplicationTests on USERCHI-RRDBCTT with PID 9916 (started by Administrator in H:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+02:36:35.361 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - No active profile set, falling back to default profiles: default
+02:36:35.388 [main] INFO  o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1755e85b: startup date [Fri Nov 03 02:36:35 CST 2017]; root of context hierarchy
+02:36:35.620 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+02:36:36.786 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+02:36:36.805 [main] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+02:36:36.874 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+02:36:36.876 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+02:36:36.877 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+02:36:36.918 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+02:36:37.250 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+02:36:37.267 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+02:36:37.846 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+02:36:37.936 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02:36:38.489 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1755e85b: startup date [Fri Nov 03 02:36:35 CST 2017]; root of context hierarchy
+02:36:38.563 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.controller.IndexController.index()
+02:36:38.565 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user],methods=[GET]}" onto public java.lang.String edu.gzhu.its.controller.UserController.getUsers()
+02:36:38.567 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+02:36:38.567 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+02:36:38.615 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:36:38.616 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:36:38.663 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:36:39.085 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - Started ItsApplicationTests in 4.0 seconds (JVM running for 4.862)
+02:36:57.073 [Thread-2] INFO  o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@1755e85b: startup date [Fri Nov 03 02:36:35 CST 2017]; root of context hierarchy
+02:36:57.076 [Thread-2] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02:36:57.082 [Thread-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+02:37:19.647 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - Starting ItsApplicationTests on USERCHI-RRDBCTT with PID 10900 (started by Administrator in H:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+02:37:19.648 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - No active profile set, falling back to default profiles: default
+02:37:19.668 [main] INFO  o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@48974e45: startup date [Fri Nov 03 02:37:19 CST 2017]; root of context hierarchy
+02:37:19.889 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+02:37:20.846 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+02:37:20.861 [main] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+02:37:20.914 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+02:37:20.916 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+02:37:20.917 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+02:37:20.948 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+02:37:21.234 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+02:37:21.248 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+02:37:21.725 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+02:37:21.807 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02:37:22.248 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@48974e45: startup date [Fri Nov 03 02:37:19 CST 2017]; root of context hierarchy
+02:37:22.306 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.controller.IndexController.index()
+02:37:22.308 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user],methods=[GET]}" onto public java.lang.String edu.gzhu.its.controller.UserController.getUsers()
+02:37:22.310 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+02:37:22.310 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+02:37:22.346 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:37:22.346 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:37:22.383 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:37:22.607 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - Started ItsApplicationTests in 3.213 seconds (JVM running for 3.672)
+02:37:22.973 [Thread-2] INFO  o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@48974e45: startup date [Fri Nov 03 02:37:19 CST 2017]; root of context hierarchy
+02:37:22.974 [Thread-2] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02:37:22.976 [Thread-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+02:38:15.944 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - Starting ItsApplicationTests on USERCHI-RRDBCTT with PID 10784 (started by Administrator in H:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+02:38:15.945 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - No active profile set, falling back to default profiles: default
+02:38:15.975 [main] INFO  o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@17cdf2d0: startup date [Fri Nov 03 02:38:15 CST 2017]; root of context hierarchy
+02:38:16.215 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+02:38:17.307 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+02:38:17.323 [main] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+02:38:17.382 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+02:38:17.383 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+02:38:17.385 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+02:38:17.427 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+02:38:17.755 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+02:38:17.770 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+02:38:18.339 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+02:38:18.439 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02:38:18.990 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@17cdf2d0: startup date [Fri Nov 03 02:38:15 CST 2017]; root of context hierarchy
+02:38:19.070 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.controller.IndexController.index()
+02:38:19.072 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user],methods=[GET]}" onto public java.lang.String edu.gzhu.its.controller.UserController.getUsers()
+02:38:19.074 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+02:38:19.075 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+02:38:19.110 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:38:19.110 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:38:19.166 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:38:19.562 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - Started ItsApplicationTests in 3.897 seconds (JVM running for 4.575)
+02:38:53.749 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - Starting ItsApplicationTests on USERCHI-RRDBCTT with PID 1008 (started by Administrator in H:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+02:38:53.750 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - No active profile set, falling back to default profiles: default
+02:38:53.771 [main] INFO  o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@48974e45: startup date [Fri Nov 03 02:38:53 CST 2017]; root of context hierarchy
+02:38:53.991 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+02:38:54.983 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+02:38:54.998 [main] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+02:38:55.049 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+02:38:55.051 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+02:38:55.052 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+02:38:55.080 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+02:38:55.371 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+02:38:55.381 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+02:38:55.860 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+02:38:55.939 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02:38:56.370 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@48974e45: startup date [Fri Nov 03 02:38:53 CST 2017]; root of context hierarchy
+02:38:56.434 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.controller.IndexController.index()
+02:38:56.436 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user],methods=[GET]}" onto public java.lang.String edu.gzhu.its.controller.UserController.getUsers()
+02:38:56.437 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+02:38:56.438 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+02:38:56.461 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:38:56.461 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:38:56.494 [main] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+02:38:56.718 [main] INFO  edu.gzhu.its.its.ItsApplicationTests - Started ItsApplicationTests in 3.219 seconds (JVM running for 3.697)
+02:38:56.968 [Thread-2] INFO  o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@48974e45: startup date [Fri Nov 03 02:38:53 CST 2017]; root of context hierarchy
+02:38:56.970 [Thread-2] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02:38:56.972 [Thread-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
