@@ -11,11 +11,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import edu.gzhu.its.dao.BaseDAO;
 
 @Repository
 public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
+	
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	@PersistenceContext
 	private EntityManager entityManager;
 
@@ -46,30 +51,60 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 			entityManager.persist(entity);
 			flag = true;
 		} catch (Exception e) {
-			System.out.println("---------------保存出错---------------");
+			logger.error("保存" + clz.getName()+"出错:" + e );;
 			throw e;
 		}
 		return flag;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Transactional
 	@Override
-	public T findByid(T t, Long id) {
+	public T findById(T t, Long id) {
 		return (T) entityManager.find(t.getClass(), id);
 	}
 
+	@Override
+	public T findById(Serializable id) {
+		// TODO Auto-generated method stub
+		return entityManager.find(clz, id);
+	}
+	
+	
 	@Transactional
 	@Override
 	public List<T> findBysql(String tablename, String filed, Object o) {
 		String sql = "from " + tablename + " u WHERE u." + filed + "=?";
-		System.out.println(sql + "--------sql语句-------------");
 		Query query = entityManager.createQuery(sql);
 		query.setParameter(1, o);
+		@SuppressWarnings("unchecked")
+		List<T> list = query.getResultList();
+		entityManager.close();
+		return list;
+	}
+	
+	public List<T> findBySql(String filed, Object o) {
+		String sql = "from " + className + " u WHERE u." + filed + "=?";
+		Query query = entityManager.createQuery(sql);
+		query.setParameter(1, o);
+		@SuppressWarnings("unchecked")
 		List<T> list = query.getResultList();
 		entityManager.close();
 		return list;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public T findOneBySql( String filed, Object o) {
+		String sql = "from " + className + " u WHERE u." + filed + "=?";
+		System.out.println(sql + "--------sql语句-------------");
+		Query query = entityManager.createQuery(sql);
+		query.setParameter(1, o);
+		entityManager.close();
+		return (T) query.getSingleResult();
+	}
+	
+	
 	@Override
 	public Object findObjiectBysql(String tablename, String filed, Object o) {
 		String sql = "from " + tablename + " u WHERE u." + filed + "=?";
@@ -103,12 +138,56 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		entityManager.close();
 		return listRe;
 	}
+	
+	public List<T> findByMoreFiled(LinkedHashMap<String, Object> map) {
+		String sql = "from " + className + " u WHERE ";
+		Set<String> set = null;
+		set = map.keySet();
+		List<String> list = new ArrayList<>(set);
+		List<Object> filedlist = new ArrayList<>();
+		for (String filed : list) {
+			sql += "u." + filed + "=? and ";
+			filedlist.add(filed);
+		}
+		sql = sql.substring(0, sql.length() - 4);
+		Query query = entityManager.createQuery(sql);
+		for (int i = 0; i < filedlist.size(); i++) {
+			query.setParameter(i + 1, map.get(filedlist.get(i)));
+		}
+		List<T> listRe = query.getResultList();
+		entityManager.close();
+		return listRe;
+	}
 
 	@Transactional
 	@Override
 	public List<T> findByMoreFiledpages(String tablename, LinkedHashMap<String, Object> map, int start,
 			int pageNumber) {
 		String sql = "from " + tablename + " u WHERE ";
+		Set<String> set = null;
+		set = map.keySet();
+		List<String> list = new ArrayList<>(set);
+		List<Object> filedlist = new ArrayList<>();
+		for (String filed : list) {
+			sql += "u." + filed + "=? and ";
+			filedlist.add(filed);
+		}
+		sql = sql.substring(0, sql.length() - 4);
+		System.out.println(sql + "--------sql语句-------------");
+		Query query = entityManager.createQuery(sql);
+		for (int i = 0; i < filedlist.size(); i++) {
+			query.setParameter(i + 1, map.get(filedlist.get(i)));
+		}
+		query.setFirstResult((start - 1) * pageNumber);
+		query.setMaxResults(pageNumber);
+		List<T> listRe = query.getResultList();
+		entityManager.close();
+		return listRe;
+	}
+	
+	public List<T> findByMoreFiledpages(LinkedHashMap<String, Object> map, int start,
+			int pageNumber) {
+		String sql = "from " + className + " u WHERE ";
 		Set<String> set = null;
 		set = map.keySet();
 		List<String> list = new ArrayList<>(set);
@@ -234,5 +313,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		List<T> result = query.getResultList();
 		return result;
 	}
+
 
 }

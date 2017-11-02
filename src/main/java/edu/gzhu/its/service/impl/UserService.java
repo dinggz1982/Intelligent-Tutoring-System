@@ -8,5 +8,6 @@ import edu.gzhu.its.service.IUserService;
 
 @Service("userService")
 public class UserService extends BaseDAOImpl<User, Long> implements IUserService{
-	
+
+
 }

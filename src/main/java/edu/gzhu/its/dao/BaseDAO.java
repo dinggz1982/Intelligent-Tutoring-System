@@ -23,7 +23,14 @@ public interface BaseDAO<T,ID extends Serializable> {
      * @param t
      * @return
      */
-    T findByid(T t,Long id);
+    T findById(T t,Long id);
+    
+    /**
+     * 根据Id查询
+     * @param id
+     * @return
+     */
+    T findById(Serializable id);
     
     /**
      * 根据表名，字段，参数查询，拼接sql语句
@@ -33,6 +40,29 @@ public interface BaseDAO<T,ID extends Serializable> {
      * @return
      */
     List<T> findBysql(String tablename,String filed,Object o);
+    
+    /**
+     * 根据一个字段查询，返回列表
+     * @param filed
+     * @param o
+     * @return
+     */
+    List<T> findBySql(String filed,Object o);
+    
+    /**
+     * 根据字段查询，返回一个实体
+     * @param filed
+     * @param o
+     * @return
+     */
+    T findOneBySql(String filed,Object o);
+    
+    /**
+     * 根据字段查询，返回一个实体
+     * @param filed
+     * @param o
+     * @return
+     */
     Object findObjiectBysql(String tablename,String filed,Object o);
 
     /**
@@ -42,6 +72,25 @@ public interface BaseDAO<T,ID extends Serializable> {
      * @return
      */
     List<T> findByMoreFiled(String tablename,LinkedHashMap<String,Object> map);
+    
+    /**
+     * 多个字段的查询
+     * @param tablename 表名
+     * @param map 将你的字段传入map中
+     * @return
+     */
+    List<T> findByMoreFiled(LinkedHashMap<String,Object> map);
+    
+    
+    /**
+     * 多字段查询分页
+     * @param tablename 表名
+     * @param map 以map存储key,value
+     * @param start 第几页
+     * @param pageNumer 一个页面的条数
+     * @return
+     */
+    List<T> findByMoreFiledpages(LinkedHashMap<String,Object> map, int start, int pageNumer);
 
     /**
      * 多字段查询分页
