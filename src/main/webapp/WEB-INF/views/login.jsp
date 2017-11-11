@@ -33,7 +33,7 @@
                 <p class="text-center margin-small-top logo-color text-small">
                   读书、实践、反思，三步一循环
                 </p>
-                <form class="login-form" action="/doLogin" method="post" autocomplete="off">
+                <form class="login-form" action="/login" method="post" autocomplete="off">
                     <div class="login-box border text-small" id="box">
                         <div class="name border-bottom">
                             <input type="text" placeholder="账号" id="username" name="username" datatype="*" nullmsg="请填写帐号信息" />
@@ -41,6 +41,7 @@
                         <div class="pwd">
                             <input type="password" placeholder="密码" datatype="*" id="password" name="password" nullmsg="请填写帐号密码" />
                         </div>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     </div>
                     <input type="submit" class="btn text-center login-btn" value="立即登录" />
                 </form>

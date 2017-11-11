@@ -1,4 +1,4 @@
-package edu.gzhu.its.dao.impl;
+package edu.gzhu.its.base.impl;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -15,7 +15,8 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
-import edu.gzhu.its.dao.BaseDAO;
+
+import edu.gzhu.its.base.BaseDAO;
 
 @Repository
 public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {

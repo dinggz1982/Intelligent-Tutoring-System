@@ -1,4 +1,4 @@
-package edu.gzhu.its.dao;
+package edu.gzhu.its.base;
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;
