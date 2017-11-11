@@ -2,7 +2,7 @@ package edu.gzhu.its.system.service.impl;
 
 import org.springframework.stereotype.Service;
 
-import edu.gzhu.its.base.impl.BaseDAOImpl;
+import edu.gzhu.its.base.dao.impl.BaseDAOImpl;
 import edu.gzhu.its.service.IUserService;
 import edu.gzhu.its.system.entity.User;
 
