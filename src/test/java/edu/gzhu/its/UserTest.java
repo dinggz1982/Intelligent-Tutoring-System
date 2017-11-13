@@ -63,5 +63,22 @@ public class UserTest {
 		PageData<User> data = this.userService.getPageData(1, 10, null);
 		System.out.println(data.getTotalCount());
 	}
+	
+	@Test
+	public void addUser(){
+		for (int i = 0; i < 100; i++) {
+			User user = new User();
+			BCryptPasswordEncoder bc = new BCryptPasswordEncoder(4);
+			user.setPassword(bc.encode("123456"));
+			user.setUsername("admin");
+			user.setEmail("dgz888@163.com");
+			user.setNickName("dgz");
+			user.setSex("男");
+			List<Role>  roles = new ArrayList<Role>();
+			userService.save(user);
+		}
+		
+		
+	}
 
 }
