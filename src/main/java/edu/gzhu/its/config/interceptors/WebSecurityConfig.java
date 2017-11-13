@@ -10,7 +10,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -53,8 +52,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
   
     @Autowired  
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {     
-//指定密码加密所使用的加密器为passwordEncoder()  
-//需要将密码加密后写入数据库   
+		 //指定密码加密所使用的加密器为passwordEncoder()  
+		 //需要将密码加密后写入数据库   
     	 PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();  
     	 auth.eraseCredentials(false).userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);      
     }  

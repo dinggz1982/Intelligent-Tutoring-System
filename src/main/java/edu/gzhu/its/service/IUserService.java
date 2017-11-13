@@ -1,5 +1,6 @@
 package edu.gzhu.its.service;
 
+import edu.gzhu.its.base.service.BaseService;
 import edu.gzhu.its.system.entity.User;
 
 public interface IUserService extends BaseService<User, Long>{

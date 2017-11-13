@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import edu.gzhu.its.base.model.PageData;
 import edu.gzhu.its.service.IUserService;
 import edu.gzhu.its.system.entity.Role;
 import edu.gzhu.its.system.entity.User;
@@ -55,6 +56,12 @@ public class UserTest {
 		user.setRoles(roles);
 		
 		userService.save(user);
+	}
+	
+	@Test
+	public void getPageDataTest(){
+		PageData<User> data = this.userService.getPageData(1, 10, null);
+		System.out.println(data.getTotalCount());
 	}
 
 }

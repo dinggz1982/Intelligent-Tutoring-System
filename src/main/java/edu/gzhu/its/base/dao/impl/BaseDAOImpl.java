@@ -6,7 +6,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -17,16 +19,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import edu.gzhu.its.base.dao.BaseDAO;
+import edu.gzhu.its.base.model.PageData;
 
 @Repository
 public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
-	
+
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	private Class<T> clz;
-	
+
 	private String className;
 
 	/**
@@ -52,7 +55,8 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 			entityManager.persist(entity);
 			flag = true;
 		} catch (Exception e) {
-			logger.error("保存" + clz.getName()+"出错:" + e );;
+			logger.error("保存" + clz.getName() + "出错:" + e);
+			;
 			throw e;
 		}
 		return flag;
@@ -70,8 +74,7 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		// TODO Auto-generated method stub
 		return entityManager.find(clz, id);
 	}
-	
-	
+
 	@Transactional
 	@Override
 	public List<T> findBysql(String tablename, String filed, Object o) {
@@ -83,7 +86,7 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		entityManager.close();
 		return list;
 	}
-	
+
 	public List<T> findBySql(String filed, Object o) {
 		String sql = "from " + className + " u WHERE u." + filed + "=?";
 		Query query = entityManager.createQuery(sql);
@@ -96,7 +99,7 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public T findOneBySql( String filed, Object o) {
+	public T findOneBySql(String filed, Object o) {
 		String sql = "from " + className + " u WHERE u." + filed + "=?";
 		System.out.println(sql + "--------sql语句-------------");
 		Query query = entityManager.createQuery(sql);
@@ -104,8 +107,7 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		entityManager.close();
 		return (T) query.getSingleResult();
 	}
-	
-	
+
 	@Override
 	public Object findObjiectBysql(String tablename, String filed, Object o) {
 		String sql = "from " + tablename + " u WHERE u." + filed + "=?";
@@ -139,7 +141,7 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		entityManager.close();
 		return listRe;
 	}
-	
+
 	public List<T> findByMoreFiled(LinkedHashMap<String, Object> map) {
 		String sql = "from " + className + " u WHERE ";
 		Set<String> set = null;
@@ -185,9 +187,8 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		entityManager.close();
 		return listRe;
 	}
-	
-	public List<T> findByMoreFiledpages(LinkedHashMap<String, Object> map, int start,
-			int pageNumber) {
+
+	public List<T> findByMoreFiledpages(LinkedHashMap<String, Object> map, int start, int pageNumber) {
 		String sql = "from " + className + " u WHERE ";
 		Set<String> set = null;
 		set = map.keySet();
@@ -315,5 +316,80 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		return result;
 	}
 
+	@Override
+	public PageData<T> getPageData(int pageIndex, int pageSize, Map<String, Object> paramMap) {
+		PageData<T> pageData = new PageData<T>(pageIndex, pageSize);
+
+		int totalCount = this.queryDataCount(paramMap);
+
+		List<T> list = this.queryPageData(pageData.getStartRow(), pageSize, paramMap);
+
+		pageData.setTotalCount(totalCount);
+
+		pageData.setPageData(list);
+
+		return pageData;
+	}
+
+	@Override
+	public int queryDataCount(Map<String, Object> params) {
+		StringBuffer chql = new StringBuffer("SELECT COUNT(*) FROM ").append(className).append(" o WHERE 1=1 ");
+		if (params != null) {
+			for (String key : params.keySet()) {
+				chql.append(" AND ").append(key).append("=").append(params.get(key));
+			}
+		}
+		Query query = entityManager.createQuery(chql.toString());
+		return  Integer.parseInt(query.getSingleResult().toString());
+	}
+
+	@Override
+	public Long queryPageTotalCount(String hql, final Map<String, Object> params) {
+		StringBuffer chql = new StringBuffer("SELECT COUNT(*) FROM ").append(className).append(" o WHERE 1=1 ");
+		if (params != null) {
+			for (String key : params.keySet()) {
+				chql.append(" AND ").append(key).append("=").append(params.get(key));
+			}
+		}
+		Query query = entityManager.createQuery(chql.toString());
+		return (Long) query.getSingleResult();
+
+	}
+
+	@Override
+	public List<T> queryPageData(int start, int maxSize, Map<String, Object> paramMap) {
+		StringBuilder hql = new StringBuilder();
+		hql.append("from " + className + "  where 1=1");
+		if (paramMap != null) {
+			for (String key : paramMap.keySet()) {
+				hql.append(" and " + key + " = " + paramMap.get(key));
+			}
+		}
+		hql.append(" order by id desc");
+		return this.queryPageList(hql.toString(), paramMap, start, maxSize);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<T> queryPageList(String hql, Map<String, Object> params, int start, int maxSize) {
+		List<T> list = null;
+		try {
+			Query query = entityManager.createQuery(hql);
+			if (params != null) {
+				for (String key : params.keySet()) {
+					query.setParameter(key, params.get(key));
+				}
+			}
+			// 用于分页查询
+			if (maxSize != 0) {
+				query.setFirstResult(start);
+				query.setMaxResults(maxSize);
+			}
+			list = query.getResultList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 
 }

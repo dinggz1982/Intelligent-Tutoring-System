@@ -36,10 +36,10 @@
                 <form class="login-form" action="/login" method="post" autocomplete="off">
                     <div class="login-box border text-small" id="box">
                         <div class="name border-bottom">
-                            <input type="text" placeholder="账号" id="username" name="username" datatype="*" nullmsg="请填写帐号信息" />
+                            <input type="text" placeholder="账号" id="username" name="username" value="admin" datatype="*" nullmsg="请填写帐号信息" />
                         </div>
                         <div class="pwd">
-                            <input type="password" placeholder="密码" datatype="*" id="password" name="password" nullmsg="请填写帐号密码" />
+                            <input type="password" placeholder="密码" datatype="*" id="password" value="123456" name="password" nullmsg="请填写帐号密码" />
                         </div>
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     </div>

@@ -1,8 +1,11 @@
-package edu.gzhu.its.service;
+package edu.gzhu.its.base.service;
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+
+import edu.gzhu.its.base.model.PageData;
 
 public interface BaseService<T,ID extends Serializable> { 
 	/**
@@ -129,4 +132,76 @@ public interface BaseService<T,ID extends Serializable> {
      * @return
      */
     Object findCount(String tablename, LinkedHashMap<String,Object> map);
+    
+
+	/**
+	 * 得到分页数据并封装成pagedata
+	 * <p>方法名:getPageData </p>
+	 * <p>Description : </p>
+	 * <p>Company : </p>
+	 * @author 丁国柱
+	 * @date 2017年11月14日 上午12:24:50
+	 * @param pageIndex
+	 * @param pageSize
+	 * @param paramMap
+	 * @return
+	 */
+	public PageData<T> getPageData(int pageIndex, int pageSize,
+			Map<String, Object> paramMap);
+	
+	/**
+	 * 查询记录数，用于分页
+	 * <p>方法名:queryDataCount </p>
+	 * <p>Description : </p>
+	 * <p>Company : </p>
+	 * @author 丁国柱
+	 * @date 2017年11月14日 上午12:26:10
+	 * @param paramMap
+	 * @return
+	 */
+	public int queryDataCount(Map<String, Object> paramMap);
+	
+	/**
+	 * 根据hql返回查询记录数
+	 * <p>方法名:queryPageTotalCount </p>
+	 * <p>Description : </p>
+	 * <p>Company : </p>
+	 * @author 丁国柱
+	 * @date 2017年11月14日 上午12:27:04
+	 * @param hql
+	 * @param params
+	 * @return
+	 */
+	public Long queryPageTotalCount(String hql, final Map<String, Object> params);
+	
+	/**
+	 * 返回分页list
+	 * <p>方法名:queryPageData </p>
+	 * <p>Description : </p>
+	 * <p>Company : </p>
+	 * @author 丁国柱
+	 * @date 2017年11月14日 上午12:37:36
+	 * @param start
+	 * @param maxSize
+	 * @param paramMap
+	 * @return
+	 */
+	public List<T> queryPageData(int start, int maxSize,
+			Map<String, Object> paramMap);
+	
+	/**
+	 * 获得分页LIST
+	 * <p>方法名:queryPageList </p>
+	 * <p>Description : </p>
+	 * <p>Company : </p>
+	 * @author 丁国柱
+	 * @date 2017年11月14日 上午12:38:50
+	 * @param hql
+	 * @param params
+	 * @param start
+	 * @param maxSize
+	 * @return
+	 */
+	public List<T> queryPageList(final String hql,
+			final Map<String, Object> params, final int start, final int maxSize);
 }

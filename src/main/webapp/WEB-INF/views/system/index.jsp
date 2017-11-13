@@ -228,7 +228,7 @@
                 <!-- search form (Optional) -->
                 <form action="#" method="get" class="sidebar-form">
                     <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                        <input type="text" name="q" class="form-control" placeholder="检索...">
                         <span class="input-group-btn">
                             <button type="submit" name="search" id="search-btn" class="btn btn-flat">
                                 <i class="fa fa-search"></i>
@@ -449,9 +449,9 @@
             var menus = [
             { id: "10010", text: "我的工作台", isHeader: true },
             {
-                id: "10001", text: "一级菜单", isOpen: true, icon: "icon-diamond",  children: [
-                { id: "10002", text: "二级菜单1", url: "../admin/dashboard.html", targetType: "ajax", icon: "icon-diamond" },
-                 { id: "10017", text: "二级菜单2", url: "../admin/ajax_content2.html", targetType: "ajax", icon: "icon-diamond" }
+                id: "10001", text: "系统管理", isOpen: true, icon: "icon-diamond",  children: [
+                { id: "10002", text: "用户管理", url: "/admin/userList", targetType: "ajax", icon: "icon-diamond" },
+                 { id: "10017", text: "菜单模块管理", url: "../admin/ajax_content2.html", targetType: "ajax", icon: "icon-diamond" }
 
                 ]
             }
