@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.gzhu.its.base.model.PageData;
-import edu.gzhu.its.base.model.PageJson;
 import edu.gzhu.its.base.model.TableSplitResult;
-import edu.gzhu.its.service.IUserService;
 import edu.gzhu.its.system.entity.User;
+import edu.gzhu.its.system.service.IUserService;
 
 @Controller
 public class UserController {

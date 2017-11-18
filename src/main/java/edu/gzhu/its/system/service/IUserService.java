@@ -1,4 +1,4 @@
-package edu.gzhu.its.service;
+package edu.gzhu.its.system.service;
 
 import edu.gzhu.its.base.service.BaseService;
 import edu.gzhu.its.system.entity.User;
@@ -14,5 +14,17 @@ public interface IUserService extends BaseService<User, Long>{
 	 * @return
 	 */
 	public User findByName(String username);
+	
+	/**
+	 * 保存用户
+	 * <p>方法名:saveUser </p>
+	 * <p>Description : </p>
+	 * <p>Company : </p>
+	 * @author 丁国柱
+	 * @date 2017年11月18日 下午7:01:14
+	 * @param user
+	 * @return
+	 */
+	public boolean saveUser(User user)  throws Exception;
 
 }

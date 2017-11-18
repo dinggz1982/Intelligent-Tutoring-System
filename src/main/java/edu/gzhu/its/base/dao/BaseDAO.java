@@ -136,11 +136,10 @@ public interface BaseDAO<T,ID extends Serializable> {
 
     /**
      * 根据条件查询总条数返回object类型
-     * @param tablename  表名
      * @param map 传入参数放入map中
      * @return
      */
-    Object findCount(String tablename, LinkedHashMap<String,Object> map);
+    Object findCount(LinkedHashMap<String,Object> map);
     
 
 	/**

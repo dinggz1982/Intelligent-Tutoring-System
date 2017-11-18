@@ -131,7 +131,7 @@ public interface BaseService<T,ID extends Serializable> {
      * @param map 传入参数放入map中
      * @return
      */
-    Object findCount(String tablename, LinkedHashMap<String,Object> map);
+    Object findCount(LinkedHashMap<String,Object> map);
     
 
 	/**

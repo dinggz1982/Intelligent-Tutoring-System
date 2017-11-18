@@ -12,10 +12,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import edu.gzhu.its.base.model.PageData;
-import edu.gzhu.its.service.IUserService;
 import edu.gzhu.its.system.entity.Role;
 import edu.gzhu.its.system.entity.User;
 import edu.gzhu.its.system.service.IRoleService;
+import edu.gzhu.its.system.service.IUserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -65,7 +65,7 @@ public class UserTest {
 	}
 	
 	@Test
-	public void addUser(){
+	public void addUser() throws Exception{
 		for (int i = 0; i < 100; i++) {
 			User user = new User();
 			BCryptPasswordEncoder bc = new BCryptPasswordEncoder(4);
@@ -75,7 +75,7 @@ public class UserTest {
 			user.setNickName("dgz");
 			user.setSex("男");
 			List<Role>  roles = new ArrayList<Role>();
-			userService.save(user);
+			userService.saveUser(user);
 		}
 		
 		

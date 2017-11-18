@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import edu.gzhu.its.service.IUserService;
 import edu.gzhu.its.system.entity.User;
+import edu.gzhu.its.system.service.IUserService;
 /**
  * spring security 用户验证类
  * <p>Title : CustomUserDetailsService</p>

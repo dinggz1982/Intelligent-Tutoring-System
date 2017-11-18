@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import edu.gzhu.its.service.IUserService;
+import edu.gzhu.its.system.service.IUserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

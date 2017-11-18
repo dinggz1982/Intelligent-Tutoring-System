@@ -289,8 +289,8 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 	}
 
 	@Override
-	public Object findCount(String tablename, LinkedHashMap<String, Object> map) {
-		String sql = "select count(u) from " + tablename + " u WHERE ";
+	public Object findCount(LinkedHashMap<String, Object> map) {
+		String sql = "select count(u) from " + className + " u WHERE ";
 		Set<String> set = null;
 		set = map.keySet();
 		List<String> list = new ArrayList<>(set);
@@ -300,7 +300,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 			filedlist.add(filed);
 		}
 		sql = sql.substring(0, sql.length() - 4);
-		System.out.println(sql + "--------sql语句-------------");
 		Query query = entityManager.createQuery(sql);
 		for (int i = 0; i < filedlist.size(); i++) {
 			query.setParameter(i + 1, map.get(filedlist.get(i)));
