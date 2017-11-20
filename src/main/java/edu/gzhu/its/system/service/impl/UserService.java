@@ -1,9 +1,7 @@
 package edu.gzhu.its.system.service.impl;
 
 import java.util.LinkedHashMap;
-import java.util.Map;
 
-import org.apache.commons.collections.map.LinkedMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -16,8 +14,6 @@ import edu.gzhu.its.system.service.IUserService;
 public class UserService extends BaseDAOImpl<User, Long> implements IUserService{
 	
 	private final static Logger logger = LoggerFactory.getLogger(UserService.class);
-
-
 
 	@Override
 	public User findByName(String username) {

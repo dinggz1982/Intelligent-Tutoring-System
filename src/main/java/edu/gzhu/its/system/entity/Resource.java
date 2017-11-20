@@ -28,7 +28,7 @@ public class Resource {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", length = 10)
-	private long id;
+	private int id;
 
 	@Column(name = "url", length = 1000)
 	private String url;// url
@@ -48,11 +48,11 @@ public class Resource {
 	@Column(name = "methodPath", length = 1000)
 	private String methodPath;// 资源所对应的包路径
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
