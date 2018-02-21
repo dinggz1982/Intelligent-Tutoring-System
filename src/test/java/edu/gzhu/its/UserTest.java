@@ -1,15 +1,20 @@
 package edu.gzhu.its;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
 
 import edu.gzhu.its.base.model.PageData;
 import edu.gzhu.its.system.entity.Role;
@@ -19,6 +24,8 @@ import edu.gzhu.its.system.service.IUserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@TransactionConfiguration(transactionManager="transactionManager", defaultRollback=false)    
+@Transactional  
 public class UserTest {
 
 	@Resource
@@ -28,6 +35,7 @@ public class UserTest {
 	private IRoleService roleService;
 
 	@Test
+	 @Rollback(false) 
 	public void addAdminUser() {
 		System.out.println(this.userService.findById(1l).getEmail());
 
@@ -46,11 +54,11 @@ public class UserTest {
 		User user = new User();
 		BCryptPasswordEncoder bc = new BCryptPasswordEncoder(4);
 		user.setPassword(bc.encode("123456"));
-		user.setUsername("admin");
+		user.setUsername("dgz");
 		user.setEmail("dgz888@163.com");
 		user.setNickName("dgz");
 		user.setSex("男");
-		List<Role>  roles = new ArrayList<Role>();
+		Set<Role>  roles = new HashSet<Role>();
 		roles.add(role1);
 		roles.add(role2);
 		user.setRoles(roles);
@@ -70,7 +78,7 @@ public class UserTest {
 			User user = new User();
 			BCryptPasswordEncoder bc = new BCryptPasswordEncoder(4);
 			user.setPassword(bc.encode("123456"));
-			user.setUsername("admin");
+			user.setUsername("dgz");
 			user.setEmail("dgz888@163.com");
 			user.setNickName("dgz");
 			user.setSex("男");

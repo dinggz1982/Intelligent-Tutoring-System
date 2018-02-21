@@ -11,7 +11,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import edu.gzhu.its.system.secuity.LoginSuccessHandler;
@@ -34,7 +33,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         .authorizeRequests()  
         .antMatchers("/index","/","/content/**").permitAll()//访问：/home 无需登录认证权限  
         .anyRequest().authenticated() //其他所有资源都需要认证，登陆后访问  
-        .antMatchers("/admin").hasAuthority("ADMIN") //登陆后之后拥有“ADMIN”权限才可以访问/hello方法，否则系统会出现“403”权限不足的提示  
         .and()  
         .formLogin()  
         .loginPage("/login")//指定登录页是”/login”  
@@ -50,11 +48,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         .tokenValiditySeconds(1209600);  
     }  
   
+    /**
+     * 认证管理
+     * <p>方法名:configureGlobal </p>
+     * <p>Description : </p>
+     * <p>Company : </p>
+     * @author 丁国柱
+     * @date 2017年12月11日 下午12:30:01
+     * @param auth
+     * @throws Exception
+     */
+    
     @Autowired  
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {     
 		 //指定密码加密所使用的加密器为passwordEncoder()  
 		 //需要将密码加密后写入数据库   
-    	 PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();  
+    	 //PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();  
+    	 BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(4);
     	 auth.eraseCredentials(false).userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);      
     }  
   

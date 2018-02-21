@@ -83,6 +83,7 @@ public class DruidDBConfig {
     
     @Value("{spring.jpa.show-sql}")
     private String show_sql;
+    
     @Bean
     @ConfigurationProperties(prefix ="spring.datasource")
     public DataSource dataSource(){

@@ -29,12 +29,13 @@ public class Resource {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", length = 10)
 	private int id;
+	
+	//url对应的访问路径
+	private String url;
 
-	@Column(name = "url", length = 1000)
-	private String url;// url
-
-	@Column(name = "resourceId", length = 50)
-	private String resourceId;// 资源ID
+	//资源名字
+	private String name;
+	
 
 	@Column(name = "remark", length = 200)
 	private String remark;// 备注
@@ -54,22 +55,6 @@ public class Resource {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public String getResourceId() {
-		return resourceId;
-	}
-
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
 	}
 
 	public String getRemark() {
@@ -102,6 +87,22 @@ public class Resource {
 
 	public void setMethodPath(String methodPath) {
 		this.methodPath = methodPath;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 }

@@ -3,6 +3,7 @@ package edu.gzhu.its.system.entity;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -20,34 +22,36 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name = "sys_user")
-public class User implements java.io.Serializable, UserDetails  {
+public class User implements java.io.Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
-    
-    @ManyToMany(cascade = {CascadeType.REFRESH},fetch = FetchType.EAGER)
-    private List<Role> roles;
-    
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @Column(name = "username")
-    private String username;
+	@ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.EAGER)
+	private Set<Role> roles;
 
-    @Column(name = "password")
-    private String password;
+	public User() {
+	}
 
-    @Column(name = "email")
-    private String email;
+	@Column(name = "username")
+	private String username;
 
-    @Column(name = "mobile")
-    private String mobile;
+	@Column(name = "password")
+	private String password;
 
-    @Column(name = "nickname")
-    private String nickName;
-    
-    public String getSex() {
+	@Column(name = "email")
+	private String email;
+
+	@Column(name = "mobile")
+	private String mobile;
+
+	@Column(name = "nickname")
+	private String nickName;
+
+	public String getSex() {
 		return sex;
 	}
 
@@ -56,7 +60,7 @@ public class User implements java.io.Serializable, UserDetails  {
 	}
 
 	@Column(name = "sex")
-    private String sex;
+	private String sex;
 
 	public Long getId() {
 		return id;
@@ -106,44 +110,30 @@ public class User implements java.io.Serializable, UserDetails  {
 		this.nickName = nickName;
 	}
 
-	 @Override
-	    public Collection<? extends GrantedAuthority> getAuthorities() {
-	        List<GrantedAuthority> auths = new ArrayList<>();
-	        List<Role> roles = this.getRoles();
-	        for (Role role : roles) {
-	            auths.add(new SimpleGrantedAuthority(role.getName()));
-	        }
-	        return auths;
-	    }
-
-	    public List<Role> getRoles() {
+	public Set<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(List<Role> roles) {
+	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
 
-		
+	public User(String userName, String password, Collection<GrantedAuthority> grantedAuths) {
+		this.username = userName;
+		this.setGrantedAuths(grantedAuths);
+		this.password = password;
+	}
 
-	    @Override
-	    public boolean isAccountNonExpired() {
-	        return true;
-	    }
+	// URL权限
+	@Transient
+	private Collection<GrantedAuthority> grantedAuths;
 
-	    @Override
-	    public boolean isAccountNonLocked() {
-	        return true;
-	    }
+	public Collection<GrantedAuthority> getGrantedAuths() {
+		return grantedAuths;
+	}
 
-	    @Override
-	    public boolean isCredentialsNonExpired() {
-	        return true;
-	    }
-
-	    @Override
-	    public boolean isEnabled() {
-	        return true;
-	    }
+	public void setGrantedAuths(Collection<GrantedAuthority> grantedAuths) {
+		this.grantedAuths = grantedAuths;
+	}
 
 }
