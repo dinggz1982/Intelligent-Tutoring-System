@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 
 import javax.annotation.Resource;
-import javax.transaction.Transactional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
 
 import edu.gzhu.its.base.model.PageData;
 import edu.gzhu.its.system.entity.Role;
@@ -24,8 +24,9 @@ import edu.gzhu.its.system.service.IUserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@TransactionConfiguration(transactionManager="transactionManager", defaultRollback=false)    
-@Transactional  
+@Rollback(false)
+@Transactional
+@EnableTransactionManagement  
 public class UserTest {
 
 	@Resource
@@ -35,10 +36,13 @@ public class UserTest {
 	private IRoleService roleService;
 
 	@Test
-	 @Rollback(false) 
-	public void addAdminUser() {
-		System.out.println(this.userService.findById(1l).getEmail());
+	@Transactional  
+	@Rollback(false) 
+	public void addAdminUser() throws Exception {
+	//	System.out.println(this.userService.findById(1l).getEmail());
 
+		
+		
 		// 管理員角色
 		Role role1 = new Role();
 		role1.setName("管理员");
@@ -63,7 +67,7 @@ public class UserTest {
 		roles.add(role2);
 		user.setRoles(roles);
 		
-		userService.save(user);
+		userService.saveUser(user);
 	}
 	
 	@Test
@@ -73,6 +77,7 @@ public class UserTest {
 	}
 	
 	@Test
+	@Rollback(false) 
 	public void addUser() throws Exception{
 		for (int i = 0; i < 100; i++) {
 			User user = new User();
@@ -85,8 +90,16 @@ public class UserTest {
 			List<Role>  roles = new ArrayList<Role>();
 			userService.saveUser(user);
 		}
-		
-		
 	}
 
+	
+	@Test
+	@Rollback(value=false)
+	public void addRoleByUser() throws Exception{
+		User user = this.userService.findById(2l);
+		List<Role> roles = this.roleService.findAll();
+		 Set<Role> set = new HashSet<Role>(roles);
+		user.setRoles(set);
+		this.userService.update(user);
+	}
 }

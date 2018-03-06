@@ -1,8 +1,6 @@
 package edu.gzhu.its.system.entity;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -13,15 +11,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-@Entity
-@Table(name = "sys_user")
+/**
+ * 用户类
+ * <p>Title : User</p>
+ * <p>Description : </p>
+ * <p>Company : </p>
+ * @author 丁国柱
+ * @date 2017年12月27日 下午6:09:13
+ */
+@Entity(name = "sys_user")
 public class User implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -36,7 +37,7 @@ public class User implements java.io.Serializable {
 	public User() {
 	}
 
-	@Column(name = "username")
+	@Column(name = "username",unique=true,columnDefinition=("varchar(255) comment '用户名'"))
 	private String username;
 
 	@Column(name = "password")

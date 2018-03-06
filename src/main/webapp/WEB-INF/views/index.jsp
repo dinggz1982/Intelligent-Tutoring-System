@@ -1,8 +1,11 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>My JSP 'index.jsp' starting page</title>
+    
+    <title>广州大学-教育技术-网络教育软件设计与开发</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -16,6 +19,8 @@
   </head>
   
   <body>
-    This is my JSP page. <br>
+    <script type="text/javascript">
+    window.location.href = "/login";
+    </script>
   </body>
 </html>

@@ -12,7 +12,7 @@ import edu.gzhu.its.system.service.IUserService;
 
 @Service("userService")
 public class UserService extends BaseDAOImpl<User, Long> implements IUserService{
-	
+
 	private final static Logger logger = LoggerFactory.getLogger(UserService.class);
 
 	@Override
@@ -34,6 +34,5 @@ public class UserService extends BaseDAOImpl<User, Long> implements IUserService
 		}
 		return false;
 	}
-
 
 }

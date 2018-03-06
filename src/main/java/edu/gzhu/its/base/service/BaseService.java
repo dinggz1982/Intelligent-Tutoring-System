@@ -1,6 +1,7 @@
 package edu.gzhu.its.base.service;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +32,7 @@ public interface BaseService<T,ID extends Serializable> {
      * 查询全部数据
      * @return
      */
-    List<T> findAll();
+    List<T> findAll() throws SQLException;
     /**
      * 根据表名，字段，参数查询，拼接sql语句
      * @param  tablename 表名

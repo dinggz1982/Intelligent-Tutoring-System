@@ -3,6 +3,7 @@ package edu.gzhu.its.base.dao.impl;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -25,6 +26,7 @@ import edu.gzhu.its.base.model.PageData;
 public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	@PersistenceContext
 	private EntityManager entityManager;
 
@@ -46,9 +48,9 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 			this.className = this.clz.getName();
 		}
 	}
-
-	@Transactional
+	
 	@Override
+	@Transactional
 	public boolean save(T entity) {
 		boolean flag = false;
 		try {
@@ -56,7 +58,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 			flag = true;
 		} catch (Exception e) {
 			logger.error("保存" + clz.getName() + "出错:" + e);
-			;
 			throw e;
 		}
 		return flag;
@@ -101,17 +102,20 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 	@Override
 	public T findOneBySql(String filed, Object o) {
 		String sql = "from " + className + " u WHERE u." + filed + "=?";
-		System.out.println(sql + "--------sql语句-------------");
 		Query query = entityManager.createQuery(sql);
 		query.setParameter(1, o);
 		entityManager.close();
-		return (T) query.getSingleResult();
+		try{
+			return (T) query.getSingleResult();
+		}catch(Exception exception){
+			return null;
+		}
+		
 	}
 
 	@Override
 	public Object findObjiectBysql(String tablename, String filed, Object o) {
 		String sql = "from " + tablename + " u WHERE u." + filed + "=?";
-		System.out.println(sql + "--------sql语句-------------");
 		Query query = entityManager.createQuery(sql);
 		query.setParameter(1, o);
 
@@ -132,7 +136,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 			filedlist.add(filed);
 		}
 		sql = sql.substring(0, sql.length() - 4);
-		System.out.println(sql + "--------sql语句-------------");
 		Query query = entityManager.createQuery(sql);
 		for (int i = 0; i < filedlist.size(); i++) {
 			query.setParameter(i + 1, map.get(filedlist.get(i)));
@@ -176,7 +179,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 			filedlist.add(filed);
 		}
 		sql = sql.substring(0, sql.length() - 4);
-		System.out.println(sql + "--------sql语句-------------");
 		Query query = entityManager.createQuery(sql);
 		for (int i = 0; i < filedlist.size(); i++) {
 			query.setParameter(i + 1, map.get(filedlist.get(i)));
@@ -215,7 +217,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 	@Override
 	public List<T> findpages(String tablename, String filed, Object o, int start, int pageNumer) {
 		String sql = "from " + tablename + " u WHERE u." + filed + "=?";
-		System.out.println(sql + "--------page--sql语句-------------");
 		List<T> list = new ArrayList<>();
 		try {
 			Query query = entityManager.createQuery(sql);
@@ -308,7 +309,7 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 	}
 
 	@Override
-	public List<T> findAll() {
+	public List<T> findAll() throws SQLException  {
 		// TODO Auto-generated method stub
 		Query query = entityManager.createQuery("FROM " + className);
 		List<T> result = query.getResultList();
@@ -389,6 +390,34 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	@Override
+	public List<Object> findObjectBySql(String sql) {
+		Query query = entityManager.createNativeQuery(sql);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<Object[]> findBySql(String sql) {
+		Query query = entityManager.createNativeQuery(sql);
+		return query.getResultList();
+	}
+
+	@Override
+	public int getCountBySql(String sql) {
+		Query query = entityManager.createNativeQuery(sql);
+		return Integer.parseInt(query.getSingleResult().toString());
+	}
+
+	@Override
+	public List<T> queryPageData(int start, int maxSize, String appendSql) {
+		StringBuilder hql = new StringBuilder();
+		hql.append("from " + className + "  where 1=1").append(appendSql);
+		
+		hql.append(" order by id desc");
+		return null;
+		//return this.queryPageList(hql.toString(), paramMap, start, maxSize);
 	}
 
 }

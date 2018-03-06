@@ -1,6 +1,7 @@
 package edu.gzhu.its.base.dao;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +20,7 @@ public interface BaseDAO<T,ID extends Serializable> {
      * 查询全部数据
      * @return
      */
-    List<T> findAll();
+    List<T> findAll() throws SQLException;
     /**
      * 根据id查询
      * @param id
@@ -198,6 +199,16 @@ public interface BaseDAO<T,ID extends Serializable> {
 			Map<String, Object> paramMap);
 	
 	/**
+	 * 根據附加的sql查詢
+	 * @param start
+	 * @param maxSize
+	 * @param appendSql
+	 * @return
+	 */
+	public List<T> queryPageData(int start, int maxSize,
+			String appendSql);
+	
+	/**
 	 * 获得分页LIST
 	 * <p>方法名:queryPageList </p>
 	 * <p>Description : </p>
@@ -213,5 +224,33 @@ public interface BaseDAO<T,ID extends Serializable> {
 	public List<T> queryPageList(final String hql,
 			final Map<String, Object> params, final int start, final int maxSize);
 	
+	 /**
+     * 根据原生sql获得结果集
+     * 
+     * @param sql
+     *            SQL语句
+     * @return 结果集
+     */
+    public List<Object> findObjectBySql(String sql);
+    
+    /**
+     * 根据原生sql获得结果集
+     * @param sql
+     * SQL语句
+     * @return 结果集
+     */
+    public List<Object[]> findBySql(String sql);
+    
+    /**
+     * 根据sql获取count
+     * <p>方法名:getCountBySql </p>
+     * <p>Description : </p>
+     * <p>Company : </p>
+     * @author 丁国柱
+     * @date 2018年1月31日 上午12:00:02
+     * @param sql
+     * @return
+     */
+    public int getCountBySql(String sql);
 	
 }

@@ -2,465 +2,210 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>管理员后台</title>
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="content/ui/global/bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link href="content/ui/global/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <!-- Theme style -->
-    <link rel="stylesheet" href="content/adminlte/dist/css/AdminLTE.css">
-    <link rel="stylesheet" href="content/adminlte/dist/css/skins/_all-skins.min.css">
-    <link href="content/min/css/supershopui.common.min.css" rel="stylesheet" />
-    <style type="text/css">
-        html {
-            overflow: hidden;
-        }
-    </style>
-      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <title>广州大学-教育技术-网络教育软件设计与开发</title>
+   <%@include file="/WEB-INF/views/include/top.jsp" %>
   </head>
-  
-  <body class="hold-transition skin-blue sidebar-mini fixed">
-    <div class="wrapper">
-        <!-- Main Header -->
-        <header class="main-header">
-            <!-- Logo -->
-            <a href="" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">its</span>
-                <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg">ITS</span>
-            </a>
+  <body>
+<header class="navbar-wrapper">
+	<div class="navbar navbar-fixed-top">
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="#">智能教学系统</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">H-ui</a> 
+			<span class="logo navbar-slogan f-l mr-10 hidden-xs">v0.1</span> 
+			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
+			<nav class="nav navbar-nav">
+				<ul class="cl">
+					<li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
+						<ul class="dropDown-menu menu radius box-shadow">
+							<li><a href="javascript:;" onclick="alert('正在开发ing')"><i class="Hui-iconfont">&#xe616;</i> 资讯</a></li>
+							<li><a href="javascript:;" onclick="alert('正在开发ing')"><i class="Hui-iconfont">&#xe613;</i> 应用</a></li>
+					</ul>
+					<li class="navbar-levelone current"><a href="javascript:;">平台</a></li>
+					<li class="navbar-levelone"><a href="javascript:;">知识图谱</a></li>
+					<li class="navbar-levelone"><a href="javascript:;">考勤</a></li>
+					<li class="navbar-levelone"><a href="javascript:;">测验</a></li>
+				</li>
+			</ul>
+		</nav>
+		<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+			<ul class="cl">
+				<li>超级管理员</li>
+				<li class="dropDown dropDown_hover">
+					<a href="#" class="dropDown_A">${currentUser.username } <i class="Hui-iconfont">&#xe6d5;</i></a>
+					<ul class="dropDown-menu menu radius box-shadow">
+						<li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
+						<li><a href="#">切换账户</a></li>
+						<li><a href="#">退出</a></li>
+				</ul>
+			</li>
+				<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
+				<li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
+					<ul class="dropDown-menu menu radius box-shadow">
+						<li><a href="javascript:;" data-val="default" title="默认（黑色）">默认（黑色）</a></li>
+						<li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
+						<li><a href="javascript:;" data-val="green" title="绿色">绿色</a></li>
+						<li><a href="javascript:;" data-val="red" title="红色">红色</a></li>
+						<li><a href="javascript:;" data-val="yellow" title="黄色">黄色</a></li>
+						<li><a href="javascript:;" data-val="orange" title="橙色">橙色</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>
+</header>
+<aside class="Hui-aside">
+	<div class="menu_dropdown bk_2">
+		<c:forEach items="${resources }" var="resource">
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> ${resource.name }<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<c:choose>
+					<c:when test="${!empty resource.children }">
+				<ul>
+					<c:forEach items="${resource.children }" var="subRes">
+							<li><a data-href="${subRes.url }" data-title="${subRes.name }" href="javascript:void(0)">${subRes.name }</a></li>
+					</c:forEach>
+				</ul>
+				</c:when>
+				</c:choose>
+			</dd>
+		</dl>
+		</c:forEach>
+		
+	</div>
 
-            <!-- Header Navbar -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <!--<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">切换导航</span>
-                </a>-->
-                <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">平台 <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">课程</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户 <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">教师</a></li>
-                                <li><a href="#">学生</a></li>
-                                <li><a href="#">其他人员</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+	<div class="menu_dropdown bk_2" style="display:none">
+		<dl id="menu-aaaaa">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 知识图谱<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="article-list.html" data-title="学科" href="javascript:void(0)">学科</a></li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
 
-                </div>
-                <!-- Navbar Right Menu -->
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
-                        <li class="dropdown messages-menu">
-                            <!-- Menu toggle button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-envelope-o"></i>
-                                <span class="label label-success">4</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">你有4条提醒</li>
-                                <li>
-                                    <!-- inner menu: contains the messages -->
-                                    <ul class="menu">
-                                        <li>
-                                            <!-- start message -->
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <!-- User Image -->
-                                                    <img src="content/ui/img/photos/boy.png" class="img-circle" alt="User Image">
-                                                </div>
-                                                <!-- Message title and timestamp -->
-                                                <h4>
-                                                    新用户注册
-                                                    <small><i class="fa fa-clock-o"></i> 现在</small>
-                                                </h4>
-                                                <!-- The message -->
-                                                <p>新用户注册!</p>
-                                            </a>
-                                        </li>
-                                        <!-- end message -->
-                                    </ul>
-                                    <!-- /.menu -->
-                                </li>
-                                <li class="footer"><a href="#">查看所有提醒</a></li>
-                            </ul>
-                        </li>
-                        <!-- /.messages-menu -->
-                        <!-- Notifications Menu -->
-                        <li class="dropdown notifications-menu">
-                            <!-- Menu toggle button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-bell-o"></i>
-                                <span class="label label-warning">10</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">你有10条消息</li>
-                                <li>
-                                    <!-- Inner Menu: contains the notifications -->
-                                    <ul class="menu">
-                                        <li>
-                                            <!-- start notification -->
-                                            <a href="#">
-                                                <i class="fa fa-users text-aqua"></i> 新用户注册!
-                                            </a>
-                                        </li>
-                                        <!-- end notification -->
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">查看所有</a></li>
-                            </ul>
-                        </li>
-                        <!-- Tasks Menu -->
-                        <li class="dropdown tasks-menu">
-                            <!-- Menu Toggle Button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-flag-o"></i>
-                                <span class="label label-danger">9</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">您有9条消息</li>
-                                <li>
-                                    <!-- Inner menu: contains the tasks -->
-                                    <ul class="menu">
-                                        <li>
-                                            <!-- Task item -->
-                                            <a href="#">
-                                                <!-- Task title and progress text -->
-                                                <h3>
-                                                    java
-                                                    <small class="pull-right">20%</small>
-                                                </h3>
-                                                <!-- The progress bar -->
-                                                <div class="progress xs">
-                                                    <!-- Change the css width attribute to simulate progress -->
-                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">20% 完成</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- end task item -->
-                                    </ul>
-                                </li>
-                                <li class="footer">
-                                    <a href="#">查看所有</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- User Account Menu -->
-                        <li class="dropdown user user-menu">
-                            <!-- Menu Toggle Button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <!-- The user image in the navbar-->
-                                <img src="content/ui/img/photos/boy.png" class="user-image" alt="User Image">
-                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">${user.username }</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- The user image in the menu -->
-                                <li class="user-header">
-                                    <img src="content/ui/img/photos/boy.png" class="img-circle" alt="User Image">
-                                    <p>
-                                        ${user.username }
-                                        <small>2016年注册</small>
-                                    </p>
-                                </li>
-                                <!-- Menu Body -->
-                                <li class="user-body">
-                                    <div class="row">
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">个人信息</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">设置</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">主题</a>
-                                        </div>
-                                    </div>
-                                    <!-- /.row -->
-                                </li>
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">个人中心</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">退出</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Control Sidebar Toggle Button -->
-                        <li>
-                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <!-- Left side column. contains the logo and sidebar -->
-        <aside class="main-sidebar">
-            <!-- sidebar: style can be found in sidebar.less -->
-            <section class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel">
-                    <div class="pull-left image">
-                        <img src="content/ui/img/photos/boy.png" class="img-circle" alt="我的头像">
-                    </div>
-                    <div class="pull-left info">
-                        <p>${user.username}</p>
-                        <!-- Status -->
-                        <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
-                    </div>
-                </div>
-                <!-- search form (Optional) -->
-                <form action="#" method="get" class="sidebar-form">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="检索...">
-                        <span class="input-group-btn">
-                            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-                <!-- /.search form -->
-                <!-- Sidebar Menu -->
-                <ul class="sidebar-menu"></ul>
-                <!-- /.sidebar-menu -->
-            </section>
-            <!-- /.sidebar -->
-        </aside>
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper" id="content-wrapper">
+	<div class="menu_dropdown bk_2" style="display:none">
+		<dl id="menu-bbbbb">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 考勤<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="#" data-title="考勤" href="javascript:void(0)">考勤</a></li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
 
-            <div class="page-content-body " id="tab-page-content">
-                
-            </div>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
-        <!-- Main Footer -->
-        <footer class="main-footer">
-            <!-- To the right -->
-            <div class="pull-right hidden-xs">
-               ITS项目组
-            </div>
-            <!-- Default to the left -->
-            版权所有 &copy;XXX 2015-2018&nbsp;&nbsp;&nbsp;&nbsp;   
-        </footer>
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Create the tabs -->
-            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-                <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-            </ul>
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <!-- Home tab content -->
-                <div class="tab-pane" id="control-sidebar-home-tab">
-                    <h3 class="control-sidebar-heading">Recent Activity</h3>
-                    <ul class="control-sidebar-menu">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-                                <div class="menu-info">
-                                    <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-                                    <p>Will be 23 on April 24th</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="menu-icon fa fa-user bg-yellow"></i>
-                                <div class="menu-info">
-                                    <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-                                    <p>New phone +1(800)555-1234</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-                                <div class="menu-info">
-                                    <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-                                    <p>nora@example.com</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="menu-icon fa fa-file-code-o bg-green"></i>
-                                <div class="menu-info">
-                                    <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-                                    <p>Execution time 5 seconds</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.control-sidebar-menu -->
-                    <h3 class="control-sidebar-heading">Tasks Progress</h3>
-                    <ul class="control-sidebar-menu">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <h4 class="control-sidebar-subheading">
-                                    Custom Template Design
-                                    <span class="label label-danger pull-right">70%</span>
-                                </h4>
-                                <div class="progress progress-xxs">
-                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <h4 class="control-sidebar-subheading">
-                                    Update Resume
-                                    <span class="label label-success pull-right">95%</span>
-                                </h4>
-                                <div class="progress progress-xxs">
-                                    <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <h4 class="control-sidebar-subheading">
-                                    Laravel Integration
-                                    <span class="label label-warning pull-right">50%</span>
-                                </h4>
-                                <div class="progress progress-xxs">
-                                    <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <h4 class="control-sidebar-subheading">
-                                    Back End Framework
-                                    <span class="label label-primary pull-right">68%</span>
-                                </h4>
-                                <div class="progress progress-xxs">
-                                    <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.control-sidebar-menu -->
-                </div>
-                <!-- /.tab-pane -->
-                <!-- Stats tab content -->
-                <div class="tab-pane" id="control-sidebar-stats-tab">状态面板设置</div>
-                <!-- /.tab-pane -->
-                <!-- Settings tab content -->
-                <div class="tab-pane" id="control-sidebar-settings-tab">
-                    <form method="post">
-                        <h3 class="control-sidebar-heading">常规设置</h3>
-                        <div class="form-group">
-                            <label class="control-sidebar-subheading">
-                                Report panel usage
-                                <input type="checkbox" class="pull-right" checked>
-                            </label>
-                            <p>
-                                Some information about this general settings option
-                            </p>
-                        </div>
-                        <!-- /.form-group -->
-                        <div class="form-group">
-                            <label class="control-sidebar-subheading">
-                                Allow mail redirect
-                                <input type="checkbox" class="pull-right" checked>
-                            </label>
-                            <p>
-                                Other sets of options are available
-                            </p>
-                        </div>
-                        <!-- /.form-group -->
-                        <div class="form-group">
-                            <label class="control-sidebar-subheading">
-                                Expose author name in posts
-                                <input type="checkbox" class="pull-right" checked>
-                            </label>
-                            <p>
-                                Allow the user to show his name in blog posts
-                            </p>
-                        </div>
-                        <!-- /.form-group -->
-                        <h3 class="control-sidebar-heading">Chat Settings</h3>
-                        <div class="form-group">
-                            <label class="control-sidebar-subheading">
-                                Show me as online
-                                <input type="checkbox" class="pull-right" checked>
-                            </label>
-                        </div>
-                        <!-- /.form-group -->
-                        <div class="form-group">
-                            <label class="control-sidebar-subheading">
-                                Turn off notifications
-                                <input type="checkbox" class="pull-right">
-                            </label>
-                        </div>
-                        <!-- /.form-group -->
-                        <div class="form-group">
-                            <label class="control-sidebar-subheading">
-                                Delete chat history
-                                <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-                            </label>
-                        </div>
-                        <!-- /.form-group -->
-                    </form>
-                </div>
-                <!-- /.tab-pane -->
-            </div>
-        </aside>
-        <!-- /.control-sidebar -->
-        <!-- Add the sidebar's background. This div must be placed
-        immediately after the control sidebar -->
-        <div class="control-sidebar-bg"></div>
-    </div>
-    <!-- ./wrapper -->
-    <!-- REQUIRED JS SCRIPTS -->
-    <!-- jQuery 2.2.3 -->
-    <script src="content/ui/global/jQuery/jquery.min.js"></script>
-    <!-- Bootstrap 3.3.6 -->
-    <script src="content/ui/global/bootstrap/js/bootstrap.min.js"></script>
-    <script src="content/min/js/supershopui.common.js"></script>
+	<div class="menu_dropdown bk_2" style="display:none">
+		<dl id="menu-ccccc">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 测验<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="#" data-title="测验" href="javascript:void(0)">测验</a></li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+
+</aside>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+<section class="Hui-article-box">
+	<div id="Hui-tabNav" class="Hui-tabNav hidden-xs">
+		<div class="Hui-tabNav-wp">
+			<ul id="min_title_list" class="acrossTab cl">
+				<li class="active">
+					<span title="我的桌面" data-href="welcome.html">我的桌面</span>
+					<em></em></li>
+		</ul>
+	</div>
+		<div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d4;</i></a><a id="js-tabNav-next" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a></div>
+</div>
+	<div id="iframe_box" class="Hui-article">
+		<div class="show_iframe">
+			<div style="display:none" class="loading"></div>
+			<iframe scrolling="yes" frameborder="0" src="/userOnline"></iframe>
+	</div>
+</div>
+</section>
+
+<div class="contextMenu" id="Huiadminmenu">
+	<ul>
+		<li id="closethis">关闭当前 </li>
+		<li id="closeall">关闭全部 </li>
+</ul>
+</div>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="${ctx }/static/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
+<script type="text/javascript">
+$(function(){
+	/*$("#min_title_list li").contextMenu('Huiadminmenu', {
+		bindings: {
+			'closethis': function(t) {
+				console.log(t);
+				if(t.find("i")){
+					t.find("i").trigger("click");
+				}		
+			},
+			'closeall': function(t) {
+				alert('Trigger was '+t.id+'\nAction was Email');
+			},
+		}
+	});*/
 
 
-    <script type="text/javascript">
-  
-      
-        $(function () {
-            App.fixIframeCotent();
-            //菜单格式
-            var menus = [
-            { id: "10010", text: "我的工作台", isHeader: true },
-            {
-                id: "10001", text: "系统管理", isOpen: true, icon: "icon-diamond",  children: [
-                { id: "10002", text: "用户管理", url: "/admin/userList", targetType: "ajax", icon: "icon-diamond" },
-                 { id: "10017", text: "菜单模块管理", url: "../admin/ajax_content2.html", targetType: "ajax", icon: "icon-diamond" }
+	$("body").Huitab({
+		tabBar:".navbar-wrapper .navbar-levelone",
+		tabCon:".Hui-aside .menu_dropdown",
+		className:"current",
+		index:0,
+	});
+});
+/*个人信息*/
+function myselfinfo(){
+	layer.open({
+		type: 1,
+		area: ['300px','200px'],
+		fix: false, //不固定
+		maxmin: true,
+		shade:0.4,
+		title: '查看信息',
+		content: '<div>管理员信息</div>'
+	});
+}
 
-                ]
-            }
-            ];
-            $('.sidebar-menu').sidebarMenu({ data: menus, param: { strUser: 'admin' } });
-            //处理菜单ajax方式加载
-            App.handleSidebarAjaxContent();
-         
-        });
-    </script>
-</body>
+/*资讯-添加*/
+function article_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*图片-添加*/
+function picture_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*产品-添加*/
+function product_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*用户-添加*/
+function member_add(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+
+
+</script> 
+  </body>
 </html>

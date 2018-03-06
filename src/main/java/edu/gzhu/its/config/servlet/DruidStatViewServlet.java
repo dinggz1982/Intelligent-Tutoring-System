@@ -9,7 +9,6 @@ import com.alibaba.druid.support.http.StatViewServlet;
 /**
  * 配置druid监控统计功能
  * 在SpringBoot项目中基于注解的配置，如果是web.xml配置，按规则配置即可
- * @author ZSX
  *
  */
 

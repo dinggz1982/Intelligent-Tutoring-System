@@ -1,0 +1,292 @@
+01:21:38.391 [restartedMain] INFO  edu.gzhu.its.ItsApplication - Starting ItsApplication on USERCHI-RRDBCTT with PID 28848 (started by Administrator in H:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+01:21:38.392 [restartedMain] INFO  edu.gzhu.its.ItsApplication - No active profile set, falling back to default profiles: default
+01:21:38.430 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5c1f0453: startup date [Sun Nov 26 01:21:38 CST 2017]; root of context hierarchy
+01:21:38.606 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+01:21:40.407 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+01:21:40.416 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+01:21:40.417 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+01:21:40.626 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+01:21:40.632 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+01:21:40.632 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2202 ms
+01:21:40.787 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+01:21:40.787 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+01:21:40.787 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+01:21:40.787 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+01:21:40.788 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+01:21:40.788 [localhost-startStop-1] INFO  o.s.b.w.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+01:21:40.897 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+01:21:40.908 [restartedMain] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+01:21:40.968 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+01:21:40.969 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+01:21:40.970 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+01:21:41.008 [restartedMain] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+01:21:41.462 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+01:21:41.472 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+01:21:41.787 [restartedMain] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+01:21:42.235 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01:21:42.475 [restartedMain] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+01:21:42.801 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@223d93e5, org.springframework.security.web.context.SecurityContextPersistenceFilter@609c303, org.springframework.security.web.header.HeaderWriterFilter@a520ffe, org.springframework.security.web.csrf.CsrfFilter@7d466b3e, org.springframework.security.web.authentication.logout.LogoutFilter@5fe88cbf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1b7454ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28494cf5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6766cdd8, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@45ef5595, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5acf88eb, org.springframework.security.web.session.SessionManagementFilter@68309db1, org.springframework.security.web.access.ExceptionTranslationFilter@4a7c586c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5aa34e17]
+01:21:43.000 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5c1f0453: startup date [Sun Nov 26 01:21:38 CST 2017]; root of context hierarchy
+01:21:43.058 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/userList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.userList()
+01:21:43.058 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.admin()
+01:21:43.058 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.system.web.IndexController.index()
+01:21:43.060 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.longin()
+01:21:43.060 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/doLogin],methods=[POST]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.doLogin()
+01:21:43.061 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/userList],methods=[GET]}" onto public edu.gzhu.its.base.model.TableSplitResult<edu.gzhu.its.system.entity.User> edu.gzhu.its.system.web.UserController.getUsers(java.lang.Integer,java.lang.Integer)
+01:21:43.062 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+01:21:43.063 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+01:21:43.099 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+01:21:43.099 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+01:21:43.133 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+01:21:43.577 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+01:21:43.624 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+01:21:43.625 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+01:21:43.630 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+01:21:43.643 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+01:21:43.655 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+01:21:43.666 [restartedMain] INFO  o.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+01:21:43.693 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9090 (http)
+01:21:43.699 [restartedMain] INFO  edu.gzhu.its.ItsApplication - Started ItsApplication in 5.562 seconds (JVM running for 5.916)
+01:21:57.283 [http-nio-9090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+01:21:57.283 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+01:21:57.298 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+01:21:58.909 [http-nio-9090-exec-2] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+01:21:58.969 [http-nio-9090-exec-2] WARN  o.h.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 57 in HQL: [from edu.gzhu.its.system.entity.User u WHERE u.username=?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+01:21:59.092 [http-nio-9090-exec-2] INFO  e.g.i.system.secuity.LoginSuccessHandler - admin 登录
+01:23:45.760 [Thread-8] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5c1f0453: startup date [Sun Nov 26 01:21:38 CST 2017]; root of context hierarchy
+01:23:45.761 [Thread-8] WARN  o.s.b.f.support.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'classPathFileSystemWatcher': java.lang.NullPointerException
+01:23:45.761 [Thread-8] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+01:23:45.761 [Thread-8] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+01:23:45.762 [Thread-8] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+01:23:45.766 [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+01:23:45.769 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+01:23:46.234 [restartedMain] INFO  edu.gzhu.its.ItsApplication - Starting ItsApplication on USERCHI-RRDBCTT with PID 28848 (started by Administrator in H:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+01:23:46.234 [restartedMain] INFO  edu.gzhu.its.ItsApplication - No active profile set, falling back to default profiles: default
+01:23:46.236 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3eedc20d: startup date [Sun Nov 26 01:23:46 CST 2017]; root of context hierarchy
+01:23:46.913 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+01:23:46.913 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+01:23:46.913 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+01:23:47.010 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+01:23:47.013 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+01:23:47.013 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 777 ms
+01:23:47.069 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+01:23:47.070 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+01:23:47.070 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+01:23:47.070 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+01:23:47.070 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+01:23:47.070 [localhost-startStop-1] INFO  o.s.b.w.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+01:23:47.075 [localhost-startStop-1] WARN  o.a.c.c.C.[Tomcat].[localhost].[/] - Cannot deserialize session attribute [user] for session [B0754CF925B8DAF7A16EA349BAC79582]
+01:23:47.078 [localhost-startStop-1] ERROR o.a.catalina.session.StandardManager - Exception loading sessions from persistent storage
+java.lang.ClassCastException: java.lang.String cannot be cast to java.io.ObjectStreamClass
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1515)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1781)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:373)
+	at java.util.ArrayList.readObject(ArrayList.java:791)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:1058)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1909)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:373)
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1611)
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1077)
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218)
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:356)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5224)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1419)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1409)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+01:23:47.104 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+01:23:47.104 [restartedMain] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+01:23:47.246 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+01:23:47.247 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+01:23:47.274 [restartedMain] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+01:23:47.618 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01:23:47.815 [restartedMain] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+01:23:47.883 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@795a99f9, org.springframework.security.web.context.SecurityContextPersistenceFilter@649954c5, org.springframework.security.web.header.HeaderWriterFilter@48b4f977, org.springframework.security.web.csrf.CsrfFilter@57a5687f, org.springframework.security.web.authentication.logout.LogoutFilter@271eee3d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@686b6370, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4905a6b2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@261581a4, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@511e9b98, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d3d55a9, org.springframework.security.web.session.SessionManagementFilter@1803212a, org.springframework.security.web.access.ExceptionTranslationFilter@6988972b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5de3280b]
+01:23:47.998 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3eedc20d: startup date [Sun Nov 26 01:23:46 CST 2017]; root of context hierarchy
+01:23:48.013 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/userList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.userList()
+01:23:48.013 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.admin()
+01:23:48.014 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.system.web.IndexController.index()
+01:23:48.014 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.longin()
+01:23:48.014 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/doLogin],methods=[POST]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.doLogin()
+01:23:48.015 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/userList],methods=[GET]}" onto public edu.gzhu.its.base.model.TableSplitResult<edu.gzhu.its.system.entity.User> edu.gzhu.its.system.web.UserController.getUsers(java.lang.Integer,java.lang.Integer)
+01:23:48.016 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+01:23:48.016 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+01:23:48.039 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+01:23:48.039 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+01:23:48.060 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+01:23:48.339 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+01:23:48.376 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+01:23:48.376 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+01:23:48.378 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+01:23:48.382 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+01:23:48.383 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+01:23:48.384 [restartedMain] INFO  o.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+01:23:48.388 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9090 (http)
+01:23:48.390 [restartedMain] INFO  edu.gzhu.its.ItsApplication - Started ItsApplication in 2.206 seconds (JVM running for 130.607)
+01:28:27.119 [restartedMain] INFO  edu.gzhu.its.ItsApplication - Starting ItsApplication on USERCHI-RRDBCTT with PID 32020 (started by Administrator in H:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+01:28:27.120 [restartedMain] INFO  edu.gzhu.its.ItsApplication - No active profile set, falling back to default profiles: default
+01:28:27.157 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5c1f0453: startup date [Sun Nov 26 01:28:27 CST 2017]; root of context hierarchy
+01:28:27.326 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+01:28:29.180 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+01:28:29.188 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+01:28:29.189 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+01:28:29.413 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+01:28:29.417 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+01:28:29.417 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2260 ms
+01:28:29.573 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+01:28:29.574 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+01:28:29.574 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+01:28:29.574 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+01:28:29.575 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+01:28:29.575 [localhost-startStop-1] INFO  o.s.b.w.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+01:28:29.684 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+01:28:29.698 [restartedMain] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+01:28:29.747 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+01:28:29.748 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+01:28:29.749 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+01:28:29.777 [restartedMain] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+01:28:30.268 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+01:28:30.279 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+01:28:30.612 [restartedMain] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+01:28:31.047 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01:28:31.324 [restartedMain] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+01:28:31.670 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a3df082, org.springframework.security.web.context.SecurityContextPersistenceFilter@28494cf5, org.springframework.security.web.header.HeaderWriterFilter@68309db1, org.springframework.security.web.csrf.CsrfFilter@29373142, org.springframework.security.web.authentication.logout.LogoutFilter@1a3914d2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1046ff56, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6700503, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19a1b6af, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5c3b8931, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e194df6, org.springframework.security.web.session.SessionManagementFilter@88dd16b, org.springframework.security.web.access.ExceptionTranslationFilter@33f39eb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2dfeedca]
+01:28:31.890 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5c1f0453: startup date [Sun Nov 26 01:28:27 CST 2017]; root of context hierarchy
+01:28:31.959 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.admin()
+01:28:31.959 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/userList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.userList()
+01:28:31.960 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.system.web.IndexController.index()
+01:28:31.961 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.longin()
+01:28:31.962 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/doLogin],methods=[POST]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.doLogin()
+01:28:31.963 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/userList],methods=[GET]}" onto public edu.gzhu.its.base.model.TableSplitResult<edu.gzhu.its.system.entity.User> edu.gzhu.its.system.web.UserController.getUsers(java.lang.Integer,java.lang.Integer)
+01:28:31.964 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+01:28:31.964 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+01:28:31.996 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+01:28:31.996 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+01:28:32.032 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+01:28:32.491 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+01:28:32.539 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+01:28:32.540 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+01:28:32.543 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+01:28:32.556 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+01:28:32.567 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+01:28:32.576 [restartedMain] INFO  o.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+01:28:32.603 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9090 (http)
+01:28:32.607 [restartedMain] INFO  edu.gzhu.its.ItsApplication - Started ItsApplication in 5.745 seconds (JVM running for 6.092)
+01:28:33.697 [http-nio-9090-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+01:28:33.698 [http-nio-9090-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+01:28:33.716 [http-nio-9090-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+01:28:35.609 [http-nio-9090-exec-1] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+01:28:35.662 [http-nio-9090-exec-1] WARN  o.h.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 57 in HQL: [from edu.gzhu.its.system.entity.User u WHERE u.username=?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+01:28:35.784 [http-nio-9090-exec-1] INFO  e.g.i.system.secuity.LoginSuccessHandler - admin 登录,IP :127.0.0.1
+01:43:10.650 [restartedMain] INFO  edu.gzhu.its.ItsApplication - Starting ItsApplication on USERCHI-RRDBCTT with PID 25984 (started by Administrator in H:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+01:43:10.650 [restartedMain] INFO  edu.gzhu.its.ItsApplication - No active profile set, falling back to default profiles: default
+01:43:10.691 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5c1f0453: startup date [Sun Nov 26 01:43:10 CST 2017]; root of context hierarchy
+01:43:10.878 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+01:43:12.632 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+01:43:12.644 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+01:43:12.645 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+01:43:12.853 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+01:43:12.858 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+01:43:12.858 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2167 ms
+01:43:13.012 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+01:43:13.012 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+01:43:13.012 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+01:43:13.012 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+01:43:13.013 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+01:43:13.013 [localhost-startStop-1] INFO  o.s.b.w.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+01:43:13.119 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+01:43:13.134 [restartedMain] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+01:43:13.186 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+01:43:13.187 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+01:43:13.188 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+01:43:13.217 [restartedMain] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+01:43:13.640 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+01:43:13.650 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+01:43:13.961 [restartedMain] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+01:43:14.141 [restartedMain] INFO  o.h.t.s.e.i.InformationExtractorJdbcDatabaseMetaDataImpl - HHH000262: Table not found: sys_user_roles
+01:43:14.142 [restartedMain] INFO  o.h.t.s.e.i.InformationExtractorJdbcDatabaseMetaDataImpl - HHH000262: Table not found: sys_user_roles
+01:43:14.601 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01:43:14.876 [restartedMain] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+01:43:15.178 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79be8455, org.springframework.security.web.context.SecurityContextPersistenceFilter@51681523, org.springframework.security.web.header.HeaderWriterFilter@18b29d12, org.springframework.security.web.csrf.CsrfFilter@2c395d90, org.springframework.security.web.authentication.logout.LogoutFilter@17940f5a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7a2677b1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e29c208, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71e5a9a0, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2969fe4e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ac4ece, org.springframework.security.web.session.SessionManagementFilter@7619e60b, org.springframework.security.web.access.ExceptionTranslationFilter@3894d8a9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@62308ed8]
+01:43:15.391 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5c1f0453: startup date [Sun Nov 26 01:43:10 CST 2017]; root of context hierarchy
+01:43:15.450 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.admin()
+01:43:15.451 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/userList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.userList()
+01:43:15.451 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.system.web.IndexController.index()
+01:43:15.453 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.longin()
+01:43:15.453 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/doLogin],methods=[POST]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.doLogin()
+01:43:15.454 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/userList],methods=[GET]}" onto public edu.gzhu.its.base.model.TableSplitResult<edu.gzhu.its.system.entity.User> edu.gzhu.its.system.web.UserController.getUsers(java.lang.Integer,java.lang.Integer)
+01:43:15.456 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+01:43:15.456 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+01:43:15.501 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+01:43:15.501 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+01:43:15.534 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+01:43:15.957 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+01:43:16.005 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+01:43:16.006 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+01:43:16.011 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+01:43:16.021 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+01:43:16.033 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+01:43:16.042 [restartedMain] INFO  o.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+01:43:16.067 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9090 (http)
+01:43:16.072 [restartedMain] INFO  edu.gzhu.its.ItsApplication - Started ItsApplication in 5.68 seconds (JVM running for 6.02)
+01:43:48.666 [Thread-8] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5c1f0453: startup date [Sun Nov 26 01:43:10 CST 2017]; root of context hierarchy
+01:43:48.668 [Thread-8] WARN  o.s.b.f.support.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'classPathFileSystemWatcher': java.lang.NullPointerException
+01:43:48.668 [Thread-8] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+01:43:48.668 [Thread-8] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+01:43:48.669 [Thread-8] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+01:43:48.672 [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+01:43:48.675 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+01:43:49.015 [restartedMain] INFO  edu.gzhu.its.ItsApplication - Starting ItsApplication on USERCHI-RRDBCTT with PID 25984 (started by Administrator in H:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+01:43:49.015 [restartedMain] INFO  edu.gzhu.its.ItsApplication - No active profile set, falling back to default profiles: default
+01:43:49.016 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@118dac6e: startup date [Sun Nov 26 01:43:49 CST 2017]; root of context hierarchy
+01:43:49.668 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+01:43:49.669 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+01:43:49.669 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+01:43:49.766 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+01:43:49.769 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+01:43:49.770 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 754 ms
+01:43:49.823 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+01:43:49.823 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+01:43:49.823 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+01:43:49.823 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+01:43:49.823 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+01:43:49.823 [localhost-startStop-1] INFO  o.s.b.w.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+01:43:49.859 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+01:43:49.859 [restartedMain] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+01:43:49.994 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+01:43:49.994 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+01:43:50.028 [restartedMain] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update

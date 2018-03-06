@@ -29,11 +29,23 @@ public class Role {
     @Column(name="description")  
     private String description;
     
+    //角色具有的资源权限
     @ManyToMany(cascade = {CascadeType.REFRESH},fetch = FetchType.EAGER)
     private Set<Resource> resources;
 
+    //角色对应的资源里的按钮权限
+    @ManyToMany(cascade = {CascadeType.REFRESH},fetch = FetchType.EAGER)
+    private Set<ResourceButton> resourceButtons;
+    
+    public Set<ResourceButton> getResourceButtons() {
+		return resourceButtons;
+	}
 
-    public Set<Resource> getResources() {
+	public void setResourceButtons(Set<ResourceButton> resourceButtons) {
+		this.resourceButtons = resourceButtons;
+	}
+
+	public Set<Resource> getResources() {
 		return resources;
 	}
 

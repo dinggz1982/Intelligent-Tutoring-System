@@ -8,7 +8,6 @@ import com.alibaba.druid.support.http.WebStatFilter;
 /**
  * 配置druid监控统计功能
  * 配置Filter
- * @author ZSX
  *
  */
 
