@@ -49,22 +49,22 @@ public class UserTest {
 		role1.setDescription("这是管理员角色");
 
 		Role role2 = new Role();
-		role2.setName("普通用户");
-		role2.setDescription("这是普通用户角色");
+		role2.setName("学生");
+		role2.setDescription("这是学生角色");
 
 		this.roleService.save(role1);
 		this.roleService.save(role2);
 
 		User user = new User();
 		BCryptPasswordEncoder bc = new BCryptPasswordEncoder(4);
-		user.setPassword(bc.encode("123456"));
-		user.setUsername("dgz");
+		user.setPassword(bc.encode("dgz123"));
+		user.setUsername("丁国柱");
 		user.setEmail("dgz888@163.com");
-		user.setNickName("dgz");
+		user.setNickName("丁国柱");
 		user.setSex("男");
 		Set<Role>  roles = new HashSet<Role>();
 		roles.add(role1);
-		roles.add(role2);
+		//roles.add(role2);
 		user.setRoles(roles);
 		
 		userService.saveUser(user);
@@ -83,9 +83,9 @@ public class UserTest {
 			User user = new User();
 			BCryptPasswordEncoder bc = new BCryptPasswordEncoder(4);
 			user.setPassword(bc.encode("123456"));
-			user.setUsername("dgz");
+			user.setUsername("丁国柱");
 			user.setEmail("dgz888@163.com");
-			user.setNickName("dgz");
+			user.setNickName("丁国柱");
 			user.setSex("男");
 			List<Role>  roles = new ArrayList<Role>();
 			userService.saveUser(user);

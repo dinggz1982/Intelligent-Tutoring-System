@@ -42,6 +42,20 @@ public interface BaseService<T,ID extends Serializable> {
      */
     List<T> findBysql(String tablename,String filed,Object o);
     
+    
+    /**
+     * 通过原生sql查询
+     * <p>方法名:findByNavateSql </p>
+     * <p>Description : </p>
+     * <p>Company : </p>
+     * @author 丁国柱
+     * @date 2018年3月6日 下午3:09:27
+     * @param sql
+     * @return
+     */
+    List<Object[]> findByNaviteSql(String sql);
+    
+    
     /**
      * 根据字段，参数查询，拼接sql语句
      * @param  tablename 表名

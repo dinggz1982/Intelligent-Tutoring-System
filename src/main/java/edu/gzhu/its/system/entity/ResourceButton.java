@@ -23,7 +23,7 @@ public class ResourceButton {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", length = 10)
+	@Column(name = "id")
 	private int id;
 	
 	//操作名

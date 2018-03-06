@@ -13,8 +13,6 @@ import java.util.Set;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -50,7 +48,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 	}
 	
 	@Override
-	@Transactional
 	public boolean save(T entity) {
 		boolean flag = false;
 		try {
@@ -64,7 +61,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Transactional
 	@Override
 	public T findById(T t, Long id) {
 		return (T) entityManager.find(t.getClass(), id);
@@ -76,7 +72,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		return entityManager.find(clz, id);
 	}
 
-	@Transactional
 	@Override
 	public List<T> findBysql(String tablename, String filed, Object o) {
 		String sql = "from " + tablename + " u WHERE u." + filed + "=?";
@@ -123,7 +118,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		return query.getSingleResult();
 	}
 
-	@Transactional
 	@Override
 	public List<T> findByMoreFiled(String tablename, LinkedHashMap<String, Object> map) {
 		String sql = "from " + tablename + " u WHERE ";
@@ -165,7 +159,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		return listRe;
 	}
 
-	@Transactional
 	@Override
 	public List<T> findByMoreFiledpages(String tablename, LinkedHashMap<String, Object> map, int start,
 			int pageNumber) {
@@ -213,7 +206,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		return listRe;
 	}
 
-	@Transactional
 	@Override
 	public List<T> findpages(String tablename, String filed, Object o, int start, int pageNumer) {
 		String sql = "from " + tablename + " u WHERE u." + filed + "=?";
@@ -232,7 +224,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		return list;
 	}
 
-	@Transactional
 	@Override
 	public boolean update(T entity) {
 		boolean flag = false;
@@ -245,7 +236,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		return flag;
 	}
 
-	@Transactional
 	@Override
 	public Integer updateMoreFiled(String tablename, LinkedHashMap<String, Object> map) {
 		String sql = "UPDATE " + tablename + " AS u SET ";
@@ -276,7 +266,6 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		return resurlt;
 	}
 
-	@Transactional
 	@Override
 	public boolean delete(T entity) {
 		boolean flag = false;
@@ -418,6 +407,12 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		hql.append(" order by id desc");
 		return null;
 		//return this.queryPageList(hql.toString(), paramMap, start, maxSize);
+	}
+
+	@Override
+	public List<Object[]> findByNaviteSql(String sql) {
+		Query query = entityManager.createNativeQuery(sql);
+		return query.getResultList();
 	}
 
 }

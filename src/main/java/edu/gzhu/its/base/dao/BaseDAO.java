@@ -46,6 +46,18 @@ public interface BaseDAO<T,ID extends Serializable> {
     List<T> findBysql(String tablename,String filed,Object o);
     
     /**
+     * 通过原生sql查询
+     * <p>方法名:findByNavateSql </p>
+     * <p>Description : </p>
+     * <p>Company : </p>
+     * @author 丁国柱
+     * @date 2018年3月6日 下午3:09:27
+     * @param sql
+     * @return
+     */
+    List<Object[]> findByNaviteSql(String sql);
+    
+    /**
      * 根据一个字段查询，返回列表
      * @param filed
      * @param o
