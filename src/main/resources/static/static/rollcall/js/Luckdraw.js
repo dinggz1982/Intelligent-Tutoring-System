@@ -34,11 +34,10 @@ function start() {
 }
 
 // 开始点名
-
 function startLuck() {
 	runing = false;
 	$('#btntxt').removeClass('start').addClass('stop');
-	startNum()
+	startNum();
 }
 
 // 循环参加名单
@@ -83,6 +82,7 @@ function zd() {
 						console.log("点名结束");
 						window.clearInterval(stopTime);
 						$('#start').text("开始");
+						$('#cango').val(1);
 						Lotterynumber = 5;
 						trigger = true;
 					};
@@ -91,6 +91,11 @@ function zd() {
 						//打印被点名的名单
 						$('.luck-user-list').prepend("<li><div class='portrait' style='background-image:url("+xinm[num]+")'></div><div class='luckuserName'>"+phone[num]+"("+xuehao[num]+")</div></li>");
 						$('.modality-list ul').append("<li><div class='luck-img' style='background-image:url("+xinm[num]+")'></div><p>"+phone[num]+"</p></li>");
+						
+						//增加选中的学生
+						
+						//$('#rollcall').append("<input type='hidden' name='id[]' value='"+id[num]+"'/>");
+						$('#rollcall').append("<input type='hidden' name='id' value='"+id[num]+"'/><input type='hidden' name='username' value='"+phone[num]+"'/><input type='hidden' name='xuehao' value='"+xuehao[num]+"'/>");
 						//将已中奖者从数组中"删除",防止二次点名
 						xinm.splice($.inArray(xinm[num], xinm), 1);
 						phone.splice($.inArray(phone[num], phone), 1);

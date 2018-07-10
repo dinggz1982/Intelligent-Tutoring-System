@@ -3,15 +3,26 @@ package edu.gzhu.its.study.web;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.google.gson.Gson;
 
+import edu.gzhu.its.base.model.PageData;
+import edu.gzhu.its.study.entity.RollCall;
+import edu.gzhu.its.study.entity.RollCallInfo;
+import edu.gzhu.its.study.service.IRollCallInfoService;
+import edu.gzhu.its.study.service.IRollCallService;
+import edu.gzhu.its.system.entity.ResourceButton;
+import edu.gzhu.its.system.entity.User;
 import edu.gzhu.its.system.service.IUserService;
 
 /**
@@ -27,6 +38,15 @@ public class RollCallController {
 	
 	@Resource
 	private IUserService userService;
+	
+	@Resource
+	private HttpServletRequest request;
+	
+	@Resource
+	private IRollCallService rollCallService;
+	
+	@Resource
+	private IRollCallInfoService rollCallInfoService;
 
 	/**
 	 * 到点名页面
@@ -72,5 +92,84 @@ public class RollCallController {
 		
 		return "study/rollCall";
 	}
+	
+	@GetMapping("/saveRollCall")
+	public String saveRollCall(Model model){
+		
+		String[] id = request.getParameterValues("id");
+		String[] xuehao = request.getParameterValues("xuehao");
+		String[] username = request.getParameterValues("username");
+
+		List<User> users = new ArrayList<User>();
+		for (int i = 0; i < xuehao.length; i++) {
+			User user = new User();
+			user.setId(Long.parseLong(id[i].toString()));
+			user.setUsername(username[i]);
+			user.setXuehao(xuehao[i]);
+			users.add(user);
+		}
+		model.addAttribute("users", users);
+		List<Object[]> allStudents = this.userService.findByNaviteSql("select id,username from sys_user where class_id=1");
+		model.addAttribute("allStudents", allStudents);
+
+		return "study/submitRollCall";
+	}
+	
+	/**
+	 * 提交点名信息
+	 * <p>方法名:submitRollCall </p>
+	 * <p>Description : </p>
+	 * <p>Company : </p>
+	 * @author 丁国柱
+	 * @date 2018年3月7日 上午11:47:09
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/submitRollCall")
+	public String submitRollCall(Model model){
+		
+		String name = request.getParameter("name");
+		
+		String[] userIds= request.getParameterValues("id");
+
+		String[] types = 	request.getParameterValues("type");
+		rollCallService.saveRollCall(name, userIds, types);
+		
+		return "study/submitRollCallSuccess";
+	}
+	
+	
+	@GetMapping("/rollCallList")
+	public String rollCallList(Integer pageIndex,Integer pageSize,Model model){
+		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
+		pageSize = 10;
+		PageData<RollCall> pageData = this.rollCallService.getPageData(pageIndex, pageSize, null);
+		model.addAttribute("dataList", pageData.getPageData());
+		model.addAttribute("total", pageData.getTotalCount());
+		model.addAttribute("pages", pageData.getTotalPage());
+		model.addAttribute("pagesize", pageData.getPageSize());
+		model.addAttribute("pageIndex", pageIndex);
+		return "study/list";
+	}
+	
+	/**
+	 * 查看点名信息
+	 * <p>方法名:showRollCall </p>
+	 * <p>Description : </p>
+	 * <p>Company : </p>
+	 * @author 丁国柱
+	 * @date 2018年3月21日 上午1:52:16
+	 * @return
+	 */
+	@GetMapping("/showRollCall/{id}")
+	public String showRollCall(@PathVariable int id,Model model){
+		RollCall call = this.rollCallService.findById(id);
+		List<RollCallInfo> callInfos = this.rollCallInfoService.findBySql("rollCall.id", id);
+		model.addAttribute("callInfos", callInfos);
+		model.addAttribute("call", call);
+		return "study/showRollCall";
+	}
+	
+	
 	
 }

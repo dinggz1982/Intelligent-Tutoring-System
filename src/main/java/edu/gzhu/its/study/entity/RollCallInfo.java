@@ -33,6 +33,20 @@ public class RollCallInfo {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
+	//被点名的学生
+	@ManyToOne
+	@JoinColumn(name = "rollCall_id")
+	private RollCall rollCall;
+	
+	
+	public RollCall getRollCall() {
+		return rollCall;
+	}
+
+	public void setRollCall(RollCall rollCall) {
+		this.rollCall = rollCall;
+	}
+
 	//1.上课 2.迟到  3.早退 4.请假  
 	private int type;
 

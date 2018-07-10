@@ -89,7 +89,9 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 考勤<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="#" data-title="考勤" href="javascript:void(0)">考勤</a></li>
+					<li><a data-href="/rollCall" data-title="考勤" href="javascript:void(0)">考勤</a></li>
+					<li><a data-href="/rollCallList" data-title="考勤信息" href="javascript:void(0)">考勤信息</a></li>
+					
 				</ul>
 			</dd>
 		</dl>

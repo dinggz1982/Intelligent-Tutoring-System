@@ -4,14 +4,71 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-
 <title>点名系统</title>
-
 <link rel="stylesheet" href="${ctx }/static/rollcall/css/style.css">
-
+<style type="text/css">
+h3 {
+font-size:14px;
+font-weight:bold;
+}
+pre,p {
+color:#1E7ACE;
+margin:4px;
+}
+input, select,textarea {
+padding:1px;
+margin:2px;
+font-size:11px;
+}
+.buttom{
+padding:1px 10px;
+font-size:12px;
+border:1px #1E7ACE solid;
+background:#D0F0FF;
+}
+#formwrapper {
+width:450px;
+margin:15px auto;
+padding:20px;
+text-align:left;
+border:1px solid #A4CDF2;
+}
+fieldset {
+padding:10px;
+margin-top:5px;
+border:1px solid #A4CDF2;
+background:#fff;
+}
+fieldset legend {
+color:#1E7ACE;
+font-weight:bold;
+padding:3px 20px 3px 20px;
+border:1px solid #A4CDF2; 
+background:#fff;
+}
+fieldset label {
+float:left;
+width:120px;
+text-align:right;
+padding:4px;
+margin:1px;
+}
+fieldset div {
+clear:left;
+margin-bottom:2px;
+}
+.enter{ text-align:center;}
+.clear {
+clear:both;
+}
+#rollcall{
+ {position:absolute;left;0;bottom:0;}
+}
+</style>
 </head>
-
 <body>
+<form action="saveRollCall" id="rollcall" method="get"></form>
+	<h1 style="text-align: center;margin-top: 20px;">课堂点名</h1>
 	<div class='luck-back'>
 		<div class="luck-content ce-pack-end">
 			<div id="luckuser" class="slotMachine">
@@ -28,42 +85,18 @@
 				</div>
 				<ul class="luck-user-list"></ul>
 				<div class="luck-user-btn">
-					<a href="#">选中人</a>
+					<a href="javascript:;" id="save" onclick="saveClick()">选中人</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="${ctx }/static/rollcall/js/jquery-2.2.1.min.js" type="text/javascript"></script>
-	<script>
-		var xinm = new Array();
-		xinm[0] = "img/1.jpg"
-		xinm[1] = "img/2.jpg"
-		xinm[2] = "img/3.jpg"
-		xinm[3] = "img/4.jpg"
-		xinm[4] = "img/5.jpg"
-		xinm[5] = "img/6.jpg"
-		xinm[6] = "img/1.jpg"
-		xinm[7] = "img/2.jpg"
-		xinm[8] = "img/3.jpg"
-		xinm[9] = "img/4.jpg"
-		xinm[10] = "img/5.jpg"
-		xinm[11] = "img/6.jpg"
+		<input type="hidden" id="cango" name="cango" value="0">
 	
-		var phone = new Array();
-		phone[0] = "张三"
-		phone[1] = "李四"
-		phone[2] = "王二麻"
-		phone[3] = "赵钱"
-		phone[4] = "孙丽"
-		phone[5] = "周五"
-		phone[6] = "郑旺"
-		phone[7] = "李二蛋"
-		phone[8] = "苟云强"
-		phone[9] = "德玛西亚"
-		phone[10] = "无知小辈"
-		phone[11] = "郝强"
-	</script>
+	<script src="${ctx }/static/rollcall/js/jquery-2.2.1.min.js"
+		type="text/javascript"></script>
 	<div style="text-align:center;"></div>
+	
+	
 	<script type="text/javascript">
 
              var arrList = new Array();   
@@ -90,8 +123,27 @@
             
  			id = eval(${ids});
  			
-        </script>  
-        	<script src="${ctx }/static/rollcall/js/Luckdraw.js" type="text/javascript"></script>
-        
+ 			function saveClick(){
+				//document.form[0].submit(); 
+				/* $("#rollcall").serialize();
+				$("#rollcall").submit(); */
+				
+ 			//$("#rollcall").submit();
+ 		//	var id = new Array();
+ 	/* 		var els =document.getElementsByName("id[]");
+for (var i = 0, j = els.length; i < j; i++){
+//alert(els[i].value); //获得值<br>alert(els[i].id);　　//获得ID　　
+id[i]=els[i].value;
+} */
+if($("#cango").val()==1){
+$("#rollcall").submit();
+}else{
+alert("还未选好人！");
+}
+ //self.location='saveRollCall?id='+els; 
+ 			}
+        </script>
+	<script src="${ctx }/static/rollcall/js/Luckdraw.js"
+		type="text/javascript"></script>
 </body>
 </html>

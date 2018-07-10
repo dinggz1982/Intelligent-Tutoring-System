@@ -42,7 +42,10 @@ public class User implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id;
+	
+	//int ==> Integer
+	//long ==> Long
 
 	@ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.EAGER)
 	private Set<Role> roles;
@@ -122,11 +125,12 @@ public class User implements java.io.Serializable {
 		this.img = img;
 	}
 
-	public Long getId() {
+
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

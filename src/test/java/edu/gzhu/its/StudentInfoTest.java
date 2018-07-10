@@ -56,6 +56,7 @@ public class StudentInfoTest {
 	 * @author 丁国柱
 	 * @date 2018年3月6日 下午1:21:13
 	 */
+	@Test
 	public void addSubject(){
 		Subject subject = new Subject();
 		subject.setCode("gzu_jyxy_jyjs");
