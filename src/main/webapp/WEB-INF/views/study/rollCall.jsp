@@ -68,7 +68,12 @@ clear:both;
 </head>
 <body>
 <form action="saveRollCall" id="rollcall" method="get"></form>
-	<h1 style="text-align: center;margin-top: 20px;">课堂点名</h1>
+	<h1 style="text-align: center;margin-top: 20px;">课堂点名
+	选择班级：<select id="classInfo" name=classInfo>
+		<option value="1">教育技术161</option>
+				<option value="2">英语161_1班</option>
+						<option value="3">英语161_2班</option>
+	</select></h1>
 	<div class='luck-back'>
 		<div class="luck-content ce-pack-end">
 			<div id="luckuser" class="slotMachine">
@@ -139,9 +144,17 @@ if($("#cango").val()==1){
 $("#rollcall").submit();
 }else{
 alert("还未选好人！");
+
 }
  //self.location='saveRollCall?id='+els; 
  			}
+ 			
+ 	$("#classInfo").change(function () {  
+            var ss = $(this).children('option:selected').val();  
+            window.location.href="/rollCall?classInfo="+ss;
+        }); 		
+ 			
+ 			
         </script>
 	<script src="${ctx }/static/rollcall/js/Luckdraw.js"
 		type="text/javascript"></script>

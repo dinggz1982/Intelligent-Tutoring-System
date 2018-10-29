@@ -51,6 +51,6 @@
 			</form>
 		</div>
 	</div>
-	<div class="footer">Copyright @广东诚泰</div>
+	<div class="footer">Copyright @XX教学系统</div>
 </body>
 </html>

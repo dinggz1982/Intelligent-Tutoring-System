@@ -10,6 +10,12 @@ import java.util.Set;
 
 import javax.annotation.Resource;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -113,5 +119,78 @@ public class StudentInfoTest {
             System.err.println("read errors :" + e);
         }
 
+	}
+	
+	@Test
+	public void getStudent(){
+		//excel文件路径文件1539104367548.xls   文件1539104355010.xls
+        String excelPath = "C:/Users/Administrator/Downloads/文件1539104355010.xls";
+        Role role = new Role();
+		role.setId(2l);
+		ClassInfo classInfo = new ClassInfo();
+		classInfo.setId(3);
+        try {
+            //String encoding = "GBK";
+            File excel = new File(excelPath);
+            if (excel.isFile() && excel.exists()) {   //判断文件是否存在
+
+                String[] split = excel.getName().split("\\.");  //.是特殊字符，需要转义！！！！！
+                Workbook wb;
+                //根据文件后缀（xls/xlsx）进行判断
+                if ( "xls".equals(split[1])){
+                    FileInputStream fis = new FileInputStream(excel);   //文件流对象
+                    wb = new HSSFWorkbook(fis);
+                }else if ("xlsx".equals(split[1])){
+                    wb = new XSSFWorkbook(excel);
+                }else {
+                    System.out.println("文件类型错误!");
+                    return;
+                }
+
+                //开始解析
+                Sheet sheet = wb.getSheetAt(0);     //读取sheet 0
+
+                int firstRowIndex = sheet.getFirstRowNum()+1;   //第一行是列名，所以不读
+                int lastRowIndex = sheet.getLastRowNum();
+                System.out.println("firstRowIndex: "+firstRowIndex);
+                System.out.println("lastRowIndex: "+lastRowIndex);
+
+                for(int rIndex = firstRowIndex; rIndex <= lastRowIndex; rIndex++) {   //遍历行
+                    System.out.println("rIndex: " + rIndex);
+                    Row row = sheet.getRow(rIndex);
+                    if (row != null) {
+                        int firstCellIndex = row.getFirstCellNum();
+                        int lastCellIndex = row.getLastCellNum();
+                        //学号
+                        String xuehao =row.getCell(0).toString();
+                        //System.out.print(xuehao);
+                        
+                        String name =row.getCell(1).toString();
+                       //System.out.print(name);
+                        
+                        String sex =row.getCell(2).toString();
+                        System.out.println(xuehao+"   "+name+"   "+sex);
+                        
+                        User user = new User();
+                		BCryptPasswordEncoder bc = new BCryptPasswordEncoder(4);
+                		user.setPassword(bc.encode("123456"));
+                		user.setUsername(name);
+                		user.setNickName(name);
+                		user.setXuehao(xuehao);
+                		user.setSex(sex);
+                		Set<Role>  roles = new HashSet<Role>();
+                		roles.add(role);
+                		user.setRoles(roles);
+                		user.setClassInfo(classInfo);
+                		userService.saveUser(user);
+
+                    }
+                }
+            } else {
+                System.out.println("找不到指定的文件");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 	}
 }

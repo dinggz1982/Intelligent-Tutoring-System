@@ -58,12 +58,14 @@ public class RollCallController {
 	 * @return
 	 */
 	@GetMapping("/rollCall")
-	public String rollCall(Model model){
+	public String rollCall(Model model,String classInfo){
 		//取得当前课程对应的学生，目前先简化处理
 		/*List<User> users = this.userService.findBySql("classInfo.id", 1);
 		model.addAttribute("users", users);*/
-		
-		List<Object[]> users = this.userService.findByNaviteSql("select id,username,xuehao,img from sys_user where class_id=1");
+		if(classInfo==null){
+			classInfo="1";
+		}
+		List<Object[]> users = this.userService.findByNaviteSql("select id,username,xuehao,img from sys_user where class_id="+classInfo);
 		List<Integer> ids = new ArrayList<Integer>();
 		List<String> usernames = new ArrayList<String>();
 		List<String> imgs = new ArrayList<String>();

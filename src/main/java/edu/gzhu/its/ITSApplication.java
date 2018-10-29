@@ -2,10 +2,23 @@ package edu.gzhu.its;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import edu.gzhu.its.base.startup.SystemStartUp;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
+public class ITSApplication extends SpringBootServletInitializer{
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(ITSApplication.class);
+    }
+
+
+    public static void main(String[] args) {
+        SpringApplication.run(ITSApplication.class, args);
+    }
+}
+
+/*@SpringBootApplication
 public class ITSApplication {
 
 	public static void main(String[] args) {
@@ -14,4 +27,4 @@ public class ITSApplication {
 		
 		SpringApplication.run(ITSApplication.class, args);
 	}
-}
+}*/
