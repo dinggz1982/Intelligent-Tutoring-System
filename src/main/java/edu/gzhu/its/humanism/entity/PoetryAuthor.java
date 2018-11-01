@@ -26,7 +26,7 @@ public class PoetryAuthor {
 	@Column(name = "name", length = 50)
 	private String name;
 	
-	@Column(name = "profile", length = 65000)
+	@Column(name = "profile", columnDefinition="text")
 	private String profile;
 	
 	@Column(name = "uuid")

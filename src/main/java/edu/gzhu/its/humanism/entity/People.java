@@ -33,11 +33,11 @@ public class People {
 	private String subProfileType;
 	
 	//描述信息
-	@Column(name = "profileDetail",length =10000)
+	@Column(name = "profileDetail",columnDefinition="text")
 	private String profileDetail;
 	
 	//人物总体描述
-	@Column(name = "description",length =10000)
+	@Column(name = "description",columnDefinition="text")
 	private String description;
 
 	public Integer getId() {

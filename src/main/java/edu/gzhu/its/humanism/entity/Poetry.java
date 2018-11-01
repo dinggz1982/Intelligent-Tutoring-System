@@ -40,7 +40,7 @@ public class Poetry {
 	private int sourceId;
 	
 	//翻译连接Id
-	@Column(name = "translationId")
+	@Column(name = "translationId",columnDefinition="text")
 	private String translationId;
 	
 	public String getTranslationId() {
@@ -70,7 +70,7 @@ public class Poetry {
 		this.dynasty = dynasty;
 	}
 
-	@Column(name = "content", length = 65535)
+	@Column(name = "content", columnDefinition="text")
 	private String content;
 	
 	public Integer getId() {
@@ -121,7 +121,7 @@ public class Poetry {
 		this.sourceId = sourceId;
 	}
 
-	@Column(name = "translation", length = 65535)
+	@Column(name = "translation", columnDefinition="text")
 	private String translation;
 
 }

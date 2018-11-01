@@ -49,7 +49,7 @@ public class Spell {
 	}
 
 	//关联信息
-	@Column(name = "linkedinfo", length = 60000)
+	@Column(name = "linkedinfo", columnDefinition="text")
 	private String linkedinfo;
 
 	public String getLinkedinfo() {
