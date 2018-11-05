@@ -84,7 +84,7 @@ public class ChineseCharacters {
 	private String xingsizi;
 	
 	//显示的关联信息
-	@Column(name = "linkedinfo",length = 60000)
+	@Column(name = "linkedinfo",columnDefinition="text")
 	private String linkedinfo;
 
 	// 五笔输入法
@@ -92,7 +92,7 @@ public class ChineseCharacters {
 	private String wubi;
 	
 	//组词
-	@Column(name = "zuci",length=10000)
+	@Column(name = "zuci",columnDefinition="text")
 	private String zuci;
 
 	public String getZuci() {
