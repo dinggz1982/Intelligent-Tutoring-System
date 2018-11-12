@@ -23,6 +23,10 @@ public class UserComment {
 	@Column(name = "id", unique = true, nullable = false)
 	private Long id;
 	
+	//课程类型
+	@Column(name = "courseType")
+	private String courseType;
+	
 	// 汉字
 	@Column(name = "content",columnDefinition="text")
 	private String content;
@@ -42,6 +46,27 @@ public class UserComment {
 	
 	@Column(name = "favCount",columnDefinition="int(2) default 0")
 	private int favCount;
+	
+	//是否被标注
+	@Column(name = "isAnnotationed",columnDefinition="int(1) default 0")
+	private boolean isAnnotationed;
+	
+
+	public String getCourseType() {
+		return courseType;
+	}
+
+	public void setCourseType(String courseType) {
+		this.courseType = courseType;
+	}
+
+	public boolean isAnnotationed() {
+		return isAnnotationed;
+	}
+
+	public void setAnnotationed(boolean isAnnotationed) {
+		this.isAnnotationed = isAnnotationed;
+	}
 
 	public Long getId() {
 		return id;

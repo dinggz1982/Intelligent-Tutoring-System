@@ -5,6 +5,7 @@
 <html>
   <head>
     <title>广州大学-教育技术-网络教育软件设计与开发</title>
+<link rel="stylesheet" type="text/css" href="${ctx}/static/h-ui/css/H-ui.min.css" />
     <!-- css,js -->
 <style type="text/css">
 *{margin:0;padding:0;}
@@ -40,7 +41,22 @@ body{background:#e5e5e3;font-size:12px;font-family:"微软雅黑";#666}
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/animate.min.css" />
   </head>
   <body>
-   	
+ <header class="navbar-wrapper">
+	<div class="navbar navbar-black">
+		<div class="container cl">
+			<a class="logo navbar-logo f-l mr-10 hidden-xs" href="#">智能教学系统</a>
+			<span class="logo navbar-slogan f-l mr-10 hidden-xs">科研&middot; 实验</span>
+			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
+			<nav class="nav navbar-nav nav-collapse" role="navigation" id="Hui-navbar">
+				<ul class="cl">
+					<li class="current"><a href="/login">登录</a></li>
+				</ul>
+			</nav>
+			<nav class="navbar-userbar hidden-xs">
+			</nav>
+		</div>
+	</div>
+</header>  	
 <div class="course">
 
 	<div class="course_box tz_blue">

@@ -84,6 +84,42 @@ public class StudentInfoTest {
 	@Test
 	@Transactional
 	@Rollback(false) 
+	public void saveYjs() throws Exception{
+		Role role = new Role();
+ 		role.setId(2l);
+ 		ClassInfo classInfo = new ClassInfo();
+ 		classInfo.setId(4);
+ 		String[] names = {"何金红","翁金塔","刘杰容","法代东","蔡瑞琦","蔡锦贤","王婕","吴丽苏","张国兰","吴霞"};
+ 		for (int i = 0; i < names.length; i++) {
+			String name = names[i];
+			User user = new User();
+    		BCryptPasswordEncoder bc = new BCryptPasswordEncoder(4);
+    		user.setPassword(bc.encode("123456"));
+    		user.setUsername(name);
+    		user.setNickName(name);
+    		user.setXuehao("20180116"+i);
+    		if(i<=4){
+    			user.setSex("男");
+    			user.setImg("/static/its/images/boy.png");
+    		}else{
+    			user.setSex("女");
+    			user.setImg("/static/its/images/girl.png");
+    		}
+    		
+    		user.setEthnicity("汉族");
+    		Set<Role>  roles = new HashSet<Role>();
+    		roles.add(role);
+    		user.setRoles(roles);
+    		user.setClassInfo(classInfo);
+    		userService.saveUser(user);
+		}
+		
+	}
+	
+	
+	@Test
+	@Transactional
+	@Rollback(false) 
 	public void save161(){
 		 /* 读取数据 */
         try {

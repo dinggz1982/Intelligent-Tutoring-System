@@ -45,11 +45,11 @@ public class UserTest {
 		
 		// 管理員角色
 		Role role1 = new Role();
-		role1.setName("管理员");
+		role1.setName("管理员1");
 		role1.setDescription("这是管理员角色");
 
 		Role role2 = new Role();
-		role2.setName("学生");
+		role2.setName("学生1");
 		role2.setDescription("这是学生角色");
 
 		this.roleService.save(role1);

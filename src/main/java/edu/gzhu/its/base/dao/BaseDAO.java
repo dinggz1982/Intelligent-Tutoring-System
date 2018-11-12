@@ -45,6 +45,21 @@ public interface BaseDAO<T,ID extends Serializable> {
      */
     List<T> findBysql(String tablename,String filed,Object o);
     
+	/**
+	 * 根据sql获取一个对象
+	 * @param hql
+	 * @return
+	 */
+	public T getByHql(String hql);
+    
+    /**
+     * 获取一个
+     * @param filed
+     * @param o
+     * @return
+     */
+    public T findOne(String filed, Object o);
+    
     /**
      * 通过原生sql查询
      * <p>方法名:findByNavateSql </p>

@@ -21,7 +21,7 @@
 					<li class="navbar-levelone current"><a href="javascript:;">平台</a></li>
 					<li class="navbar-levelone"><a href="javascript:;">知识图谱</a></li>
 					<li class="navbar-levelone"><a href="javascript:;">考勤</a></li>
-					<li class="navbar-levelone"><a href="javascript:;">测验</a></li>
+					<li class="navbar-levelone"><a href="javascript:;">用户评论语料库</a></li>
 				</li>
 			</ul>
 		</nav>
@@ -99,10 +99,10 @@
 
 	<div class="menu_dropdown bk_2" style="display:none">
 		<dl id="menu-ccccc">
-			<dt><i class="Hui-iconfont">&#xe616;</i> 测验<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe616;</i> 用户评论语料库<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="#" data-title="测验" href="javascript:void(0)">测验</a></li>
+					<li><a data-href="/myJob" data-title="用户评论语料库" href="javascript:void(0)">用户评论语料库</a></li>
 				</ul>
 			</dd>
 		</dl>

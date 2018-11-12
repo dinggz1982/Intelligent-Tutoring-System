@@ -92,6 +92,35 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		entityManager.close();
 		return list;
 	}
+	
+	/**
+	 * 根据sql获取一个对象
+	 * @param hql
+	 * @return
+	 */
+	public T getByHql(String hql)  {
+		try {
+			Query query = entityManager.createQuery(" from " + className + " where " + hql);
+			query.setMaxResults(1);
+			T t =  (T) query.getSingleResult();
+			entityManager.close();
+			return t;
+		} catch (Exception e) {
+			return null;
+		}
+
+	}
+	
+	
+	public T findOne(String filed, Object o) {
+		String sql = "from " + className + " u WHERE u." + filed + "=?";
+		Query query = entityManager.createQuery(sql);
+		query.setParameter(1, o);
+		@SuppressWarnings("unchecked")
+		T t = (T) query.getSingleResult();
+		entityManager.close();
+		return t;
+	}
 
 	@SuppressWarnings("unchecked")
 	@Override
