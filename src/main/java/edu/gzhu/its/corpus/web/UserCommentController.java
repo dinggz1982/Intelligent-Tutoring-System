@@ -1,8 +1,11 @@
 package edu.gzhu.its.corpus.web;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -24,6 +27,7 @@ import edu.gzhu.its.system.service.IUserService;
 
 @Controller
 public class UserCommentController {
+	public List<Integer> userIds = Arrays.asList(127, 128, 129, 130, 131, 132, 133, 134, 135, 136);
 
 	@Resource
 	private IUserCommentService userCommentService;
@@ -166,5 +170,69 @@ public class UserCommentController {
 		model.addAttribute("remarks",remarks);
 		return "/userComment/progress";
 	}
+	
+	
+	@GetMapping("/create")
+	public String create(Model model) throws SQLException{
+		List<UserComment> comments = this.userCommentService.findAll();
+		List<UserTask> tasks = new ArrayList<UserTask>();
+		int i = 0;
+		int n = 0;
+		for (Iterator iterator = comments.iterator(); iterator.hasNext();) {
+			if (i < 200) {
+				UserComment userComment = (UserComment) iterator.next();
+				long user1Id = userIds.get(n);
+
+				int userTaskCount = this.userTaskService.getCountBySql("select count(*) from user_task where user_id="
+						+ user1Id + " and user_comment_id=" + userComment.getId());
+				if (userTaskCount == 0) {
+					User user = new User();
+					user.setId(user1Id);
+					UserTask task = new UserTask();
+					task.setAnnotationed(false);
+					task.setUser(user);
+					task.setUserComment(userComment);
+					tasks.add(task);
+					i++;
+				} else {
+					if (n == 9) {
+						User user = new User();
+						Random random = new Random();
+						int k = random.nextInt(userIds.size());
+
+						long userId = userIds.get(k);
+						user.setId(userId);
+						UserTask task = new UserTask();
+						task.setAnnotationed(false);
+						task.setUser(user);
+						task.setUserComment(userComment);
+						tasks.add(task);
+						i++;
+					} else {
+						User user = new User();
+						user.setId(userIds.get(n + 1));
+						UserTask task = new UserTask();
+						task.setAnnotationed(false);
+						task.setUser(user);
+						task.setUserComment(userComment);
+						tasks.add(task);
+						i++;
+					}
+				}
+				if (n == 9) {
+					n = 0;
+				}
+				n++;
+			} else {
+				this.userTaskService.saveUserTasks(tasks);
+				tasks.clear();
+				i = 0;
+			}
+		}
+		return null;
+	}
+	
+	
+	
 	
 }
