@@ -4,6 +4,7 @@
 <head>
 <title>我的标注任务</title>
 <%@include file="/WEB-INF/views/include/top.jsp"%>
+<script type="text/javascript" src="static/echarts/echarts.min.js"></script>
 </head>
 <body>
 	<nav class="breadcrumb">
@@ -16,11 +17,49 @@
 		
 	<div class="pd-20 col-xs-10 col-md-offset-1">
 		<div class="text-c">
-			<input type="text" class="input-text" style="width:250px"
-				placeholder="检索评论" id="" name="">
-			<button type="submit" class="btn btn-success" id="" name="">
-				<i class="icon-search"></i> 搜评论
-			</button>
+			 <div id="main" style="width: 600px;height:200px;"></div>
+			  <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        option = {
+    title : {
+        text: '已标注：${hasRemarkCount}，已标注：${notRemarkCount}',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['未标注','已标注']
+    },
+    series : [
+        {
+            name: '标注任务',
+            type: 'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:${notRemarkCount}, name:'未标注'},
+                {value:${hasRemarkCount}, name:'已标注'}
+            ],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        },
+    ],
+};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
 		</div>
 
 		<div class="panel panel-secondary mt-20">
@@ -33,6 +72,8 @@
 		<h2>有效性判断</h2>
 		<div class="skin-minimal">
 			 <div class="radio-box">
+			  <input type="radio" id="radio-2" name="invalidComment" value="2">
+    <label for="radio-2">有用评论</label>
     <input type="radio" id="radio-1" name="invalidComment" value="1">
     <label for="radio-1">无效评论</label>
   </div>
@@ -89,15 +130,23 @@
 				<button onclick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
 			</div>
 			<input type="hidden" name="commentId" value="${comment.id}">
+			<input type="hidden" name="taskId" value="${taskId}">
 		</div> 
 	</form>
+	<div style="margin-bottom: 50px;"></div>
 </div>
 	<!--请在下方写此页面业务相关的脚本-->
-	<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
 function save_submit(){
 	var form = document.getElementById('userCommentForm');
-
+	//是否有效评论
+	/* var invalidComment = $('input:radio[name="invalidComment"]:checked').val();
+	if(invalidComment!=1){
+		//非无效评论时，要求有选项
+	}
+	if(!$('#checkbox-id').is(':checked')) {
+    
+	} */
 	form.submit();
 }
 </script>

@@ -5,6 +5,6 @@ import edu.gzhu.its.corpus.entity.UserRemark;
 
 public interface IUserRemarkService extends BaseService<UserRemark, Long>{
 	
-	public void saveUserRemark(UserRemark remark);
+	public void saveUserRemark(UserRemark remark,long taskId);
 
 }

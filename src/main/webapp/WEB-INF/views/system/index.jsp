@@ -103,6 +103,8 @@
 			<dd>
 				<ul>
 					<li><a data-href="/myJob" data-title="用户评论语料库" href="javascript:void(0)">用户评论语料库</a></li>
+					<li><a data-href="/progress" data-title="标注进展" href="javascript:void(0)">标注进展</a></li>
+					
 				</ul>
 			</dd>
 		</dl>

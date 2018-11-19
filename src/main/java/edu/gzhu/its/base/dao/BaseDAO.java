@@ -286,5 +286,12 @@ public interface BaseDAO<T,ID extends Serializable> {
      * @return
      */
     public int getCountBySql(String sql);
+    
+    /**
+     * 执行原生sql
+     * @param sql
+     * @return
+     */
+    public int executeSql(String sql);
 	
 }

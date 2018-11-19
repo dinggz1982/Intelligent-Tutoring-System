@@ -27,6 +27,46 @@ public class UserRemark {
 	@Column(name = "id", unique = true, nullable = false)
 	private Long id;
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((contentRelated == null) ? 0 : contentRelated.hashCode());
+		result = prime * result + ((emotionRelated == null) ? 0 : emotionRelated.hashCode());
+		result = prime * result + (isEffectiveComment ? 1231 : 1237);
+		result = prime * result + ((otherRelated == null) ? 0 : otherRelated.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UserRemark other = (UserRemark) obj;
+		if (contentRelated == null) {
+			if (other.contentRelated != null)
+				return false;
+		} else if (!contentRelated.equals(other.contentRelated))
+			return false;
+		if (emotionRelated == null) {
+			if (other.emotionRelated != null)
+				return false;
+		} else if (!emotionRelated.equals(other.emotionRelated))
+			return false;
+		if (isEffectiveComment != other.isEffectiveComment)
+			return false;
+		if (otherRelated == null) {
+			if (other.otherRelated != null)
+				return false;
+		} else if (!otherRelated.equals(other.otherRelated))
+			return false;
+		return true;
+	}
+
 	// 标注的用户
 	@ManyToOne
 	@JoinColumn(name = "userComment_id")
