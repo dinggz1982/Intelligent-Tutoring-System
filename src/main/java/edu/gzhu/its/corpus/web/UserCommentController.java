@@ -103,7 +103,7 @@ public class UserCommentController {
 		}
 		this.userRemarkService.saveUserRemark(remark);
 
-		return "/userComment/myJob";
+		return "redirect:/myJob";
 	}
 
 	/**

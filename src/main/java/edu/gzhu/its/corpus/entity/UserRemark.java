@@ -14,49 +14,50 @@ import edu.gzhu.its.system.entity.User;
 
 /**
  * 用户标注
+ * 
  * @author dinggz
  *
  */
 @Entity
 @Table(name = "user_remark")
 public class UserRemark {
-	
+
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
 	private Long id;
-	
-	//标注的用户
-		@ManyToOne
-		@JoinColumn(name = "userComment_id")
-		private UserComment userComment;
-	
+
+	// 标注的用户
+	@ManyToOne
+	@JoinColumn(name = "userComment_id")
+	private UserComment userComment;
+
 	public UserComment getUserComment() {
-			return userComment;
-		}
+		return userComment;
+	}
 
-		public void setUserComment(UserComment userComment) {
-			this.userComment = userComment;
-		}
+	public void setUserComment(UserComment userComment) {
+		this.userComment = userComment;
+	}
 
-	//标注的用户
+	// 标注的用户
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
-	
-	//内容相关
+
+	// 内容相关
 	@Column(name = "contentRelated")
 	private String contentRelated;
-	
-	//情感相关
+
+	// 情感相关
 	@Column(name = "emotionRelated")
 	private String emotionRelated;
-	
-	//其他
+
+	// 其他
 	@Column(name = "otherRelated")
 	private String otherRelated;
-	
-	@Column(name = "isEffectiveComment",columnDefinition="int(1) default 0")
+
+	@Column(name = "isEffectiveComment", columnDefinition = "int(1) default 0")
 	private boolean isEffectiveComment;
 
 	public Long getId() {
@@ -106,8 +107,5 @@ public class UserRemark {
 	public void setEffectiveComment(boolean isEffectiveComment) {
 		this.isEffectiveComment = isEffectiveComment;
 	}
-	
-	
-	
 
 }

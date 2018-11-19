@@ -42,6 +42,14 @@ public interface BaseService<T,ID extends Serializable> {
      */
     List<T> findBysql(String tablename,String filed,Object o);
     
+    
+    /**
+     * 根据hql返回list
+     * @param hql
+     * @return
+     */
+     List<T> find(String hql);
+     
     /**
      * 获取一个
      * @param filed
@@ -233,4 +241,11 @@ public interface BaseService<T,ID extends Serializable> {
 	 */
 	public List<T> queryPageList(final String hql,
 			final Map<String, Object> params, final int start, final int maxSize);
+	
+	/**
+	 * 通过原生语句查询总数
+	 * @param sql
+	 * @return
+	 */
+	public int getCountBySql(String sql);
 }

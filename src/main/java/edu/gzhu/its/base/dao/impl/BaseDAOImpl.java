@@ -13,6 +13,7 @@ import java.util.Set;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -251,6 +252,11 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		}
 
 		return list;
+	}
+	
+	public List<T> find(String hql) {
+		Query query = entityManager.createQuery(" from " + className +" "+hql );
+		return query.getResultList();
 	}
 
 	@Override

@@ -37,6 +37,13 @@ public interface BaseDAO<T,ID extends Serializable> {
     T findById(Serializable id);
     
     /**
+     * 根据hql返回list
+     * @param hql
+     * @return
+     */
+     List<T> find(String hql);
+    
+    /**
      * 根据表名，字段，参数查询，拼接sql语句
      * @param  tablename 表名
      * @param filed 字段名
