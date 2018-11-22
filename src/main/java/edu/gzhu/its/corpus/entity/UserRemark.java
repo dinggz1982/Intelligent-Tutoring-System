@@ -2,6 +2,8 @@ package edu.gzhu.its.corpus.entity;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -84,6 +86,17 @@ public class UserRemark {
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
+	
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	@Column(name = "createTime")
+	private Date createTime;
 
 	// 内容相关
 	@Column(name = "contentRelated")

@@ -3,8 +3,11 @@ package edu.gzhu.its.corpus.web;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import javax.annotation.Resource;
@@ -15,6 +18,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import edu.gzhu.its.base.model.PageData;
 import edu.gzhu.its.corpus.entity.UserComment;
 import edu.gzhu.its.corpus.entity.UserRemark;
 import edu.gzhu.its.corpus.entity.UserTask;
@@ -27,7 +31,7 @@ import edu.gzhu.its.system.service.IUserService;
 
 @Controller
 public class UserCommentController {
-	public List<Integer> userIds = Arrays.asList(127, 128, 129, 130, 131, 132, 133, 134, 135, 136);
+	public List<Integer> userIds = Arrays.asList(127, 128, 129, 130, 131, 132, 133, 134, 135, 136,138,140,141);
 
 	@Resource
 	private IUserCommentService userCommentService;
@@ -36,7 +40,7 @@ public class UserCommentController {
 	private IUserRemarkService userRemarkService;
 	@Resource
 	private IUserTaskService userTaskService;
-	
+
 	@Resource
 	private IUserService userService;
 
@@ -45,40 +49,67 @@ public class UserCommentController {
 
 	/**
 	 * 我的工作
-	 * 
 	 * @return
 	 */
 	@GetMapping("/myJob")
 	public String myJob(Model model) {
 		User currentUser = (User) session.getAttribute("currentUser");
-		
-		//用户的标注总数
-		//int totalCount = this.userTaskService.getCountBySql("select count(*) from user_task where user_id="+currentUser.getId());
-		
-		//已标注的总数
-		int hasRemarkCount = this.userTaskService.getCountBySql("select count(*) from user_task where user_id="+currentUser.getId()+" and isAnnotationed=1 ");
 
-		//未标注
-		int notRemarkCount = this.userTaskService.getCountBySql("select count(*) from user_task where user_id="+currentUser.getId()+" and isAnnotationed=0 ");
+		// 用户的标注总数
+		// int totalCount = this.userTaskService.getCountBySql("select count(*) from
+		// user_task where user_id="+currentUser.getId());
 
-		
-		
-		UserTask task = this.userTaskService.getByHql(" user_id="+currentUser.getId()+" and isAnnotationed=0 order by id asc ");
-		UserComment comment = task.getUserComment();
-		model.addAttribute("notRemarkCount", notRemarkCount);
-		model.addAttribute("hasRemarkCount", hasRemarkCount);
-		model.addAttribute("comment", comment);
-		model.addAttribute("taskId", task.getId());
+		// 已标注的总数
+		int hasRemarkCount = this.userTaskService.getCountBySql(
+				"select count(*) from user_task where user_id=" + currentUser.getId() + " and isAnnotationed=1 ");
+
+		// 未标注
+		int notRemarkCount = this.userTaskService.getCountBySql(
+				"select count(*) from user_task where user_id=" + currentUser.getId() + " and isAnnotationed=0 ");
+
+		UserTask task = this.userTaskService
+				.getByHql(" user_id=" + currentUser.getId() + " and isAnnotationed=0 order by user_comment_id asc ");
+		if (task != null) {
+			UserComment comment = task.getUserComment();
+			model.addAttribute("notRemarkCount", notRemarkCount);
+			model.addAttribute("hasRemarkCount", hasRemarkCount);
+			model.addAttribute("comment", comment);
+			model.addAttribute("taskId", task.getId());
+		}
 		return "/userComment/myJob";
 	}
 
+	/**
+	 * 我的标注
+	 * @param pageIndex
+	 * @param pageSize
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/myRemark")
+	public String myRemark(Integer pageIndex,Integer pageSize,Model model){
+		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
+		pageSize = 10;
+		Map<String, Object> map = new HashMap<>();
+		User currentUser = (User) session.getAttribute("currentUser");
+		map.put("user_id", currentUser.getId());
+		PageData<UserRemark> pageData = this.userRemarkService.getPageData(pageIndex, pageSize, map);
+		model.addAttribute("dataList", pageData.getPageData());
+		model.addAttribute("total", pageData.getTotalCount());
+		model.addAttribute("pages", pageData.getTotalPage());
+		model.addAttribute("pagesize", pageData.getPageSize());
+		model.addAttribute("pageIndex", pageIndex);
+		return "userComment/myRemark";
+	}
+	
 	@GetMapping("/saveUserComment")
-	public String saveUserComment(String invalidComment, Long commentId,Long taskId, String[] contentRelated,
+	public String saveUserComment(String invalidComment, Long commentId, Long taskId, String[] contentRelated,
 			String[] emotionRelated, String[] otherRelated) {
 		User currentUser = (User) session.getAttribute("currentUser");
 		UserComment comment = new UserComment();
 		comment.setId(commentId);
 		UserRemark remark = new UserRemark();
+		remark.setCreateTime(new Date());
 		if (invalidComment != null && invalidComment.equals("1")) {
 
 			remark.setUser(currentUser);
@@ -111,8 +142,8 @@ public class UserCommentController {
 				remark.setOtherRelated(other);
 			}
 		}
-		
-		this.userRemarkService.saveUserRemark(remark,taskId);
+
+		this.userRemarkService.saveUserRemark(remark, taskId);
 
 		return "redirect:/myJob";
 	}
@@ -152,28 +183,33 @@ public class UserCommentController {
 	 * 标注进展
 	 */
 	@GetMapping("/progress")
-	public String progress(Model model){
-		//取得标注的用户
+	public String progress(Model model) {
+		// 取得标注的用户
 		List<User> users = this.userService.find(" where id between 127 and 136");
 		List<UserRemarkBean> remarks = new ArrayList<>();
 		for (Iterator iterator = users.iterator(); iterator.hasNext();) {
 			User user = (User) iterator.next();
 			UserRemarkBean bean = new UserRemarkBean();
-			int hasRemarkCount = this.userTaskService.getCountBySql("select count(*) from user_task where user_id="+user.getId()+" and isAnnotationed=1 ");
-			int notRemarkCount = this.userTaskService.getCountBySql("select count(*) from user_task where user_id="+user.getId()+" and isAnnotationed=0 ");
+			int hasRemarkCount = this.userTaskService.getCountBySql(
+					"select count(*) from user_task where user_id=" + user.getId() + " and isAnnotationed=1 ");
+			int notRemarkCount = this.userTaskService.getCountBySql(
+					"select count(*) from user_task where user_id=" + user.getId() + " and isAnnotationed=0 ");
 			bean.setHasRemarkCount(hasRemarkCount);
 			bean.setNotRemarkCount(notRemarkCount);
 			bean.setUser(user);
 			remarks.add(bean);
 		}
-		
-		model.addAttribute("remarks",remarks);
+
+		int hasRemarkCount =  this.userCommentService.getCountBySql("select count(*) from user_comment where isAnnotationed=1");
+		int notRemarkCount =  this.userCommentService.getCountBySql("select count(*) from user_comment where isAnnotationed=0");
+		model.addAttribute("hasRemarkCount",hasRemarkCount);
+		model.addAttribute("notRemarkCount",notRemarkCount);
+		model.addAttribute("remarks", remarks);
 		return "/userComment/progress";
 	}
-	
-	
+
 	@GetMapping("/create")
-	public String create(Model model) throws SQLException{
+	public String create(Model model) throws SQLException {
 		List<UserComment> comments = this.userCommentService.findAll();
 		List<UserTask> tasks = new ArrayList<UserTask>();
 		int i = 0;
@@ -231,8 +267,5 @@ public class UserCommentController {
 		}
 		return null;
 	}
-	
-	
-	
-	
+
 }

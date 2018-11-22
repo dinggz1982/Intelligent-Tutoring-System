@@ -8,14 +8,20 @@
 </head>
 <body>
 	<nav class="breadcrumb">
-	<i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
+	<i class="Hui-iconfont">&#xe67f;</i> <a href="/admin" target="_blank">首页 </a><span class="c-gray en">&gt;</span>
 	用户评论语料库<span class="c-gray en">&gt;</span> 评论标注 <a
 		class="btn btn-success radius r"
 		style="line-height:1.6em;margin-top:3px"
 		href="javascript:location.replace(location.href);" title="刷新"><i
 		class="Hui-iconfont">&#xe68f;</i></a></nav>
-		
-	<div class="pd-20 col-xs-10 col-md-offset-1">
+	<c:choose>
+		<c:when test="${empty comment }">
+		<div class="pd-20 col-xs-10 col-md-offset-1">
+		<h1>目前您没有标注任务！</h1>
+		</div>
+		</c:when>
+		<c:otherwise>
+			<div class="pd-20 col-xs-10 col-md-offset-1">
 		<div class="text-c">
 			 <div id="main" style="width: 600px;height:200px;"></div>
 			  <script type="text/javascript">
@@ -135,6 +141,9 @@
 	</form>
 	<div style="margin-bottom: 50px;"></div>
 </div>
+		</c:otherwise>
+	</c:choose>		
+	
 	<!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript">
 function save_submit(){
