@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.gzhu.its.base.model.PageData;
 import edu.gzhu.its.corpus.entity.UserComment;
@@ -30,6 +31,7 @@ import edu.gzhu.its.system.entity.User;
 import edu.gzhu.its.system.service.IUserService;
 
 @Controller
+@RequestMapping("/corpus")
 public class UserCommentController {
 	public List<Integer> userIds = Arrays.asList(127, 128, 129, 130, 131, 132, 133, 134, 135, 136,138,140,141);
 
@@ -185,7 +187,7 @@ public class UserCommentController {
 	@GetMapping("/progress")
 	public String progress(Model model) {
 		// 取得标注的用户
-		List<User> users = this.userService.find(" where id between 127 and 136");
+		List<User> users = this.userService.find(" where id >=127");
 		List<UserRemarkBean> remarks = new ArrayList<>();
 		for (Iterator iterator = users.iterator(); iterator.hasNext();) {
 			User user = (User) iterator.next();

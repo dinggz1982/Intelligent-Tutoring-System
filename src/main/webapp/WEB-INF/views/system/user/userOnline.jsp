@@ -6,7 +6,7 @@
    <%@include file="/WEB-INF/views/include/top.jsp" %>
   </head>
   <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 系统管理 <span class="c-gray en">&gt;</span> 在线用户</nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="/admin" target="_blank">首页</a> <span class="c-gray en">&gt;</span> 系统管理 <span class="c-gray en">&gt;</span> 在线用户</nav>
 <div class="pd-20">
 
 <h1>
@@ -17,10 +17,11 @@
   	</span>
   </c:forEach>
 </div>
+<div class="container">
+<a id="tongji_view" href="/corpus/myJob"  class="btn btn-success radius size-XL mt-10">我的标注任务</a>
+<a id="tongji_view" href="/corpusprogress"  class="btn btn-success radius size-XL mt-10">标注进展</a>
+<a id="tongji_view" href="/corpus/apply"  class="btn btn-success radius size-XL mt-10">申请标注</a>
 
-<!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script> 
-<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
-<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+</div>
   </body>
 </html>
