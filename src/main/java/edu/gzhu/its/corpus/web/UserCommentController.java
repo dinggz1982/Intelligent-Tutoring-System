@@ -33,7 +33,7 @@ import edu.gzhu.its.system.service.IUserService;
 @Controller
 @RequestMapping("/corpus")
 public class UserCommentController {
-	public List<Integer> userIds = Arrays.asList(127, 128, 129, 130, 131, 132, 133, 134, 135, 136,138,140,141);
+	public List<Integer> userIds = Arrays.asList(127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 140, 141);
 
 	@Resource
 	private IUserCommentService userCommentService;
@@ -51,6 +51,7 @@ public class UserCommentController {
 
 	/**
 	 * 我的工作
+	 * 
 	 * @return
 	 */
 	@GetMapping("/myJob")
@@ -58,7 +59,8 @@ public class UserCommentController {
 		User currentUser = (User) session.getAttribute("currentUser");
 
 		// 用户的标注总数
-		// int totalCount = this.userTaskService.getCountBySql("select count(*) from
+		// int totalCount = this.userTaskService.getCountBySql("select count(*)
+		// from
 		// user_task where user_id="+currentUser.getId());
 
 		// 已标注的总数
@@ -83,13 +85,14 @@ public class UserCommentController {
 
 	/**
 	 * 我的标注
+	 * 
 	 * @param pageIndex
 	 * @param pageSize
 	 * @param model
 	 * @return
 	 */
 	@GetMapping("/myRemark")
-	public String myRemark(Integer pageIndex,Integer pageSize,Model model){
+	public String myRemark(Integer pageIndex, Integer pageSize, Model model) {
 		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
 		pageSize = 10;
 		Map<String, Object> map = new HashMap<>();
@@ -103,7 +106,7 @@ public class UserCommentController {
 		model.addAttribute("pageIndex", pageIndex);
 		return "userComment/myRemark";
 	}
-	
+
 	@GetMapping("/saveUserComment")
 	public String saveUserComment(String invalidComment, Long commentId, Long taskId, String[] contentRelated,
 			String[] emotionRelated, String[] otherRelated) {
@@ -147,7 +150,7 @@ public class UserCommentController {
 
 		this.userRemarkService.saveUserRemark(remark, taskId);
 
-		return "redirect:/myJob";
+		return "redirect:/myJob?message=标注成功";
 	}
 
 	/**
@@ -202,14 +205,41 @@ public class UserCommentController {
 			remarks.add(bean);
 		}
 
-		int hasRemarkCount =  this.userCommentService.getCountBySql("select count(*) from user_comment where isAnnotationed=1");
-		int notRemarkCount =  this.userCommentService.getCountBySql("select count(*) from user_comment where isAnnotationed=0");
-		model.addAttribute("hasRemarkCount",hasRemarkCount);
-		model.addAttribute("notRemarkCount",notRemarkCount);
+		int hasRemarkCount = this.userCommentService
+				.getCountBySql("select count(*) from user_comment where isAnnotationed=1");
+		int notRemarkCount = this.userCommentService
+				.getCountBySql("select count(*) from user_comment where isAnnotationed=0");
+		model.addAttribute("hasRemarkCount", hasRemarkCount);
+		model.addAttribute("notRemarkCount", notRemarkCount);
 		model.addAttribute("remarks", remarks);
 		return "/userComment/progress";
 	}
 
+	/**
+	 * 申请标注页面
+	 * 
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/apply")
+	public String apply(Model model) {
+		User currentUser = (User) session.getAttribute("currentUser");
+		model.addAttribute("currentUser", currentUser);
+		return "/userComment/apply";
+	}
+	
+	/**
+	 * 保存用户的标注申请
+	 * @return
+	 */
+	@GetMapping("/apply")
+	public String saveApply(int number){
+		User currentUser = (User) session.getAttribute("currentUser");
+		this.userTaskService.updateUserTasks(currentUser.getId(), number);
+		return "redirect:/myJob?message=申请成功";
+	}
+	
+	
 	@GetMapping("/create")
 	public String create(Model model) throws SQLException {
 		List<UserComment> comments = this.userCommentService.findAll();
