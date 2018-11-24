@@ -35,9 +35,9 @@ public class UserTaskService extends BaseDAOImpl<UserTask, Long> implements IUse
 	public void updateUserTasks(long userId,int number){
 		//取得最后一批数据的id
 		List<Object> list = this.findObjectBySql("select id from user_task where isAnnotationed=0 order by id desc limit "+number);
-		Object begin = list.get(0);
-		Object end  = list.get(list.size()-1);
-		this.executeSql("update user_task set user_id="+userId +" where id between  "+ begin + " and " + end);
+		Object end = list.get(0);
+		Object begin = list.get(list.size()-1);
+		this.executeSql("update user_task set user_id="+userId +" where id >=  "+ begin + " and id <=" + end);
 		
 	}
 }

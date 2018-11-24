@@ -9,48 +9,96 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 /**
  * 用户评论
+ * 
  * @author dinggz
  *
  */
 @Entity
 @Table(name = "user_comment")
 public class UserComment {
-	
+
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
 	private Long id;
-	
-	//课程类型
+
+	// 课程类型
 	@Column(name = "courseType")
 	private String courseType;
-	
+
 	// 汉字
-	@Column(name = "content",columnDefinition="text")
+	@Column(name = "content", columnDefinition = "text")
 	private String content;
-	
-	//课程
+
+	// 课程
 	@Column(name = "course")
 	private String course;
-	
+
 	@Column(name = "createTime")
 	private Date createTime;
-	
-	@Column(name = "against",columnDefinition="int(2) default 0")
+
+	@Column(name = "against", columnDefinition = "int(2) default 0")
 	private int against;
-	
-	@Column(name = "vote",columnDefinition="int(2) default 0")
+
+	@Column(name = "vote", columnDefinition = "int(2) default 0")
 	private int vote;
-	
-	@Column(name = "favCount",columnDefinition="int(2) default 0")
+
+	@Column(name = "favCount", columnDefinition = "int(2) default 0")
 	private int favCount;
-	
-	//是否被标注
-	@Column(name = "isAnnotationed",columnDefinition="int(1) default 0")
+
+	// 是否被标注
+	@Column(name = "isAnnotationed", columnDefinition = "int(1) default 0")
 	private boolean isAnnotationed;
+
+	// 内容相关
+	@Column(name = "contentRelated")
+	private String contentRelated;
+
+	// 情感相关
+	@Column(name = "emotionRelated")
+	private String emotionRelated;
+
+	// 其他
+	@Column(name = "otherRelated")
+	private String otherRelated;
 	
+	@Column(name = "isEffectiveComment", columnDefinition = "int(1) default 0")
+	private boolean isEffectiveComment;
+	
+	public boolean isEffectiveComment() {
+		return isEffectiveComment;
+	}
+
+	public void setEffectiveComment(boolean isEffectiveComment) {
+		this.isEffectiveComment = isEffectiveComment;
+	}
+
+	public String getContentRelated() {
+		return contentRelated;
+	}
+
+	public void setContentRelated(String contentRelated) {
+		this.contentRelated = contentRelated;
+	}
+
+	public String getEmotionRelated() {
+		return emotionRelated;
+	}
+
+	public void setEmotionRelated(String emotionRelated) {
+		this.emotionRelated = emotionRelated;
+	}
+
+	public String getOtherRelated() {
+		return otherRelated;
+	}
+
+	public void setOtherRelated(String otherRelated) {
+		this.otherRelated = otherRelated;
+	}
 
 	public String getCourseType() {
 		return courseType;
@@ -123,5 +171,5 @@ public class UserComment {
 	public void setFavCount(int favCount) {
 		this.favCount = favCount;
 	}
-	
+
 }

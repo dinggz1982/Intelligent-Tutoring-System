@@ -19,7 +19,7 @@
 </div>
 <div class="container">
 <a id="tongji_view" href="/corpus/myJob"  class="btn btn-success radius size-XL mt-10">我的标注任务</a>
-<a id="tongji_view" href="/corpusprogress"  class="btn btn-success radius size-XL mt-10">标注进展</a>
+<a id="tongji_view" href="/corpus/progress"  class="btn btn-success radius size-XL mt-10">标注进展</a>
 <a id="tongji_view" href="/corpus/apply"  class="btn btn-success radius size-XL mt-10">申请标注</a>
 
 </div>

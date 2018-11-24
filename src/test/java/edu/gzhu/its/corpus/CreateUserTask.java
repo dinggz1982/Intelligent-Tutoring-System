@@ -144,14 +144,5 @@ public class CreateUserTask {
 			}
 		}
 	}
-	
-	public static void main(String[] args) {
-		for (int j = 0; j < 3; j++) {
-			for (int i = 0; i < 100; i++) {
-				System.out.println(i);
-				if(i==10)break;
-			}
-		}
-		
-	}
+
 }

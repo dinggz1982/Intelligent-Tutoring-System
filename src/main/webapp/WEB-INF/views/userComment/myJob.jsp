@@ -4,7 +4,7 @@
 <head>
 <title>我的标注任务</title>
 <%@include file="/WEB-INF/views/include/top.jsp"%>
-<script type="text/javascript" src="static/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="/static/echarts/echarts.min.js"></script>
 </head>
 <body>
 	<nav class="breadcrumb">
@@ -74,7 +74,7 @@
 		</div>
 	</div>
 	<div class="col-xs-10 col-md-offset-1">
-	<form action="/saveUserComment" method="get" id="userCommentForm">
+	<form action="/corpus/saveUserComment" method="get" id="userCommentForm">
 		<h2>有效性判断</h2>
 		<div class="skin-minimal">
 			 <div class="radio-box">

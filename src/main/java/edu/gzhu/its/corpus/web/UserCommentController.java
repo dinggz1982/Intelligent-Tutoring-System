@@ -150,7 +150,7 @@ public class UserCommentController {
 
 		this.userRemarkService.saveUserRemark(remark, taskId);
 
-		return "redirect:/myJob?message=标注成功";
+		return "redirect:/corpus/myJob?message=标注成功";
 	}
 
 	/**
@@ -232,11 +232,11 @@ public class UserCommentController {
 	 * 保存用户的标注申请
 	 * @return
 	 */
-	@GetMapping("/apply")
+	@GetMapping("/saveApply")
 	public String saveApply(int number){
 		User currentUser = (User) session.getAttribute("currentUser");
 		this.userTaskService.updateUserTasks(currentUser.getId(), number);
-		return "redirect:/myJob?message=申请成功";
+		return "redirect:/corpus/myJob?message=申请成功";
 	}
 	
 	
