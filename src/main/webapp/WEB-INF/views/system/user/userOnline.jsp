@@ -22,6 +22,7 @@
 <a id="tongji_view" href="/corpus/progress"  class="btn btn-success radius size-XL mt-10">标注进展</a>
 <a id="tongji_view" href="/corpus/apply"  class="btn btn-success radius size-XL mt-10">申请标注</a>
 <a id="tongji_view" href="/corpus/apply"  class="btn btn-success radius size-XL mt-10">申请标注</a>
+<a id="tongji_view" href="/corpus/apply"  class="btn btn-success radius size-XL mt-10">申请标注</a>
 
 </div>
   </body>
