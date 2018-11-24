@@ -4,7 +4,7 @@
 <head>
 <title>标注任务总体进展</title>
 <%@include file="/WEB-INF/views/include/top.jsp"%>
-<script type="text/javascript" src="static/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="/static/echarts/echarts.min.js"></script>
 </head>
 <body>
 	<nav class="breadcrumb">

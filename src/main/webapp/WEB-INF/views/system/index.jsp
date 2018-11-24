@@ -15,8 +15,8 @@
 				<ul class="cl">
 					<li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
 						<ul class="dropDown-menu menu radius box-shadow">
-							<li><a href="javascript:;" onclick="alert('正在开发ing')"><i class="Hui-iconfont">&#xe616;</i> 资讯</a></li>
-							<li><a href="javascript:;" onclick="alert('正在开发ing')"><i class="Hui-iconfont">&#xe613;</i> 应用</a></li>
+							<li><a href="javascript:;" onclick="alert('正在开发ing')"><i class="Hui-iconfont">&#xe616;</i> 学习者画像</a></li>
+							<li><a href="javascript:;" onclick="alert('正在开发ing')"><i class="Hui-iconfont">&#xe613;</i> 推荐引擎</a></li>
 					</ul>
 					<li class="navbar-levelone current"><a href="javascript:;">平台</a></li>
 					<li class="navbar-levelone"><a href="javascript:;">知识图谱</a></li>
@@ -100,8 +100,8 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 用户评论语料库<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="/myJob" data-title="用户评论语料库" href="javascript:void(0)">用户评论语料库</a></li>
-					<li><a data-href="/progress" data-title="标注进展" href="javascript:void(0)">标注进展</a></li>
+					<li><a data-href="/corpus/myJob" data-title="用户评论语料库" href="javascript:void(0)">用户评论语料库</a></li>
+					<li><a data-href="/corpus/progress" data-title="标注进展" href="javascript:void(0)">标注进展</a></li>
 					
 				</ul>
 			</dd>
