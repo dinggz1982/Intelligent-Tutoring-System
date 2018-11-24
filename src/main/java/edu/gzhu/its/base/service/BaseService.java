@@ -185,6 +185,19 @@ public interface BaseService<T,ID extends Serializable> {
 	 */
 	public PageData<T> getPageData(int pageIndex, int pageSize,
 			Map<String, Object> paramMap);
+	/**
+	 * 得到分页数据并封装成pagedata
+	 * <p>方法名:getPageData </p>
+	 * <p>Description : </p>
+	 * <p>Company : </p>
+	 * @author 丁国柱
+	 * @date 2017年11月14日 上午12:24:50
+	 * @param pageIndex
+	 * @param pageSize
+	 * @param paramMap
+	 * @return
+	 */
+	public PageData<T> getPageData(int page, int pageSize, String hql);
 	
 	/**
 	 * 查询记录数，用于分页

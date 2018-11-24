@@ -72,7 +72,7 @@ public class UserTest {
 	
 	@Test
 	public void getPageDataTest(){
-		PageData<User> data = this.userService.getPageData(1, 10, null);
+		PageData<User> data = this.userService.getPageData(1, 10, "");
 		System.out.println(data.getTotalCount());
 	}
 	

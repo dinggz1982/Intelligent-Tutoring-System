@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>我的标注</title>
+<title>${user.username }的标注</title>
 <%@include file="/WEB-INF/views/include/top.jsp"%>
 <script type="text/javascript" src="static/echarts/echarts.min.js"></script>
    <link rel="stylesheet" type="text/css" href="/static/lib/layerui/2.2.5/css/layui.css">
@@ -73,7 +73,7 @@ layui.use(['laypage', 'layer'], function(){
                     if(!first) {
     　　　　　　　　　　　　//***第一次不执行,一定要记住,这个必须有,要不然就是死循环,哈哈
                         var pageIndex = obj.curr;
-                      self.location='/corpus/detail/${userId}?pageIndex='+pageIndex; 
+                      self.location='/corpus/detail/${user.id}?pageIndex='+pageIndex; 
                     }
                 }
   });

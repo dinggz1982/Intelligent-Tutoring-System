@@ -14,6 +14,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.hibernate.exception.SQLGrammarException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -393,6 +394,36 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		return this.queryPageList(hql.toString(), paramMap, start, maxSize);
 	}
 
+	public PageData<T> getPageData(int page, int pageSize, String hql) {
+		// 创建一个pagedata
+		PageData<T> pageData = new PageData<T>(page, pageSize);
+
+		// 求得总记录
+		int totalCount = this.count(hql);
+		pageData.setTotalCount(totalCount);
+		pageData.setPageData(this.getPageList(page, pageSize, hql));
+
+		return pageData;
+	}
+	
+	public List<T> getPageList(int page, int pageSize, String hql)  {
+		Query query = entityManager.createQuery(" from " + className + " where 1=1  " + hql);
+		query.setFirstResult((page - 1) * pageSize);
+		query.setMaxResults(pageSize);
+		return query.getResultList();
+	}
+
+	
+	
+	public int count(String hql) throws SQLGrammarException {
+		String sql = "select count(*) from " + className + " u where 1=1 " + hql;
+
+		Query query = entityManager.createQuery(sql);
+
+		return Integer.parseInt(query.getSingleResult().toString());
+	}
+	
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> queryPageList(String hql, Map<String, Object> params, int start, int maxSize) {

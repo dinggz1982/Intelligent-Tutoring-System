@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.gzhu.its.base.model.PageData;
@@ -97,8 +98,8 @@ public class UserCommentController {
 		pageSize = 10;
 		Map<String, Object> map = new HashMap<>();
 		User currentUser = (User) session.getAttribute("currentUser");
-		map.put("user_id", currentUser.getId());
-		PageData<UserRemark> pageData = this.userRemarkService.getPageData(pageIndex, pageSize, map);
+		map.put("user.id", currentUser.getId());
+		PageData<UserRemark> pageData = this.userRemarkService.getPageData(pageIndex, pageSize, " and user_id="+currentUser.getId());
 		model.addAttribute("dataList", pageData.getPageData());
 		model.addAttribute("total", pageData.getTotalCount());
 		model.addAttribute("pages", pageData.getTotalPage());
@@ -191,6 +192,7 @@ public class UserCommentController {
 	public String progress(Model model) {
 		// 取得标注的用户
 		List<User> users = this.userService.find(" where id >=127");
+		
 		List<UserRemarkBean> remarks = new ArrayList<>();
 		for (Iterator iterator = users.iterator(); iterator.hasNext();) {
 			User user = (User) iterator.next();
@@ -227,6 +229,25 @@ public class UserCommentController {
 		model.addAttribute("currentUser", currentUser);
 		return "/userComment/apply";
 	}
+	
+	
+	
+	@GetMapping("/detail/{userId}")
+	public String detail(Model model,@PathVariable long userId,Integer pageIndex,Integer pageSize){
+		User user = this.userService.findById(userId);
+		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
+		pageSize = 10;
+		PageData<UserRemark> pageData = this.userRemarkService.getPageData(pageIndex, pageSize, " and user_id="+userId);
+		model.addAttribute("user", user);
+		model.addAttribute("dataList", pageData.getPageData());
+		model.addAttribute("total", pageData.getTotalCount());
+		model.addAttribute("pages", pageData.getTotalPage());
+		model.addAttribute("pagesize", pageData.getPageSize());
+		model.addAttribute("pageIndex", pageIndex);
+		
+		return "/userComment/detail";
+	}
+	
 	
 	/**
 	 * 保存用户的标注申请

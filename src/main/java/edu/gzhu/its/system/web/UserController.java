@@ -56,7 +56,7 @@ public class UserController {
 	public String list(Integer pageIndex,Integer pageSize,Model model){
 		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
 		pageSize = 10;
-		PageData<User> pageData = this.userService.getPageData(pageIndex, pageSize, null);
+		PageData<User> pageData = this.userService.getPageData(pageIndex, pageSize, "");
 		model.addAttribute("dataList", pageData.getPageData());
 		model.addAttribute("total", pageData.getTotalCount());
 		model.addAttribute("pages", pageData.getTotalPage());
@@ -81,7 +81,7 @@ public class UserController {
 		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
 		pageSize = 10;
 		
-		PageData<User> pageData = this.userService.getPageData(pageIndex, pageSize, null);
+		PageData<User> pageData = this.userService.getPageData(pageIndex, pageSize, "");
 		TableSplitResult<User> pageJson = new TableSplitResult<User>();
 		pageJson.setTotal(pageData.getTotalCount());
 		pageJson.setRows(pageData.getPageData());

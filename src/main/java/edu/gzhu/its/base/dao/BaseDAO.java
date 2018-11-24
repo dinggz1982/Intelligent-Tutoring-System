@@ -193,6 +193,16 @@ public interface BaseDAO<T,ID extends Serializable> {
 			Map<String, Object> paramMap);
 	
 	/**
+	 * 得到分页数据并封装成pagedata
+	 * @param page
+	 * @param pageSize
+	 * @param hql
+	 * @return
+	 */
+	public PageData<T> getPageData(int page, int pageSize, String hql);
+	
+	
+	/**
 	 * 查询记录数，用于分页
 	 * <p>方法名:queryDataCount </p>
 	 * <p>Description : </p>

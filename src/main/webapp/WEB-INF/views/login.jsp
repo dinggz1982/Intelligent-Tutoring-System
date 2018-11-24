@@ -4,6 +4,12 @@
 <head>
 <title>广州大学-教育技术-网络教育软件设计与开发</title>
    <%@include file="/WEB-INF/views/include/top.jsp" %>
+    <script>
+        <!-- 解决登录页面嵌套问题 -->
+        if (window != top){
+            top.location.href = location.href;
+        }
+    </script>
 </head>
 
 <body>

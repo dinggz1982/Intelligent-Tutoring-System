@@ -74,12 +74,16 @@
  			<th>
  				未标注
  			</th>
+ 			<th>
+ 				详细情况
+ 			</th>
  			<c:forEach items="${remarks}" var="userRemark">
  				<tr>
  					<td>${userRemark.user.username}</td>
  					<td>${userRemark.hasRemarkCount+userRemark.notRemarkCount}</td>
  					<td>${userRemark.hasRemarkCount}</td>
  					<td>${userRemark.notRemarkCount}</td>
+ 					<td><a href="/corpus/detail/${userRemark.user.id}" target="_blank">详细情况</a></td>
  				</tr>
  			
  			</c:forEach>

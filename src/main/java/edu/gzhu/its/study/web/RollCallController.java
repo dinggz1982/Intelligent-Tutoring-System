@@ -145,7 +145,7 @@ public class RollCallController {
 	public String rollCallList(Integer pageIndex,Integer pageSize,Model model){
 		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
 		pageSize = 10;
-		PageData<RollCall> pageData = this.rollCallService.getPageData(pageIndex, pageSize, null);
+		PageData<RollCall> pageData = this.rollCallService.getPageData(pageIndex, pageSize, "");
 		model.addAttribute("dataList", pageData.getPageData());
 		model.addAttribute("total", pageData.getTotalCount());
 		model.addAttribute("pages", pageData.getTotalPage());
