@@ -89,7 +89,7 @@ public class StudentInfoTest {
  		role.setId(2l);
  		ClassInfo classInfo = new ClassInfo();
  		classInfo.setId(4);
- 		String[] names = {"何金红","翁金塔","刘杰容","法代东","蔡瑞琦","蔡锦贤","王婕","吴丽苏","张国兰","吴霞"};
+ 		String[] names = {"史湘衣"};
  		for (int i = 0; i < names.length; i++) {
 			String name = names[i];
 			User user = new User();
@@ -98,13 +98,13 @@ public class StudentInfoTest {
     		user.setUsername(name);
     		user.setNickName(name);
     		user.setXuehao("20180116"+i);
-    		if(i<=4){
+    		/*if(i==0){
     			user.setSex("男");
     			user.setImg("/static/its/images/boy.png");
-    		}else{
+    		}else{*/
     			user.setSex("女");
     			user.setImg("/static/its/images/girl.png");
-    		}
+    		//}
     		
     		user.setEthnicity("汉族");
     		Set<Role>  roles = new HashSet<Role>();
