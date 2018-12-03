@@ -101,7 +101,7 @@ public class UserRemarkService extends BaseDAOImpl<UserRemark, Long> implements 
 								+ ",emotionRelated=" + emotionRelated + ",otherRelated=" + otherRelated + " where id="
 								+ remark.getUserComment().getId());
 					} else {
-						this.executeSql("update user_comment set isAnnotationed=1,isEffective=0 where id="
+						this.executeSql("update user_comment set isAnnotationed=1,isEffectiveComment=0 where id="
 								+ remark.getUserComment().getId());
 					}
 				} else {
@@ -139,7 +139,7 @@ public class UserRemarkService extends BaseDAOImpl<UserRemark, Long> implements 
 									+ ",emotionRelated=" + emotionRelated + ",otherRelated=" + otherRelated
 									+ " where id=" + remark.getUserComment().getId());
 						} else {
-							this.executeSql("update user_comment set isAnnotationed=1,isEffective=0 where id="
+							this.executeSql("update user_comment set isAnnotationed=1,isEffectiveComment=0 where id="
 									+ remark.getUserComment().getId());
 						}
 						isFinished = true;

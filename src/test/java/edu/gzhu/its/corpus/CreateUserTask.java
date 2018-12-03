@@ -44,7 +44,7 @@ public class CreateUserTask {
 	@Resource
 	private IUserService userService;
 
-	public List<Integer> userIds = Arrays.asList(127, 128, 129, 130, 131, 132, 133, 134, 135, 136);
+	public List<Integer> userIds = Arrays.asList(127, 128, 129, 130, 131, 132, 133, 135, 136);
 
 	public void create() throws SQLException {
 		List<UserComment> comments = this.userCommentService.find(" where id>156250");
@@ -143,6 +143,89 @@ public class CreateUserTask {
 				i = 0;
 			}
 		}
+	}
+
+	@Test
+	@Transactional
+	@Rollback(false)
+	public void setUser() {
+		List<Object[]> es = this.userCommentService.findByNaviteSql(
+				"select a.id,a.user_id from user_task a ,(select user_id,user_comment_id from user_task group by user_id,user_comment_id having count(1) > 1) as b where a.user_id=b.user_id and a.user_comment_id=b.user_comment_id");
+		String ids = "(";
+		for (Iterator iterator = es.iterator(); iterator.hasNext();) {
+			Object[] objects = (Object[]) iterator.next();
+			ids = ids + objects[0] + ",";
+		}
+		ids = ids.substring(0, ids.length() - 1) + ")";
+		this.userCommentService.executeSql("update user_task set user_id=1 where id in " + ids);
+
+	}
+
+	@Test
+	@Transactional
+	@Rollback(false)
+	public void add() throws SQLException {
+		List<UserComment> comments = this.userCommentService.findAll();
+		int n = 0;
+		List<UserTask> tasks = new ArrayList<UserTask>();
+		int i = 0;
+		for (Iterator iterator = comments.iterator(); iterator.hasNext();) {
+			if (i < 200) {
+				UserComment userComment = (UserComment) iterator.next();
+				User user = new User();
+				if (n == 8) {
+					n = 0;
+				}
+				long user1Id = userIds.get(n);
+				int userTaskCount = this.userTaskService.getCountBySql("select count(*) from user_task where user_id="
+						+ user1Id + " and user_comment_id=" + userComment.getId());
+				if (userTaskCount == 0) {
+					n++;
+					user.setId(user1Id);
+					UserTask task = new UserTask();
+					task.setAnnotationed(false);
+					task.setUser(user);
+					task.setUserComment(userComment);
+					tasks.add(task);
+					i++;
+				} else {
+					if (n == 8) {
+						n = 0;
+						user1Id = userIds.get(n++);
+
+					} else {
+						user1Id = userIds.get(n++ + 1);
+					}
+					user.setId(user1Id);
+					UserTask task = new UserTask();
+					task.setAnnotationed(false);
+					task.setUser(user);
+					task.setUserComment(userComment);
+					tasks.add(task);
+					i++;
+				}
+			} else {
+				this.userTaskService.saveUserTasks(tasks);
+				tasks.clear();
+				i = 0;
+			}
+		}
+	}
+	
+	@Test
+	@Transactional
+	@Rollback(false)
+	public void change(){
+		userIds = Arrays.asList( 128, 129, 130, 131, 132, 133, 135);
+		for (Iterator iterator = userIds.iterator(); iterator.hasNext();) {
+			Integer integer = (Integer) iterator.next();
+			List<Object[]> list = this.userTaskService.findByNaviteSql("select id,user_id from user_task where user_id="+integer + " order by id desc limit 229");
+			for (Iterator iterator2 = list.iterator(); iterator2.hasNext();) {
+				Object[] objects = (Object[]) iterator2.next();
+				this.userTaskService.executeSql("update user_task set user_id=136 where id="+ objects[0]);
+			}
+		}
+		
 	}
 
 }

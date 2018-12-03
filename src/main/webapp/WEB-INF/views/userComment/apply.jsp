@@ -27,20 +27,16 @@
 				<div class="mt-20 skin-minimal">
 				<div class="row cl">
 					<div class="radio-box">
-						<input type="radio" value="5000" id="radio-1" name="number"> <label
-							for="radio-1">5000</label>
+						<input type="radio" value="1000" id="radio-1" name="number"> <label
+							for="radio-1">1000</label>
 					</div>
 					<div class="radio-box">
-						<input type="radio" value="10000" id="radio-2" name="number">
-						<label for="radio-2">10000</label>
+						<input type="radio" value="1500" id="radio-2" name="number">
+						<label for="radio-2">1500</label>
 					</div>
 					<div class="radio-box">
-						<input type="radio" value="15000" id="radio-3" name="number">
-						<label for="radio-3">15000</label>
-					</div>
-					<div class="radio-box">
-						<input type="radio" value="20000" id="radio-4" name="number">
-						<label for="radio-4">20000</label>
+						<input type="radio" value="2000" id="radio-3" name="number">
+						<label for="radio-3">2000</label>
 					</div>
 					</div>
 					<div class="row cl">

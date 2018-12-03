@@ -68,6 +68,18 @@ public class UserComment {
 	@Column(name = "isEffectiveComment", columnDefinition = "int(1) default 0")
 	private boolean isEffectiveComment;
 	
+	
+	public boolean isDelFlag() {
+		return delFlag;
+	}
+
+	public void setDelFlag(boolean delFlag) {
+		this.delFlag = delFlag;
+	}
+
+	@Column(name = "delFlag", columnDefinition = "int(1) default 0")
+	private boolean delFlag;
+	
 	public boolean isEffectiveComment() {
 		return isEffectiveComment;
 	}

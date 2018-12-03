@@ -34,7 +34,7 @@ import edu.gzhu.its.system.service.IUserService;
 @Controller
 @RequestMapping("/corpus")
 public class UserCommentController {
-	public List<Integer> userIds = Arrays.asList(127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 140, 141);
+	public List<Integer> userIds = Arrays.asList(127, 128, 129, 130, 131, 132, 133, 135, 136, 138, 140, 141);
 
 	@Resource
 	private IUserCommentService userCommentService;
@@ -284,7 +284,7 @@ public class UserCommentController {
 					tasks.add(task);
 					i++;
 				} else {
-					if (n == 9) {
+					if (n == 8) {
 						User user = new User();
 						Random random = new Random();
 						int k = random.nextInt(userIds.size());
@@ -299,7 +299,9 @@ public class UserCommentController {
 						i++;
 					} else {
 						User user = new User();
-						user.setId(userIds.get(n + 1));
+						Random random = new Random();
+						int k = random.nextInt(7);
+						user.setId(userIds.get(k));
 						UserTask task = new UserTask();
 						task.setAnnotationed(false);
 						task.setUser(user);
@@ -308,7 +310,7 @@ public class UserCommentController {
 						i++;
 					}
 				}
-				if (n == 9) {
+				if (n == 8) {
 					n = 0;
 				}
 				n++;
@@ -317,6 +319,22 @@ public class UserCommentController {
 				tasks.clear();
 				i = 0;
 			}
+		}
+		return null;
+	}
+	
+	@GetMapping("/create2")
+	public String create2(Model model) throws SQLException {
+		List<UserComment> comments = this.userCommentService.findAll();
+		for (Iterator iterator = comments.iterator(); iterator.hasNext();) {
+			UserComment userComment = (UserComment) iterator.next();
+			User user = new User();
+			user.setId(1l);
+			UserTask task = new UserTask();
+			task.setAnnotationed(false);
+			task.setUser(user);
+			task.setUserComment(userComment);
+			this.userTaskService.save(task);
 		}
 		return null;
 	}
