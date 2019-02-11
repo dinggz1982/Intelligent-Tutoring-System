@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
@@ -32,6 +34,19 @@ public class Subject {
 	//学科代码
 	private String code;
 	
+	//对应学院
+	@ManyToOne
+	@JoinColumn(name = "institute_id")
+	private Institute institute;
+	
+	public Institute getInstitute() {
+		return institute;
+	}
+
+	public void setInstitute(Institute institute) {
+		this.institute = institute;
+	}
+
 	//学科描述
 	@Type(type = "text")
 	@Column(columnDefinition = "text comment '学科说明'")

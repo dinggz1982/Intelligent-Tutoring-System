@@ -38,4 +38,9 @@ public class UserService extends BaseDAOImpl<User, Long> implements IUserService
 		return false;
 	}
 
+	@Override
+	public int getUserCount() {
+		return this.getCountBySql("select count(*) from sys_user");
+	}
+
 }

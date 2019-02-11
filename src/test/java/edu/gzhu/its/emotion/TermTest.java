@@ -4,11 +4,7 @@ import java.util.List;
 
 import org.ansj.domain.Result;
 import org.ansj.domain.Term;
-import org.ansj.splitWord.analysis.BaseAnalysis;
-import org.ansj.splitWord.analysis.DicAnalysis;
-import org.ansj.splitWord.analysis.IndexAnalysis;
 import org.ansj.splitWord.analysis.NlpAnalysis;
-import org.ansj.splitWord.analysis.ToAnalysis;
 import org.junit.Test;
 import org.nlpcn.commons.lang.tire.domain.Forest;
 import org.nlpcn.commons.lang.tire.library.Library;
@@ -26,7 +22,7 @@ import org.nlpcn.commons.lang.tire.library.Library;
 public class TermTest {
 
 	
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		String str = "教育技术学是现代教育学发展的重要成果，教育技术参与教育过程，是对教育过程模式的优化提升，使得教育过程的组织序列更具逻辑，系统优化了分析和处理教育、教学问题的思路" ;
 		
 		System.out.println(BaseAnalysis.parse(str));
@@ -34,7 +30,7 @@ public class TermTest {
 		System.out.println(DicAnalysis.parse(str));
 		System.out.println(IndexAnalysis.parse(str));
 		System.out.println(NlpAnalysis.parse(str));
-	}
+	}*/
 	
 	 @Test
 	 public void wordTest(){

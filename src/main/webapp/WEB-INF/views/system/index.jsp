@@ -22,7 +22,7 @@
 					<li class="navbar-levelone"><a href="javascript:;">知识图谱</a></li>
 					<li class="navbar-levelone"><a href="javascript:;">考勤</a></li>
 					<li class="navbar-levelone"><a href="javascript:;">用户评论语料库</a></li>
-				</li>
+					<li class="navbar-levelone"><a href="#" onclick="gotoHomeWork()">作业管理系统</a></li>
 			</ul>
 		</nav>
 		<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
@@ -124,7 +124,7 @@
 	<div id="iframe_box" class="Hui-article">
 		<div class="show_iframe">
 			<div style="display:none" class="loading"></div>
-			<iframe scrolling="yes" frameborder="0" src="/userOnline"></iframe>
+			<iframe scrolling="yes" id="iframe" frameborder="0" src="/userOnline"></iframe>
 	</div>
 </div>
 </section>
@@ -206,7 +206,10 @@ function product_add(title,url){
 function member_add(title,url,w,h){
 	layer_show(title,url,w,h);
 }
-
+/*显示作业界面 */
+function gotoHomeWork(){
+	document.getElementById("iframe").src="/homeWork/home";
+}
 
 </script> 
   </body>

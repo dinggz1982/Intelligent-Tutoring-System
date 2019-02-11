@@ -70,7 +70,6 @@ public class Course {
 	public void setSubject(Subject subject) {
 		this.subject = subject;
 	}
-	
 
 	public User getTeacher() {
 		return teacher;

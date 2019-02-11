@@ -18,7 +18,6 @@ import javax.persistence.Transient;
 import org.springframework.security.core.GrantedAuthority;
 
 import edu.gzhu.its.profile.entity.ClassInfo;
-import edu.gzhu.its.profile.entity.Subject;
 
 /**
  * 用户类

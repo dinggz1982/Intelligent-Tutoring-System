@@ -27,5 +27,11 @@ public interface IUserService extends BaseService<User, Long>{
 	 * @return
 	 */
 	public boolean saveUser(User user)  throws Exception;
+	
+	/**
+	 * 获取用户总数
+	 * @return
+	 */
+	public int getUserCount();
 
 }
