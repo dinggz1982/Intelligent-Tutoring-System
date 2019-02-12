@@ -13,7 +13,6 @@ import javax.persistence.Table;
  * <p>Description : </p>
  * <p>Company : </p>
  * @author 丁国柱
- * @date 2018年3月6日 下午2:26:12
  */
 @Entity
 @Table(name = "profile_institute")

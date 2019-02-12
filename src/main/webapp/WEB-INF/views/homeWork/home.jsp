@@ -83,7 +83,6 @@ legend a:hover {
 								</a> <a href="javascript:;" data-url="user-info.html"
 									data-parent="true" data-title="班级管理"> <i class="iconfont "
 									></i><span>班级总数</span></a>
-
 							</div>
 							</section>
 						</div>
@@ -112,12 +111,12 @@ legend a:hover {
 							</div>
 							<div class="value tab-menu" bind="1">
 								<a href="javascript:;" data-url="user-info.html"
-									data-parent="true" data-title="今日新增"> <i class="iconfont "
+									data-parent="true" data-title="学院管理"> <i class="iconfont "
 									data-icon=""></i>
 									<h1>10</h1>
 								</a> <a href="javascript:;" data-url="user-info.html"
-									data-parent="true" data-title="今日新增"> <i class="iconfont "
-									data-icon=""></i><span>今日新增</span></a>
+									data-parent="true" data-title="学院总数"> <i class="iconfont "
+									data-icon=""></i><span>学院总数</span></a>
 							</div>
 							</section>
 						</div>
@@ -154,7 +153,7 @@ legend a:hover {
 			</c:if>
 			
 			
-<c:if test="${role.name eq '学生' }">
+		<c:if test="${role.name eq '学生' }">
 				<fieldset class="layui-elem-field layui-field-title site-title">
 					<legend>
 						<a name="default">学生功能</a>

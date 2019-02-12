@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Transient;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -47,6 +48,7 @@ public class User implements java.io.Serializable {
 	//long ==> Long
 
 	@ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.EAGER)
+	@OrderBy("id asc")
 	private Set<Role> roles;
 
 	// 对应的资源
