@@ -34,7 +34,7 @@ public class HomeWorkController {
 		int userCount = this.userService.getUserCount();
 		model.addAttribute("userCount", userCount);
 		
-		return "homeWork/home";
+		return "homework/home";
 	}
 	
 	@GetMapping({"","/","/index"})
@@ -56,7 +56,7 @@ public class HomeWorkController {
 			myRole="学生";
 		}
 		model.addAttribute("myRole", myRole);
-		return "homeWork/index";
+		return "homework/index";
 	}
 	
 	/**
@@ -83,6 +83,6 @@ public class HomeWorkController {
 			myRole="学生";
 		}
 		model.addAttribute("myRole", myRole);
-		return "homeWork/index";
+		return "homework/index";
 	}
 }

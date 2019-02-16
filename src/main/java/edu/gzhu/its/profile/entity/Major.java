@@ -9,50 +9,31 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Type;
-
 /**
- * 科目
- * <p>Title : Subject</p>
- * <p>Description : </p>
- * <p>Company : </p>
- * @author 丁国柱
- * @date 2018年3月6日 下午1:03:45
+ * 专业
+ * 
+ * @author dingguozhu
+ *
  */
 @Entity
-@Table(name = "profile_subject")
-public class Subject {
+@Table(name = "profile_major")
+public class Major {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
-	
 
-	//科目名字
+	// 专业名字
 	private String name;
-	
-	//科目代码
+
+	// 专业代码
 	private String code;
-	
-	
-	//对应的专业
+
+	// 对应学院
 	@ManyToOne
-	@JoinColumn(name = "major_id")
-	private Major major;
-
-
-	public Major getMajor() {
-		return major;
-	}
-
-	public void setMajor(Major major) {
-		this.major = major;
-	}
-
-	//科目描述
-	@Type(type = "text")
-	@Column(columnDefinition = "text comment '科目说明'")
-	private String description;
+	@JoinColumn(name = "institute_id")
+	private Institute institute;
 
 	public int getId() {
 		return id;
@@ -78,12 +59,11 @@ public class Subject {
 		this.code = code;
 	}
 
-	public String getDescription() {
-		return description;
+	public Institute getInstitute() {
+		return institute;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setInstitute(Institute institute) {
+		this.institute = institute;
 	}
-
 }

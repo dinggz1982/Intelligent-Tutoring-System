@@ -1,12 +1,18 @@
 package edu.gzhu.its.profile.entity;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import edu.gzhu.its.system.entity.User;
@@ -40,10 +46,37 @@ public class Course {
 	@ManyToOne
 	@JoinColumn(name = "teacher_id")
 	private User teacher;
+	
+	@Column(columnDefinition="varchar(255) comment '这门课的上课时间' ")
+	private String studyTime;
+	
+	@ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.EAGER)
+	@OrderBy("id asc")
+	private Set<ClassInfo> classInfos; 
 
 
 	public int getId() {
 		return id;
+	}
+
+
+	public String getStudyTime() {
+		return studyTime;
+	}
+
+
+	public void setStudyTime(String studyTime) {
+		this.studyTime = studyTime;
+	}
+
+
+	public Set<ClassInfo> getClassInfos() {
+		return classInfos;
+	}
+
+
+	public void setClassInfos(Set<ClassInfo> classInfos) {
+		this.classInfos = classInfos;
 	}
 
 

@@ -1,0 +1,1103 @@
+20:57:47.552 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Starting ITSApplication on O4L55N85900JS3T with PID 42096 (started by dingguozhu in E:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+20:57:47.552 [restartedMain] INFO  edu.gzhu.its.ITSApplication - No active profile set, falling back to default profiles: default
+20:57:47.676 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6c9ff954: startup date [Sat Feb 16 20:57:47 CST 2019]; root of context hierarchy
+20:57:47.956 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+20:57:49.465 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+20:57:49.584 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+20:57:49.672 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.gzhu.its.emotion.dao.EmotionDao.
+20:57:51.035 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+20:57:51.067 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+20:57:51.068 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+20:57:51.478 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+20:57:51.535 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+20:57:51.535 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3859 ms
+20:57:52.288 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+20:57:52.365 [localhost-startStop-1] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+20:57:52.489 [localhost-startStop-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+20:57:52.491 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+20:57:52.492 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+20:57:52.588 [localhost-startStop-1] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+20:57:54.203 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+20:57:54.253 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+20:57:55.188 [localhost-startStop-1] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+20:58:01.195 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+20:58:01.256 [localhost-startStop-1] WARN  e.g.i.s.s.CtFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+20:58:01.311 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+20:58:01.311 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+20:58:01.311 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+20:58:01.311 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+20:58:01.312 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+20:58:01.312 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'ctFilterSecurityInterceptor' to: [/*]
+20:58:01.312 [localhost-startStop-1] INFO  o.s.b.w.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+20:58:01.429 [localhost-startStop-1] WARN  o.a.c.c.C.[Tomcat].[localhost].[/] - Cannot deserialize session attribute [currentUser] for session [B7871A26817DF271C440D389575CD56F]
+20:58:01.450 [localhost-startStop-1] ERROR o.a.catalina.session.StandardManager - Exception loading sessions from persistent storage
+java.lang.ClassCastException: java.lang.String cannot be cast to java.io.ObjectStreamClass
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1515)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1781)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:373)
+	at java.util.ArrayList.readObject(ArrayList.java:791)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:1058)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1909)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:373)
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1611)
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1077)
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218)
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:356)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5224)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1419)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1409)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+20:58:01.971 [restartedMain] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+20:58:02.469 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@216a2297, org.springframework.security.web.context.SecurityContextPersistenceFilter@60f0eee0, org.springframework.security.web.header.HeaderWriterFilter@2eeea8a9, org.springframework.security.web.csrf.CsrfFilter@61cc7d36, org.springframework.security.web.authentication.logout.LogoutFilter@f764c5f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@739c335d, org.springframework.security.web.session.ConcurrentSessionFilter@171e0454, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1dc7611f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d8a73a0, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2bb3514d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52aa30d9, org.springframework.security.web.session.SessionManagementFilter@21a9299f, org.springframework.security.web.access.ExceptionTranslationFilter@1d966e27, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@18018c14]
+20:58:03.218 [restartedMain] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+20:58:03.530 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6c9ff954: startup date [Sat Feb 16 20:57:47 CST 2019]; root of context hierarchy
+20:58:03.614 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/apply],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.apply(org.springframework.ui.Model)
+20:58:03.615 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/create],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.create(org.springframework.ui.Model) throws java.sql.SQLException
+20:58:03.615 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/progress],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.progress(org.springframework.ui.Model)
+20:58:03.615 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/detail/{userId}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.detail(org.springframework.ui.Model,long,java.lang.Integer,java.lang.Integer)
+20:58:03.616 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myJob],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myJob(org.springframework.ui.Model)
+20:58:03.616 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/otherAnnotations],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.otherAnnotations()
+20:58:03.616 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/create2],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.create2(org.springframework.ui.Model) throws java.sql.SQLException
+20:58:03.616 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/saveUserComment],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.saveUserComment(java.lang.String,java.lang.Long,java.lang.Long,java.lang.String[],java.lang.String[],java.lang.String[])
+20:58:03.616 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myAnnotations],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myAnnotations()
+20:58:03.616 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/saveApply],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.saveApply(int)
+20:58:03.616 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myRemark],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myRemark(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+20:58:03.617 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/userComment],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.userComment()
+20:58:03.618 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork || /homeWork/ || /homeWork/index],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.index(org.springframework.ui.Model)
+20:58:03.618 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.add(org.springframework.ui.Model)
+20:58:03.618 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork/home],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.home(org.springframework.ui.Model)
+20:58:03.620 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/humanism/index],methods=[GET]}" onto public java.lang.String edu.gzhu.its.humanism.web.HumanismController.index()
+20:58:03.621 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/class/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.ClassController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+20:58:03.621 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveRollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.saveRollCall(org.springframework.ui.Model)
+20:58:03.621 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.rollCall(org.springframework.ui.Model,java.lang.String)
+20:58:03.621 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rollCallList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.rollCallList(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+20:58:03.622 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/showRollCall/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.showRollCall(int,org.springframework.ui.Model)
+20:58:03.622 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/submitRollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.submitRollCall(org.springframework.ui.Model)
+20:58:03.622 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/userList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.userList()
+20:58:03.622 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.admin(org.springframework.ui.Model)
+20:58:03.623 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.system.web.IndexController.index()
+20:58:03.624 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/logout],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.security.core.Authentication)
+20:58:03.624 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.longin()
+20:58:03.624 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/doLogin],methods=[POST]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.doLogin()
+20:58:03.625 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/userOnline],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.OnlineController.onLineUser(org.springframework.ui.Model)
+20:58:03.625 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/resource/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.ResourceController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+20:58:03.625 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/resource/tree],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.ResourceController.tree()
+20:58:03.625 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/role/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.RoleController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+20:58:03.626 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.UserController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+20:58:03.626 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/user/userList1],methods=[GET]}" onto public edu.gzhu.its.base.model.TableSplitResult<edu.gzhu.its.system.entity.User> edu.gzhu.its.system.web.UserController.userList1(java.lang.Integer,java.lang.Integer)
+20:58:03.627 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+20:58:03.628 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+20:58:03.672 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+20:58:03.672 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+20:58:03.719 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+20:58:05.104 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+20:58:05.164 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+20:58:05.165 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+20:58:05.170 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+20:58:05.182 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+20:58:05.221 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+20:58:05.316 [restartedMain] INFO  o.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+20:58:05.403 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9090 (http)
+20:58:05.409 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Started ITSApplication in 19.054 seconds (JVM running for 22.58)
+20:58:07.774 [http-nio-9090-exec-1] INFO  o.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1540981285,1540995508,1541432537] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+20:58:07.779 [http-nio-9090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+20:58:07.780 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+20:58:07.795 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+20:58:22.858 [http-nio-9090-exec-7] WARN  o.h.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 57 in HQL: [from edu.gzhu.its.system.entity.User u WHERE u.username=?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+20:59:31.261 [http-nio-9090-exec-9] WARN  o.h.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 56 in HQL: [from edu.gzhu.its.system.entity.Resource u WHERE u.url=?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+21:23:31.376 [Thread-8] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6c9ff954: startup date [Sat Feb 16 20:57:47 CST 2019]; root of context hierarchy
+21:23:31.380 [Thread-8] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+21:23:31.381 [Thread-8] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+21:23:31.382 [Thread-8] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+21:23:31.398 [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+21:23:31.406 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+21:23:31.813 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Starting ITSApplication on O4L55N85900JS3T with PID 42096 (started by dingguozhu in E:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+21:23:31.813 [restartedMain] INFO  edu.gzhu.its.ITSApplication - No active profile set, falling back to default profiles: default
+21:23:31.815 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@a74ff05: startup date [Sat Feb 16 21:23:31 CST 2019]; root of context hierarchy
+21:23:32.277 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+21:23:32.347 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+21:23:32.403 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.gzhu.its.emotion.dao.EmotionDao.
+21:23:32.608 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+21:23:32.609 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+21:23:32.609 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+21:23:32.738 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21:23:32.743 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+21:23:32.743 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 928 ms
+21:23:33.094 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+21:23:33.094 [localhost-startStop-1] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+21:23:33.536 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+21:23:33.536 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+21:23:33.661 [localhost-startStop-1] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+21:35:15.732 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Starting ITSApplication on O4L55N85900JS3T with PID 43856 (started by dingguozhu in E:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+21:35:15.733 [restartedMain] INFO  edu.gzhu.its.ITSApplication - No active profile set, falling back to default profiles: default
+21:35:15.769 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6c9ff954: startup date [Sat Feb 16 21:35:15 CST 2019]; root of context hierarchy
+21:35:15.895 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+21:35:16.603 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+21:35:16.706 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+21:35:16.792 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.gzhu.its.emotion.dao.EmotionDao.
+21:35:17.514 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+21:35:17.527 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+21:35:17.528 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+21:35:17.778 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21:35:17.788 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+21:35:17.788 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2019 ms
+21:35:18.364 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+21:35:18.429 [localhost-startStop-1] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+21:35:18.487 [localhost-startStop-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+21:35:18.489 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+21:35:18.490 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+21:35:18.518 [localhost-startStop-1] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+21:35:19.106 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+21:35:19.115 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+21:35:19.613 [localhost-startStop-1] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+21:35:21.503 [localhost-startStop-1] INFO  o.h.t.s.e.i.InformationExtractorJdbcDatabaseMetaDataImpl - HHH000262: Table not found: profile_course_classInfos
+21:35:21.504 [localhost-startStop-1] INFO  o.h.t.s.e.i.InformationExtractorJdbcDatabaseMetaDataImpl - HHH000262: Table not found: profile_course_classInfos
+21:35:27.988 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+21:35:28.030 [localhost-startStop-1] WARN  e.g.i.s.s.CtFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+21:35:28.103 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+21:35:28.104 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+21:35:28.104 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+21:35:28.104 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+21:35:28.104 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+21:35:28.104 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'ctFilterSecurityInterceptor' to: [/*]
+21:35:28.105 [localhost-startStop-1] INFO  o.s.b.w.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+21:35:28.138 [localhost-startStop-1] WARN  o.a.c.c.C.[Tomcat].[localhost].[/] - Cannot deserialize session attribute [currentUser] for session [FFC18506682352AD664034515FAEC004]
+21:35:28.144 [localhost-startStop-1] ERROR o.a.catalina.session.StandardManager - Exception loading sessions from persistent storage
+java.lang.ClassCastException: java.lang.String cannot be cast to java.io.ObjectStreamClass
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1515)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1781)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:373)
+	at java.util.ArrayList.readObject(ArrayList.java:791)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:1058)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1909)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:373)
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1611)
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1077)
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218)
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:356)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5224)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1419)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1409)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+21:35:28.569 [restartedMain] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+21:35:28.879 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a1283d6, org.springframework.security.web.context.SecurityContextPersistenceFilter@7c840395, org.springframework.security.web.header.HeaderWriterFilter@2eeea8a9, org.springframework.security.web.csrf.CsrfFilter@61cc7d36, org.springframework.security.web.authentication.logout.LogoutFilter@6130d63d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2eb8ce06, org.springframework.security.web.session.ConcurrentSessionFilter@cd14006, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a60cb27, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18ca7b82, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@18018c14, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39279bef, org.springframework.security.web.session.SessionManagementFilter@49b29c42, org.springframework.security.web.access.ExceptionTranslationFilter@1d966e27, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6414c30]
+21:35:29.295 [restartedMain] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+21:35:29.571 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6c9ff954: startup date [Sat Feb 16 21:35:15 CST 2019]; root of context hierarchy
+21:35:29.639 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/apply],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.apply(org.springframework.ui.Model)
+21:35:29.639 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/create],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.create(org.springframework.ui.Model) throws java.sql.SQLException
+21:35:29.640 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/progress],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.progress(org.springframework.ui.Model)
+21:35:29.640 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/detail/{userId}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.detail(org.springframework.ui.Model,long,java.lang.Integer,java.lang.Integer)
+21:35:29.640 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myJob],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myJob(org.springframework.ui.Model)
+21:35:29.640 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myRemark],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myRemark(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:35:29.641 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/saveUserComment],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.saveUserComment(java.lang.String,java.lang.Long,java.lang.Long,java.lang.String[],java.lang.String[],java.lang.String[])
+21:35:29.641 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/create2],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.create2(org.springframework.ui.Model) throws java.sql.SQLException
+21:35:29.641 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/saveApply],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.saveApply(int)
+21:35:29.641 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/userComment],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.userComment()
+21:35:29.641 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/otherAnnotations],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.otherAnnotations()
+21:35:29.641 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myAnnotations],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myAnnotations()
+21:35:29.642 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork || /homeWork/ || /homeWork/index],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.index(org.springframework.ui.Model)
+21:35:29.643 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.add(org.springframework.ui.Model)
+21:35:29.643 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork/home],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.home(org.springframework.ui.Model)
+21:35:29.645 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/humanism/index],methods=[GET]}" onto public java.lang.String edu.gzhu.its.humanism.web.HumanismController.index()
+21:35:29.645 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/class/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.ClassController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:35:29.646 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/course/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.CourseController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:35:29.647 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rollCallList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.rollCallList(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:35:29.647 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.rollCall(org.springframework.ui.Model,java.lang.String)
+21:35:29.647 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/submitRollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.submitRollCall(org.springframework.ui.Model)
+21:35:29.647 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/showRollCall/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.showRollCall(int,org.springframework.ui.Model)
+21:35:29.647 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveRollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.saveRollCall(org.springframework.ui.Model)
+21:35:29.648 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/userList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.userList()
+21:35:29.648 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.admin(org.springframework.ui.Model)
+21:35:29.649 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.system.web.IndexController.index()
+21:35:29.650 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/logout],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.security.core.Authentication)
+21:35:29.651 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/doLogin],methods=[POST]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.doLogin()
+21:35:29.651 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.longin()
+21:35:29.651 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/userOnline],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.OnlineController.onLineUser(org.springframework.ui.Model)
+21:35:29.652 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/resource/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.ResourceController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:35:29.653 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/resource/tree],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.ResourceController.tree()
+21:35:29.653 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/role/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.RoleController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:35:29.654 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.UserController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:35:29.654 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/user/userList1],methods=[GET]}" onto public edu.gzhu.its.base.model.TableSplitResult<edu.gzhu.its.system.entity.User> edu.gzhu.its.system.web.UserController.userList1(java.lang.Integer,java.lang.Integer)
+21:35:29.655 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+21:35:29.656 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+21:35:29.702 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+21:35:29.702 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+21:35:29.743 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+21:35:30.749 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+21:35:30.786 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+21:35:30.786 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+21:35:30.790 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+21:35:30.799 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+21:35:30.811 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+21:35:30.822 [restartedMain] INFO  o.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+21:35:30.843 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9090 (http)
+21:35:30.846 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Started ITSApplication in 15.334 seconds (JVM running for 15.914)
+21:35:32.567 [http-nio-9090-exec-1] INFO  o.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1540981285,1540995508,1541432537; JSESSIONID=FFC18506682352AD664034515FAEC004] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+21:35:32.573 [http-nio-9090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+21:35:32.573 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+21:35:32.592 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+21:35:39.716 [http-nio-9090-exec-4] WARN  o.h.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 57 in HQL: [from edu.gzhu.its.system.entity.User u WHERE u.username=?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+21:36:14.978 [http-nio-9090-exec-10] ERROR o.h.hql.internal.ast.ErrorCounter - line 1:70: unexpected token: teacher
+21:36:14.979 [http-nio-9090-exec-10] ERROR o.h.hql.internal.ast.ErrorCounter - line 1:70: unexpected token: teacher
+antlr.NoViableAltException: unexpected token: teacher
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:769)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:323)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:186)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:279)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:187)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:142)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:76)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:150)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:302)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:240)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1894)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:347)
+	at com.sun.proxy.$Proxy99.createQuery(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy99.createQuery(Unknown Source)
+	at edu.gzhu.its.base.dao.impl.BaseDAOImpl.count(BaseDAOImpl.java:421)
+	at edu.gzhu.its.base.dao.impl.BaseDAOImpl.getPageData(BaseDAOImpl.java:402)
+	at edu.gzhu.its.base.dao.impl.BaseDAOImpl$$FastClassBySpringCGLIB$$ed1e22f0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at edu.gzhu.its.profile.service.impl.CourseService$$EnhancerBySpringCGLIB$$40d91bfa.getPageData(<generated>)
+	at edu.gzhu.its.profile.web.CourseController.list(CourseController.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at edu.gzhu.its.system.security.CtFilterSecurityInterceptor.invoke(CtFilterSecurityInterceptor.java:46)
+	at edu.gzhu.its.system.security.CtFilterSecurityInterceptor.doFilter(CtFilterSecurityInterceptor.java:33)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+21:36:14.987 [http-nio-9090-exec-10] ERROR o.a.c.c.C.[.[.[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: teacher near line 1, column 70 [select count(*) from edu.gzhu.its.profile.entity.Course u where 1=1  teacher.id=1]; nested exception is java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: teacher near line 1, column 70 [select count(*) from edu.gzhu.its.profile.entity.Course u where 1=1  teacher.id=1]] with root cause
+org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: teacher near line 1, column 70 [select count(*) from edu.gzhu.its.profile.entity.Course u where 1=1  teacher.id=1]
+	at org.hibernate.hql.internal.ast.QuerySyntaxException.convert(QuerySyntaxException.java:74)
+	at org.hibernate.hql.internal.ast.ErrorCounter.throwQueryException(ErrorCounter.java:91)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:288)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:187)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:142)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:76)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:150)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:302)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:240)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1894)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:347)
+	at com.sun.proxy.$Proxy99.createQuery(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy99.createQuery(Unknown Source)
+	at edu.gzhu.its.base.dao.impl.BaseDAOImpl.count(BaseDAOImpl.java:421)
+	at edu.gzhu.its.base.dao.impl.BaseDAOImpl.getPageData(BaseDAOImpl.java:402)
+	at edu.gzhu.its.base.dao.impl.BaseDAOImpl$$FastClassBySpringCGLIB$$ed1e22f0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at edu.gzhu.its.profile.service.impl.CourseService$$EnhancerBySpringCGLIB$$40d91bfa.getPageData(<generated>)
+	at edu.gzhu.its.profile.web.CourseController.list(CourseController.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at edu.gzhu.its.system.security.CtFilterSecurityInterceptor.invoke(CtFilterSecurityInterceptor.java:46)
+	at edu.gzhu.its.system.security.CtFilterSecurityInterceptor.doFilter(CtFilterSecurityInterceptor.java:33)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+21:36:48.870 [Thread-8] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6c9ff954: startup date [Sat Feb 16 21:35:15 CST 2019]; root of context hierarchy
+21:36:48.875 [Thread-8] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+21:36:48.875 [Thread-8] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+21:36:48.876 [Thread-8] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+21:36:48.883 [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+21:36:48.889 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+21:36:49.318 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Starting ITSApplication on O4L55N85900JS3T with PID 43856 (started by dingguozhu in E:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+21:36:49.318 [restartedMain] INFO  edu.gzhu.its.ITSApplication - No active profile set, falling back to default profiles: default
+21:36:49.320 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@c3fcfad: startup date [Sat Feb 16 21:36:49 CST 2019]; root of context hierarchy
+21:36:49.811 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+21:36:49.883 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+21:36:49.943 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.gzhu.its.emotion.dao.EmotionDao.
+21:36:50.112 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+21:36:50.113 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+21:36:50.113 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+21:36:50.223 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21:36:50.228 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+21:36:50.229 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 908 ms
+21:36:50.508 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+21:36:50.508 [localhost-startStop-1] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+21:36:50.896 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+21:36:50.897 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+21:36:51.038 [localhost-startStop-1] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+21:36:55.792 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+21:36:55.812 [localhost-startStop-1] WARN  e.g.i.s.s.CtFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+21:36:55.824 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+21:36:55.824 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+21:36:55.824 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+21:36:55.824 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+21:36:55.825 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+21:36:55.825 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'ctFilterSecurityInterceptor' to: [/*]
+21:36:55.825 [localhost-startStop-1] INFO  o.s.b.w.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+21:36:55.828 [localhost-startStop-1] WARN  o.a.c.c.C.[Tomcat].[localhost].[/] - Cannot deserialize session attribute [currentUser] for session [DC30640DADFEA69824A7CD4B4CB5F67F]
+21:36:55.831 [localhost-startStop-1] ERROR o.a.catalina.session.StandardManager - Exception loading sessions from persistent storage
+java.lang.ClassCastException: java.lang.String cannot be cast to java.io.ObjectStreamClass
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1515)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1781)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:373)
+	at java.util.ArrayList.readObject(ArrayList.java:791)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:1058)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1909)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:373)
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1611)
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1077)
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218)
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:356)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5224)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1419)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1409)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+21:36:56.139 [restartedMain] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+21:36:56.176 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a9290c4, org.springframework.security.web.context.SecurityContextPersistenceFilter@51f66448, org.springframework.security.web.header.HeaderWriterFilter@4c965680, org.springframework.security.web.csrf.CsrfFilter@6c852eed, org.springframework.security.web.authentication.logout.LogoutFilter@57b85f96, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@134fb419, org.springframework.security.web.session.ConcurrentSessionFilter@3dfc9911, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2faa1aa0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@ed56b4c, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@77e70038, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40119d6f, org.springframework.security.web.session.SessionManagementFilter@784b32b3, org.springframework.security.web.access.ExceptionTranslationFilter@66015cea, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@57e5b39a]
+21:36:56.296 [restartedMain] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+21:36:56.309 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@c3fcfad: startup date [Sat Feb 16 21:36:49 CST 2019]; root of context hierarchy
+21:36:56.319 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/apply],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.apply(org.springframework.ui.Model)
+21:36:56.320 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/create],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.create(org.springframework.ui.Model) throws java.sql.SQLException
+21:36:56.320 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/progress],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.progress(org.springframework.ui.Model)
+21:36:56.320 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/detail/{userId}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.detail(org.springframework.ui.Model,long,java.lang.Integer,java.lang.Integer)
+21:36:56.320 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myJob],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myJob(org.springframework.ui.Model)
+21:36:56.320 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myRemark],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myRemark(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:36:56.320 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/saveUserComment],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.saveUserComment(java.lang.String,java.lang.Long,java.lang.Long,java.lang.String[],java.lang.String[],java.lang.String[])
+21:36:56.320 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/create2],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.create2(org.springframework.ui.Model) throws java.sql.SQLException
+21:36:56.320 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/saveApply],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.saveApply(int)
+21:36:56.320 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/userComment],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.userComment()
+21:36:56.321 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/otherAnnotations],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.otherAnnotations()
+21:36:56.321 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myAnnotations],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myAnnotations()
+21:36:56.321 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork || /homeWork/ || /homeWork/index],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.index(org.springframework.ui.Model)
+21:36:56.322 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.add(org.springframework.ui.Model)
+21:36:56.322 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork/home],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.home(org.springframework.ui.Model)
+21:36:56.322 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/humanism/index],methods=[GET]}" onto public java.lang.String edu.gzhu.its.humanism.web.HumanismController.index()
+21:36:56.322 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/class/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.ClassController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:36:56.323 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/course/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.CourseController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:36:56.323 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rollCallList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.rollCallList(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:36:56.323 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.rollCall(org.springframework.ui.Model,java.lang.String)
+21:36:56.323 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/submitRollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.submitRollCall(org.springframework.ui.Model)
+21:36:56.323 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/showRollCall/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.showRollCall(int,org.springframework.ui.Model)
+21:36:56.323 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveRollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.saveRollCall(org.springframework.ui.Model)
+21:36:56.323 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/userList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.userList()
+21:36:56.324 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.admin(org.springframework.ui.Model)
+21:36:56.324 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.system.web.IndexController.index()
+21:36:56.324 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/logout],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.security.core.Authentication)
+21:36:56.324 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/doLogin],methods=[POST]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.doLogin()
+21:36:56.324 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.longin()
+21:36:56.324 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/userOnline],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.OnlineController.onLineUser(org.springframework.ui.Model)
+21:36:56.324 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/resource/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.ResourceController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:36:56.325 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/resource/tree],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.ResourceController.tree()
+21:36:56.325 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/role/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.RoleController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:36:56.325 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.UserController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:36:56.325 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/user/userList1],methods=[GET]}" onto public edu.gzhu.its.base.model.TableSplitResult<edu.gzhu.its.system.entity.User> edu.gzhu.its.system.web.UserController.userList1(java.lang.Integer,java.lang.Integer)
+21:36:56.326 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+21:36:56.326 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+21:36:56.346 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+21:36:56.346 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+21:36:56.359 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+21:36:57.114 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+21:36:57.136 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+21:36:57.136 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+21:36:57.138 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+21:36:57.141 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+21:36:57.141 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+21:36:57.142 [restartedMain] INFO  o.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+21:36:57.146 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9090 (http)
+21:36:57.148 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Started ITSApplication in 7.862 seconds (JVM running for 102.215)
+21:37:56.936 [http-nio-9090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+21:37:56.936 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+21:37:56.938 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 2 ms
+21:37:58.160 [http-nio-9090-exec-9] WARN  o.h.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 57 in HQL: [from edu.gzhu.its.system.entity.User u WHERE u.username=?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+21:38:00.075 [http-nio-9090-exec-1] ERROR o.h.hql.internal.ast.ErrorCounter - line 1:70: unexpected token: teacher_id
+21:38:00.075 [http-nio-9090-exec-1] ERROR o.h.hql.internal.ast.ErrorCounter - line 1:70: unexpected token: teacher_id
+antlr.NoViableAltException: unexpected token: teacher_id
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:769)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:323)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:186)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:279)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:187)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:142)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:76)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:150)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:302)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:240)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1894)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:347)
+	at com.sun.proxy.$Proxy125.createQuery(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy125.createQuery(Unknown Source)
+	at edu.gzhu.its.base.dao.impl.BaseDAOImpl.count(BaseDAOImpl.java:421)
+	at edu.gzhu.its.base.dao.impl.BaseDAOImpl.getPageData(BaseDAOImpl.java:402)
+	at edu.gzhu.its.base.dao.impl.BaseDAOImpl$$FastClassBySpringCGLIB$$ed1e22f0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at edu.gzhu.its.profile.service.impl.CourseService$$EnhancerBySpringCGLIB$$40d91bfa.getPageData(<generated>)
+	at edu.gzhu.its.profile.web.CourseController.list(CourseController.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at edu.gzhu.its.system.security.CtFilterSecurityInterceptor.invoke(CtFilterSecurityInterceptor.java:46)
+	at edu.gzhu.its.system.security.CtFilterSecurityInterceptor.doFilter(CtFilterSecurityInterceptor.java:33)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+21:38:00.077 [http-nio-9090-exec-1] ERROR o.a.c.c.C.[.[.[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: teacher_id near line 1, column 70 [select count(*) from edu.gzhu.its.profile.entity.Course u where 1=1  teacher_id=1]; nested exception is java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: teacher_id near line 1, column 70 [select count(*) from edu.gzhu.its.profile.entity.Course u where 1=1  teacher_id=1]] with root cause
+org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: teacher_id near line 1, column 70 [select count(*) from edu.gzhu.its.profile.entity.Course u where 1=1  teacher_id=1]
+	at org.hibernate.hql.internal.ast.QuerySyntaxException.convert(QuerySyntaxException.java:74)
+	at org.hibernate.hql.internal.ast.ErrorCounter.throwQueryException(ErrorCounter.java:91)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:288)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:187)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:142)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:76)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:150)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:302)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:240)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1894)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:347)
+	at com.sun.proxy.$Proxy125.createQuery(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy125.createQuery(Unknown Source)
+	at edu.gzhu.its.base.dao.impl.BaseDAOImpl.count(BaseDAOImpl.java:421)
+	at edu.gzhu.its.base.dao.impl.BaseDAOImpl.getPageData(BaseDAOImpl.java:402)
+	at edu.gzhu.its.base.dao.impl.BaseDAOImpl$$FastClassBySpringCGLIB$$ed1e22f0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at edu.gzhu.its.profile.service.impl.CourseService$$EnhancerBySpringCGLIB$$40d91bfa.getPageData(<generated>)
+	at edu.gzhu.its.profile.web.CourseController.list(CourseController.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at edu.gzhu.its.system.security.CtFilterSecurityInterceptor.invoke(CtFilterSecurityInterceptor.java:46)
+	at edu.gzhu.its.system.security.CtFilterSecurityInterceptor.doFilter(CtFilterSecurityInterceptor.java:33)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+21:38:32.075 [Thread-12] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@c3fcfad: startup date [Sat Feb 16 21:36:49 CST 2019]; root of context hierarchy
+21:38:32.078 [Thread-12] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+21:38:32.078 [Thread-12] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+21:38:32.079 [Thread-12] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+21:38:32.081 [Thread-12] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+21:38:32.087 [Thread-12] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+21:38:32.461 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Starting ITSApplication on O4L55N85900JS3T with PID 43856 (started by dingguozhu in E:\Intelligent Tutoring System\Intelligent-Tutoring-System)
+21:38:32.461 [restartedMain] INFO  edu.gzhu.its.ITSApplication - No active profile set, falling back to default profiles: default
+21:38:32.462 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22c92aa2: startup date [Sat Feb 16 21:38:32 CST 2019]; root of context hierarchy
+21:38:32.910 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+21:38:32.980 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+21:38:33.039 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.gzhu.its.emotion.dao.EmotionDao.
+21:38:33.213 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+21:38:33.214 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+21:38:33.214 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+21:38:33.298 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21:38:33.302 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+21:38:33.302 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 840 ms
+21:38:33.549 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+21:38:33.550 [localhost-startStop-1] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+21:38:33.922 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-3} inited
+21:38:33.922 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+21:38:34.019 [localhost-startStop-1] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+21:38:39.005 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+21:38:39.023 [localhost-startStop-1] WARN  e.g.i.s.s.CtFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+21:38:39.034 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+21:38:39.035 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+21:38:39.035 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+21:38:39.035 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+21:38:39.035 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+21:38:39.035 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'ctFilterSecurityInterceptor' to: [/*]
+21:38:39.035 [localhost-startStop-1] INFO  o.s.b.w.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+21:38:39.038 [localhost-startStop-1] WARN  o.a.c.c.C.[Tomcat].[localhost].[/] - Cannot deserialize session attribute [currentUser] for session [07FF08F7DE385CB27E1DD2E8B5D13FFD]
+21:38:39.040 [localhost-startStop-1] ERROR o.a.catalina.session.StandardManager - Exception loading sessions from persistent storage
+java.lang.ClassCastException: java.lang.String cannot be cast to java.io.ObjectStreamClass
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1515)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1781)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:373)
+	at java.util.ArrayList.readObject(ArrayList.java:791)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:1058)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1909)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2018)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1942)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1808)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1353)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:373)
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1611)
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1077)
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218)
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:356)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5224)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1419)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1409)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+21:38:39.316 [restartedMain] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+21:38:39.347 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43aa2dea, org.springframework.security.web.context.SecurityContextPersistenceFilter@74e48809, org.springframework.security.web.header.HeaderWriterFilter@42bad4d8, org.springframework.security.web.csrf.CsrfFilter@51b60f89, org.springframework.security.web.authentication.logout.LogoutFilter@5d2d1b11, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@48b431ea, org.springframework.security.web.session.ConcurrentSessionFilter@58a7e535, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@606c9e59, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a44cf21, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@39edbe51, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7eca63da, org.springframework.security.web.session.SessionManagementFilter@390c7fda, org.springframework.security.web.access.ExceptionTranslationFilter@18e69131, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2203fbce]
+21:38:39.455 [restartedMain] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+21:38:39.467 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22c92aa2: startup date [Sat Feb 16 21:38:32 CST 2019]; root of context hierarchy
+21:38:39.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/apply],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.apply(org.springframework.ui.Model)
+21:38:39.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/create],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.create(org.springframework.ui.Model) throws java.sql.SQLException
+21:38:39.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/progress],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.progress(org.springframework.ui.Model)
+21:38:39.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/detail/{userId}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.detail(org.springframework.ui.Model,long,java.lang.Integer,java.lang.Integer)
+21:38:39.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myJob],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myJob(org.springframework.ui.Model)
+21:38:39.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myRemark],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myRemark(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:38:39.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/saveUserComment],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.saveUserComment(java.lang.String,java.lang.Long,java.lang.Long,java.lang.String[],java.lang.String[],java.lang.String[])
+21:38:39.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/create2],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.create2(org.springframework.ui.Model) throws java.sql.SQLException
+21:38:39.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/saveApply],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.saveApply(int)
+21:38:39.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/userComment],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.userComment()
+21:38:39.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/otherAnnotations],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.otherAnnotations()
+21:38:39.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myAnnotations],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myAnnotations()
+21:38:39.477 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork || /homeWork/ || /homeWork/index],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.index(org.springframework.ui.Model)
+21:38:39.477 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.add(org.springframework.ui.Model)
+21:38:39.477 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork/home],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.home(org.springframework.ui.Model)
+21:38:39.477 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/humanism/index],methods=[GET]}" onto public java.lang.String edu.gzhu.its.humanism.web.HumanismController.index()
+21:38:39.477 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/class/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.ClassController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:38:39.477 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/course/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.CourseController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:38:39.478 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rollCallList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.rollCallList(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:38:39.478 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.rollCall(org.springframework.ui.Model,java.lang.String)
+21:38:39.478 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/submitRollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.submitRollCall(org.springframework.ui.Model)
+21:38:39.478 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/showRollCall/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.showRollCall(int,org.springframework.ui.Model)
+21:38:39.478 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveRollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.saveRollCall(org.springframework.ui.Model)
+21:38:39.478 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/userList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.userList()
+21:38:39.478 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.admin(org.springframework.ui.Model)
+21:38:39.478 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.system.web.IndexController.index()
+21:38:39.479 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/logout],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.security.core.Authentication)
+21:38:39.479 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/doLogin],methods=[POST]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.doLogin()
+21:38:39.479 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.longin()
+21:38:39.479 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/userOnline],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.OnlineController.onLineUser(org.springframework.ui.Model)
+21:38:39.479 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/resource/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.ResourceController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:38:39.479 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/resource/tree],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.ResourceController.tree()
+21:38:39.479 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/role/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.RoleController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:38:39.480 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.UserController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+21:38:39.480 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/user/userList1],methods=[GET]}" onto public edu.gzhu.its.base.model.TableSplitResult<edu.gzhu.its.system.entity.User> edu.gzhu.its.system.web.UserController.userList1(java.lang.Integer,java.lang.Integer)
+21:38:39.480 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+21:38:39.481 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+21:38:39.494 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+21:38:39.494 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+21:38:39.507 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+21:38:40.248 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+21:38:40.279 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+21:38:40.280 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+21:38:40.281 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+21:38:40.285 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+21:38:40.285 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+21:38:40.286 [restartedMain] INFO  o.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+21:38:40.289 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9090 (http)
+21:38:40.291 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Started ITSApplication in 7.861 seconds (JVM running for 205.359)
+21:38:40.338 [http-nio-9090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+21:38:40.338 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+21:38:40.340 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 2 ms
+21:38:45.153 [http-nio-9090-exec-5] WARN  o.h.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 57 in HQL: [from edu.gzhu.its.system.entity.User u WHERE u.username=?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
