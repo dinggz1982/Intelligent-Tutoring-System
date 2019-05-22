@@ -183,6 +183,19 @@
 				</div>
 			</c:if>
 		</c:forEach>
+		<h2 style="clear:both;margin-top: 20px; ">实验</h2>
+				<div class="row">
+					<div class="col" style="margin-bottom: 10px;">
+						<div class="card" style="width: 200px;height: 180px;">
+							<div class="card-body">
+								<a href="/tagview" class="card-link">
+									<h4 class="card-title">标签实验</h4>
+									<p class="card-text">标签可视化实验.</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 	</div>
 	<!-- 相关操作end -->
 	<script src="/static/res/home/lib/layui/layui.js" charset="utf-8"></script>
