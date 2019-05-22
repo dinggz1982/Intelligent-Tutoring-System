@@ -2,10 +2,11 @@ var cv = document.getElementById("canvas");
 var cxt = cv.getContext('2d');
 //cxt.save();
 //var back_font = "px Arial";
-var list2=[["Layout",346],["Xiong",105],["Kai",95],["Cloud",153],["Word",148], ["China", 246],["Students", 286],["August", 85],["Hello",112],["key",88],["EdWordle",500],["Rigid Body",192],["method",102]];
+var list2=[["Layout",346],["Xiong",4015],["Kai",11195],["Cloud",153],["Word",148], ["China", 246],["Students", 286],["August", 85],["Hello",112],["key",88],["EdWordle",500],["Rigid Body",192],["method",102]];
 var list1=[["Layout",846],["group",534],["cats",336],["Hope",996],["word",453],["cloud",412],["Sunday",733]];
 var list3=[["Layout",846],["hello",643]];
-var wlist=[list1,list2,list3];
+/*var mylist = [${wordString}];
+var wlist=[mylist];*/
 var list=[];
 var len,twoBoxLen,max,min; //max:最高词频 min:最低词频
 

@@ -182,7 +182,7 @@
 					<div class="col" style="margin-bottom: 10px;">
 						<div class="card" style="width: 200px;height: 180px;">
 							<div class="card-body">
-								<a href="/tagview" class="card-link">
+								<a href="/tagView" class="card-link">
 									<h4 class="card-title">标签实验</h4>
 									<p class="card-text">标签可视化实验.</p>
 								</a>

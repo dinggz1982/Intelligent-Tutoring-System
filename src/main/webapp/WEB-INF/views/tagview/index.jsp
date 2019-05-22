@@ -109,6 +109,8 @@
 	<script type="text/javascript" src="/tag/mywc.js"></script>
   	<script type="text/javascript">
   		//window.onload = originalWordle;
+  		var mylist = [${wordString}];
+		var wlist=[mylist];
   		window.onload = changeWL;
 		document.getElementById("ReLayout2").onclick = originalWordle;
 		//document.getElementById("Cforces").onclick = centerWordle;
