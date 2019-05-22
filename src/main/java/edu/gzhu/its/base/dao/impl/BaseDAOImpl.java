@@ -18,6 +18,7 @@ import org.hibernate.exception.SQLGrammarException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import edu.gzhu.its.base.dao.BaseDAO;
 import edu.gzhu.its.base.model.PageData;
@@ -50,6 +51,7 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 	}
 	
 	@Override
+	@Transactional
 	public boolean save(T entity) {
 		boolean flag = false;
 		try {

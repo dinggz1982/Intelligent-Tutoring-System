@@ -7,19 +7,11 @@
    <link rel="stylesheet" type="text/css" href="/static/lib/layerui/2.2.5/css/layui.css">
   </head>
   <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 课程列表 <span class="c-gray en">&gt;</span> 用户管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="/homeWork/home">首页</a> <span class="c-gray en">&gt;</span> 课程列表</nav>
 <div class="pd-20">
-  <!-- 
-  <div class="text-c"> 日期范围：
-    <input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}'})" id="datemin" class="input-text Wdate" style="width:120px;">
-    -
-    <input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d'})" id="datemax" class="input-text Wdate" style="width:120px;">
-    <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name=""><button type="submit" class="btn btn-success" id="" name=""><i class="icon-search"></i> 搜用户</button>
-
-  </div> -->
   <div class="cl pd-5 bg-1 bk-gray mt-20">
     <span class="l">
-    	    <a href="javascript:;" onclick="addCourse()" class="btn btn-primary radius"><i class="icon-plus"></i> 新增课程</a>
+    <a href="#" onclick="addNewSchool()" class="btn btn-primary radius">新增课程</a>
     </span>
   </div>
   <table class="table table-border table-bordered table-hover table-bg table-sort">
@@ -28,24 +20,18 @@
         <th width="25"><input type="checkbox" name="" value=""></th>
         <th width="80">序号</th>
         <th width="100">课程名</th>
+        <th width="150">上课班级</th>
         <th width="150">上课学期</th>
-        <th width="70">上课班级</th>
-        <th width="100">操作</th>
       </tr>
     </thead>
     <tbody>
-    	<c:forEach items="${dataList }" var="course" varStatus="status">
+    	<c:forEach items="${dataList }" var="school" varStatus="status">
       <tr class="text-c">
         <td><input type="checkbox" value="1" name=""></td>
         <td>${status.index+1 }</td>
-        <td><u style="cursor:pointer" class="text-primary">${course.name }</u></td>
-        <td>${course.studyTime }</td>
-        <td>
-        	<c:forEach items="${course.classInfos }" var="classInfo">
-        		${classInfo.name }
-        	</c:forEach>
-        
-        </td>
+        <td><u style="cursor:pointer" class="text-primary">${school.name }</u></td>
+        <td>${school.address }</td>
+        <td class="user-status"><span class="label label-success">已启用</span></td>
         <td class="f-14 user-manage"><a style="text-decoration:none" onClick="user_stop(this,'10001')" href="javascript:;" title="停用"><i class="icon-hand-down"></i></a> <a title="编辑" href="javascript:;" onclick="user_edit('4','550','','编辑','user-add.html')" class="ml-5" style="text-decoration:none"><i class="icon-edit"></i></a> <a style="text-decoration:none" class="ml-5" onClick="user_password_edit('10001','370','228','修改密码','user-password-edit.html')" href="javascript:;" title="修改密码"><i class="icon-key"></i></a> <a title="删除" href="javascript:;" onclick="user_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="icon-trash"></i></a></td>
       </tr>
       </c:forEach>
@@ -55,6 +41,7 @@
 </div>
 
 <!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="${ctx }/static/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
 <script type="text/javascript" src="${ctx }/static/lib/layerui/2.2.5/layui.js"></script>
 <script type="text/javascript" src="${ctx }/static/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
@@ -70,24 +57,26 @@ layui.use(['laypage', 'layer'], function(){
                     if(!first) {
     　　　　　　　　　　　　//***第一次不执行,一定要记住,这个必须有,要不然就是死循环,哈哈
                         var pageIndex = obj.curr;
-                      self.location='/course/list?pageIndex='+pageIndex; 
+                      self.location='/user/list?pageIndex='+pageIndex; 
                     }
                 }
   });
   });
-//新增课程
-function addCourse(){
-layer.open({
+  
+  //新增学校
+  function addNewSchool(){
+  layer.open({
   type: 2,
-  title: false,
-  area: ['630px', '360px'],
-  shade: 0.8,
-  closeBtn: 0,
-  shadeClose: true,
-  content: '/course/add'
+  title:'新增学校',
+  area: ['700px', '450px'],
+  fixed: false, //不固定
+  maxmin: true,
+  content: '/school/add'
 });
-}
-
+  
+  }
+  
+  
 </script>
   </body>
 </html>

@@ -13,7 +13,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="its_school")
+@Table(name="profile_school")
 public class School {
 	/**
 	 * 主键
@@ -24,12 +24,23 @@ public class School {
 	private int id;
 
 	//学校名
-	@Column(name="schoolName",unique=true,columnDefinition="varchar(255) comment '学校名'")
+	@Column(name="name",unique=true,columnDefinition="varchar(255) comment '学校名'")
 	private String name;
 	
 	//学校地址
 	@Column(name="address",columnDefinition="varchar(255) comment '学校地址'")
 	private String address;
+
+	
+	public School() {
+		super();
+	}
+
+	public School(String name, String address) {
+		super();
+		this.name = name;
+		this.address = address;
+	}
 
 	public int getId() {
 		return id;

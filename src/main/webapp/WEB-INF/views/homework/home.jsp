@@ -73,10 +73,7 @@
 					<div class="col" style="margin-bottom: 10px;">
 						<div class="card" style="width: 200px;height: 180px;">
 							<div class="card-body">
-								<a href="#" class="card-link">
-									<h4 class="card-title">学校管理</h4>
-									<p class="card-text">查看学校列表.</p>
-								</a>
+									<h4 class="card-title"><a href="/school/list" class="card-link">学校管理</a></h4>
 							</div>
 						</div>
 					</div>
@@ -85,10 +82,7 @@
 					<div class="col" style="margin-bottom: 10px;">
 						<div class="card" style="width: 200px;height: 180px;">
 							<div class="card-body">
-								<a href="#" class="card-link">
-									<h4 class="card-title">学院管理</h4>
-									<p class="card-text">查看学院列表.</p>
-								</a>
+								<h4 class="card-title"><a href="/institute/list" class="card-link">学院管理</a></h4>
 							</div>
 						</div>
 					</div>
