@@ -11,7 +11,7 @@
 		<div class="container-fluid cl">
 			<a class="logo navbar-logo f-l mr-10 hidden-xs" href="#">智能教学系统</a> <a
 				class="logo navbar-logo-m f-l mr-10 visible-xs"
-				href="/aboutHui.shtml">H-ui</a> <span
+				href="#">H-ui</a> <span
 				class="logo navbar-slogan f-l mr-10 hidden-xs">v0.1</span> <a
 				aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs"
 				href="javascript:;">&#xe667;</a>

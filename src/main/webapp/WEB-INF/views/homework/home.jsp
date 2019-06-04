@@ -189,8 +189,20 @@
 							</div>
 						</div>
 					</div>
+					<div class="col" style="margin-bottom: 10px;">
+						<div class="card" style="width: 200px;height: 180px;">
+							<div class="card-body">
+								<a href="/corpus/list" class="card-link">
+									<h4 class="card-title">语料库实验</h4>
+									<p class="card-text">学习资源用户评论语料库.</p>
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
+				
 	</div>
+	<div style="margin-bottom: 30px;"></div>
 	<!-- 相关操作end -->
 	<script src="/static/res/home/lib/layui/layui.js" charset="utf-8"></script>
 

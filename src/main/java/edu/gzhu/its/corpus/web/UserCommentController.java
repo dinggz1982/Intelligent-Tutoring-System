@@ -49,6 +49,7 @@ public class UserCommentController {
 
 	@Autowired
 	private HttpSession session;
+	
 
 	/**
 	 * 我的工作
@@ -83,7 +84,26 @@ public class UserCommentController {
 		}
 		return "/userComment/myJob";
 	}
-
+	
+	/**
+	 * 列出全部評論
+	 * @return
+	 */
+	@GetMapping("/list")
+	public String list(Integer pageIndex, Integer pageSize, Model model){
+		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
+		pageSize = 10;
+		PageData<UserComment> pageData = this.userCommentService.getPageData(pageIndex, pageSize, "");
+		model.addAttribute("dataList", pageData.getPageData());
+		model.addAttribute("total", pageData.getTotalCount());
+		model.addAttribute("pages", pageData.getTotalPage());
+		model.addAttribute("pagesize", pageData.getPageSize());
+		model.addAttribute("pageIndex", pageIndex);
+		return "/userComment/list";
+	}
+	
+	
+	
 	/**
 	 * 我的标注
 	 * 

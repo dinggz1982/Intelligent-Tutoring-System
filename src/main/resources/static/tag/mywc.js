@@ -1343,6 +1343,7 @@ function moveWord3(i,dx,dy){
 function showWord(i){
 	cxt.putImageData(imgData,0,0);
 	cxt.strokeStyle="red";
+	//console.log(wordlist[i].border[0]);
 	cxt.strokeRect(wordlist[i].border[0],wordlist[i].border[1],wordlist[i].border[2],wordlist[i].border[3]);
 }
 
