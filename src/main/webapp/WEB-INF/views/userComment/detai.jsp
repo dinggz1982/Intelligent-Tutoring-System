@@ -1,12 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="its" uri="/WEB-INF/tlds/remark.tld" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>${user.username }的标注</title>
+<title>我的标注</title>
 <%@include file="/WEB-INF/views/include/top.jsp"%>
-<script type="text/javascript" src="static/echarts/echarts.min.js"></script>
    <link rel="stylesheet" type="text/css" href="/static/lib/layerui/2.2.5/css/layui.css">
 
 </head>
@@ -51,11 +51,12 @@
  					<td>${its:other(remark.otherRelated)}</td>
  					<td><fmt:formatDate value="${remark.createTime}" pattern="yyyy-MM-dd HH:mm" /></td>
  				</tr>
- 			
  			</c:forEach>
  		</tr>
 		</table>
  	</div>
+ 	  
  	<script type="text/javascript" src="${ctx }/static/lib/layerui/2.2.5/layui.js"></script>
+	
 </body>
 </html>

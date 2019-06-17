@@ -157,6 +157,21 @@
 							</div>
 						</div>
 					</div>
+					
+					<!-- 标签词汇 -->
+					<div class="col" style="margin-bottom: 10px;">
+						<div class="card" style="width: 200px;height: 180px;">
+							<img class="card-img-top"
+								style="width: 100px;height: 100px;margin: 10 auto;"
+								src="/static/images/email-app-icon.png" alt="Card image">
+							<div class="card-body">
+								<h4 class="card-title">
+									<a href="/tag-setting" class="card-link">标签词汇设定</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<!-- 标签词汇end -->
 				</div>
 			</c:if>
 

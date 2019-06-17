@@ -33,10 +33,4 @@ public class WebDirUtil {
 		//return "F:/lcVirtualStorage/WebRoot/lcontology"; //windows环境
 	}
 	
-	
-	
-	public static void main(String[] args) {
-		WebDirUtil propertyUtil = new WebDirUtil();
-		System.out.println(propertyUtil.getWebRootDir() + "/models/dep.m");
-	}
 }

@@ -16,10 +16,14 @@ public class Word {
 	
 	private String word;
 	
+	@Column(name = "ifidf", columnDefinition = "float default 0")
+	private float ifidf;
+	
+	@Column(name = "frequency", columnDefinition = "int(5) default 0")
 	private int frequency;
 	
-	private String important;
-
+	private String weight;
+	
 	public int getId() {
 		return id;
 	}
@@ -43,13 +47,22 @@ public class Word {
 	public void setFrequency(int frequency) {
 		this.frequency = frequency;
 	}
+	
 
-	public String getImportant() {
-		return important;
+	public String getWeight() {
+		return weight;
 	}
 
-	public void setImportant(String important) {
-		this.important = important;
+	public void setWeight(String weight) {
+		this.weight = weight;
+	}
+
+	public float getIfidf() {
+		return ifidf;
+	}
+
+	public void setIfidf(float ifidf) {
+		this.ifidf = ifidf;
 	}
 	
 	

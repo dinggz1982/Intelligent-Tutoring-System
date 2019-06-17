@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import edu.gzhu.its.base.model.PageData;
 import edu.gzhu.its.experiment.entity.Word;
 import edu.gzhu.its.experiment.service.IWordService;
 
@@ -35,4 +36,28 @@ public class TagViewController {
 		return "tagview/index";
 	}
 
+	/**
+	 * 设定标签
+	 * @param model
+	 * @return
+	 * @throws SQLException
+	 */
+	@GetMapping("/tag-setting")
+	public String tagSetting(Integer pageIndex, Integer pageSize,Model model) throws SQLException{
+		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
+		pageSize = 10;
+		PageData<Word> pageData = this.wordService.getPageData(pageIndex, pageSize, "");
+		model.addAttribute("dataList", pageData.getPageData());
+		model.addAttribute("total", pageData.getTotalCount());
+		model.addAttribute("pages", pageData.getTotalPage());
+		model.addAttribute("pagesize", pageData.getPageSize());
+		model.addAttribute("pageIndex", pageIndex);
+		return "/tagview/wordList";
+	}
+	
+	@GetMapping("/tag/add")
+	public String tagAdd(){
+		
+		return "/tagview/add";
+	}
 }

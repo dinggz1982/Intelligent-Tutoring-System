@@ -89,6 +89,7 @@ function showWLinModal(){
         str+=list[i][0]+" "+list[i][1];
         str+="\n";
     }
+   // alert(str);
     document.getElementById("modal_body").innerHTML = str;
 }
 
@@ -96,10 +97,10 @@ function clearWL() {
     document.getElementById("modal_body").innerHTML="";
     //alert(document.getElementById("modal_body").innerText)
 }
-
+//更新词汇
 function inputWL(){
     var rowdata = $('#modal_body').val();
-    //alert(rowdata);
+    //console.log(rowdata);
     var wl=[];
     //var rowdata = "Xiong 32\nKai 44";
     var str = /[a-z]/i;
@@ -120,6 +121,10 @@ function inputWL(){
             i++;
         }
         var freq = parseInt(frequency);
+        console.log("word="+word);
+        console.log("freq="+freq);
+        console.log("isNaN(freq)="+isNaN(freq));
+
         if(word==""||freq<=0||isNaN(freq)){
         	alert("Invalid Input!");
             return 0;
@@ -129,7 +134,7 @@ function inputWL(){
         }
     }
     if(wl.length<=0){
-        alert("Empty Input!");
+        alert("词汇表不能为空!");
     }else{
         changeWLBP(wl);
     }

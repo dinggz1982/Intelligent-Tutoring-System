@@ -86,7 +86,7 @@
 						&times;
 					</button>
 					<h4 class="modal-title" id="myModalLabel">
-						Word:Frequency (such as EdWordle:100)
+						词汇:权重 
 					</h4>
 				</div>
 				<div class="modal-body">

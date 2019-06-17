@@ -102,6 +102,13 @@ public class UserCommentController {
 		return "/userComment/list";
 	}
 	
+	@GetMapping("/commentdetail/{id}")
+	public String detail(@PathVariable Long id,Model model){
+		
+		List<UserRemark> remarks = this.userRemarkService.find(" where userComment_id="+id);
+		model.addAttribute("remarks", remarks);
+		return "/userComment/detail";
+	}
 	
 	
 	/**
@@ -137,7 +144,6 @@ public class UserCommentController {
 		UserRemark remark = new UserRemark();
 		remark.setCreateTime(new Date());
 		if (invalidComment != null && invalidComment.equals("1")) {
-
 			remark.setUser(currentUser);
 			remark.setEffectiveComment(false);
 			remark.setUserComment(comment);
