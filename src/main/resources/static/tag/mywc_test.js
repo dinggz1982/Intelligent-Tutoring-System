@@ -146,9 +146,10 @@ cv.onmousedown = function(e){
 	var mx = ev.layerX || ev.offsetX;
 	var my = ev.layerY || ev.offsetY;
 	document.getElementById("coordinate").innerHTML=mx+":"+my;
-	
+	//alert(selectWords.length);
 	if(selectWords.length){
 		for(var i in selectWords){
+			//alert(selectWords[i][0]);
 			var x1=wordlist[selectWords[i]].border[0];
 			var y1=wordlist[selectWords[i]].border[1];
 			var x2=x1+wordlist[selectWords[i]].border[2];
@@ -281,6 +282,8 @@ cv.onmousedown = function(e){
 			if(wordlist[i].word.search(' ')>=0){ //不存在为-1
 				wordlen--;
 			}
+			//alert(wordlen);
+			
 			for(var j=0;j<wordlen;j++){
 				//alert(i+": "+j)
 				var letter=wlTwoBox[i].box[j];
@@ -289,10 +292,26 @@ cv.onmousedown = function(e){
 				var y1=letter.border[1];
 				var y2=y1+letter.border[3];//y2=y1+wordh;
 				if(mx>=x1&&mx<=x2&&my>=y1&&my<=y2){
+					
 					//document.getElementById("word").innerHTML=list[i][0]+" : "+list[i][1];
 					document.getElementById("word").innerHTML=wordlist[i].word+" : "+wordlist[i].freq;
+					//填充左侧的词汇选项
+					document.getElementById("selectWord").innerHTML=wordlist[i].word;
+					document.getElementById("wordFreq").innerHTML=wordlist[i].freq;
+					document.getElementById("wordColor").value=wordlist[i].color;
+					document.getElementById("wordColor").onchange = function(){
+			  			//alert(this.value);
+			  			changeWordColor(this.value,i);
+			  		}
 					document.getElementById("font").style.display="inline"; //inline内联元素，不会换行；block块级标签，换行
 					document.getElementById("color").value=wordlist[i].color;
+					document.getElementById("wordColor").value=wordlist[i].color;
+					document.getElementById("wordColor").onchange = function(){
+			  			//alert(this.value);
+			  			changeWordColor(this.value,i);
+			  		}
+					document.getElementById("colorValue").innerHTML=wordlist[i].color;
+
 					//showWord(i);
 					document.getElementById("color").onchange = function(){
 			  			//alert(this.value);
@@ -343,7 +362,9 @@ cv.onmousedown = function(e){
 					var wby=wordlist[i].border[1];
 					var wbw=wordlist[i].border[2];
 					var wbh=wordlist[i].border[3];
-					
+					document.getElementById("wordX").innerHTML=wbx;
+					document.getElementById("wordY").innerHTML=wby;
+
 					var mnx,mny;
 					cv.onmousemove = function(e){
 						//cxt.clearRect(mnx-dx,mny-dy,wordw,wordh);
@@ -361,9 +382,10 @@ cv.onmousedown = function(e){
 		  				//showSelectWords(i);
   						movex=mnx-mx;
   						movey=mny-my;
-
 		  				cxt.strokeStyle="red";
 		  				cxt.strokeRect(wbx+movex,wby+movey,wbw,wbh);
+		  				document.getElementById("wordX").innerHTML=wbx+movex;
+  						document.getElementById("wordY").innerHTML=wby+movey;
 		  			}
 		  			
 					//cxt.putImageData(imageData,mnx,mny);
@@ -404,6 +426,8 @@ cv.onmousedown = function(e){
 			  				cxt.strokeRect(wbx+movex,wby+movey,wbw,wbh);
 							movex=0;
 							movey=0;
+							document.getElementById("wordX").innerHTML=wordlist[i].border[0];
+	  						document.getElementById("wordY").innerHTML=wordlist[i].border[1];
 						}
 						
 					}
@@ -412,7 +436,7 @@ cv.onmousedown = function(e){
 				}//-if
 			}//-for
 		}else{ //小尺寸单词
-			
+
 			var x1=wordlist[i].border[0];
 			var y1=wordlist[i].border[1];
 			var x2=x1+wordlist[i].border[2];
@@ -433,6 +457,15 @@ cv.onmousedown = function(e){
 					changeWordFont(this.value,i);
 		  		}
 				
+				document.getElementById("selectWord").innerHTML=wordlist[i].word;
+				document.getElementById("wordFreq").innerHTML=wordlist[i].freq;
+				document.getElementById("wordColor").value=wordlist[i].color;
+				document.getElementById("colorValue").innerHTML=wordlist[i].color;
+				document.getElementById("wordColor").onchange = function(){
+		  			//alert(this.value);
+		  			changeWordColor(this.value,i);
+		  		}
+				
 				x1--; //x_left
 				y1--; //y_top
 				var dx=mx-x1;
@@ -444,6 +477,8 @@ cv.onmousedown = function(e){
 					
 				var imageDataOtherWords = cxt.getImageData(0,0,cw,ch);
 				cxt.putImageData(selectWord,x1,y1);
+				document.getElementById("wordX").innerHTML=x1;
+				document.getElementById("wordY").innerHTML=y1;
 				//showWord(i);
 				var mnx,mny;
 				cv.onmousemove = function(e){
@@ -455,10 +490,10 @@ cv.onmousedown = function(e){
 	  				document.getElementById("coordinate").innerHTML=mnx+":"+mny;
 	  				//cxt.globalCompositeOperation="lighter";//重叠图形颜色叠加
 	  				cxt.putImageData(selectWord,mnx-dx,mny-dy);
-
+	  				document.getElementById("wordX").innerHTML=mnx-dx;
+					document.getElementById("wordY").innerHTML=mny-dy;
 					movex=mnx-mx;
 					movey=mny-my;
-	  				
 	  			}
 				
 				cv.onmouseup = function(e){
@@ -469,6 +504,8 @@ cv.onmousedown = function(e){
 						wordlist[i].border[1]+=movey;
 						cxt.clearRect(mnx-dx,mny-dy,wordw,wordh);
 						cxt.putImageData(wordlist[i].border[4],mnx-dx+1,mny-dy+1);
+						document.getElementById("wordX").innerHTML=wordlist[i].border[0];
+						document.getElementById("wordY").innerHTML=wordlist[i].border[1];
 						fresh();
 						//imgData=cxt.getImageData(0,0,cw,ch);
 						editSave();
@@ -545,12 +582,37 @@ cv.onmouseup = function(e){
 	cv.onmousemove = null;
 }
 */
-
+/**
+ * 将结果保存到服务器
+ */
 function saveInfo(){
-	var wlength = wordlist.length;
+	/*var wlength = wordlist.length;
 	for(var i=0;i<wlength;i++){
-		console.log(wordlist[i].word)
-	}
+		console.log(wordlist[i])
+	}*/
+	/*console.log(JSON.stringify(wordlist));
+	//spring security post请求
+	var header = $("meta[name='_csrf_header']").attr("content");
+	var token =$("meta[name='_csrf']").attr("content");
+	  $.ajax({
+          type: "POST",
+          url: "/saveMytag",
+          dataType: "json",
+          data: {wordModels:JSON.stringify(wordlist)},
+          beforeSend : function(xhr) {
+              xhr.setRequestHeader(header, token);
+          },
+          success: function (data, msg) {
+              if (data.status == 1) {
+                  alert(data.msg);
+              }
+              else {
+                  alert(data.msg);
+              }
+          }
+      });
+	*/
+	
 }
 
 function originalWordle(){
@@ -1838,7 +1900,7 @@ function getBorder2(x,y,wordw,wordh){
 	return [x,y,wordw,wordh,imageData];
 	//wordlist.push([word,size,color,x,y,wordw,wordh,imageData,rotateDegree]);
 }
-
+//生成字的随机颜色
 function randomColor(){
   	var hex = Math.floor(Math.random()*16777216).toString(16);
   	while(hex.length<6){
@@ -1847,12 +1909,13 @@ function randomColor(){
   	console.log('color:#'+hex);
   	return '#'+hex;
 }
-
+//获取字对应的颜色
 function getColor(list,i){
 	console.log("color="+list[i][2]);
 	return list[i][2];
 }
 
+//修改字的颜色
 function changeWordColor(color,i){
 	//alert(wordlist[i].word+":"+wordlist[i].size);
 	cxt.putImageData(imgData,0,0);
@@ -1861,6 +1924,7 @@ function changeWordColor(color,i){
 	cxt.font = wordlist[i].size.toString()+"px "+wordlist[i].font;
 	wordlist[i].color = cxt.fillStyle = color;
 	cxt.fillText(wordlist[i].word,0,450);
+	document.getElementById("colorValue").innerHTML=color;
 	var wordw=Math.floor(cxt.measureText(wordlist[i].word).width); //注意，像素一定要是整数，要不然会出错
 	var newWBorder = getBorder(0,450,wordw,Math.floor(wordlist[i].border[3]*1.5));
 	//cxt.clearRect(0,450,wordw,Math.floor(wordlist[i].border[3]*1.5));
@@ -1905,7 +1969,7 @@ function changeWordColor(color,i){
 	editSave();
 	showWord(i);
 }
-
+//修改字的颜色
 function changeWordFont(fontType,i){
 	//alert(fontType);
 	cxt.putImageData(imgData,0,0);
@@ -2181,6 +2245,31 @@ function download(type) {
     }
     var timestamp=new Date().getTime(); //new Date().toLocaleDateString();
     var filename = timestamp + '.' + type;
+    
+   
+	//spring security post请求
+	var header = $("meta[name='_csrf_header']").attr("content");
+	var token =$("meta[name='_csrf']").attr("content");
+	console.log(wordlist);
+	
+	  $.ajax({
+          type: "POST",
+          url: "/saveMytag",
+          dataType: "json",
+          data: {wordModels:JSON.stringify(wordlist)},
+          beforeSend : function(xhr) {
+              xhr.setRequestHeader(header, token);
+          },
+          success: function (data, msg) {
+              if (data.status == 1) {
+                  alert(data.msg);
+              }
+              else {
+                  alert(data.msg);
+              }
+          }
+      });
+	  
     saveFile(imgdata, filename);
 }
 

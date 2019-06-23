@@ -30,6 +30,12 @@ public interface BaseDAO<T,ID extends Serializable> {
     T findById(T t,Long id);
     
     /**
+     * 批量保存
+     * @param entitys
+     */
+    public void batchSave(List<T> entitys);
+    
+    /**
      * 根据Id查询
      * @param id
      * @return

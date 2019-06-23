@@ -10,10 +10,9 @@ var wlist=[mylist];*/
 var list=[];
 var len,twoBoxLen,max,min; //max:最高词频 min:最低词频
 
-var cw = cv.width;//矩形的长度
-var ch = cv.height;//矩形的高度
+var cw = cv.width;
+var ch = cv.height;
 //alert(cw+";;;"+ch)
-
 var maxFontSize = 60;
 var minFontSize = 10;
 var size = 0;
@@ -809,30 +808,33 @@ function rigidWordle(){
 	var distanceUp=0;
 	var distanceDown=0;
 	shuffle(list);
-	
 	for(var i=0;i<len;i++){
 		
 		size = Math.floor((maxFontSize - minFontSize)/(max-min) * (list[i][1]-min/2) +minFontSize);
 		size>1.6*maxFontSize?size=1.6*maxFontSize:'';
-		//此处设置字体大小
 		cxt.font = size.toString()+"px Arial";
 		//alert(size);
-		//color = randomColor();
-		//设置字体颜色
-		color = getColor(list,i);
+		color = randomColor();
 		cxt.fillStyle = color;
 		
 		cxt.save();
 		
 		var wordw = Math.floor(cxt.measureText(list[i][0]).width);
 		var wordh = Math.floor(cxt.measureText("Pk").width);
-		//console.log("wordw="+wordw+",wordh="+wordh);
 		
-		/*var x = getPosition(list[i])[0];
-		var y = getPosition(list[i])[1];*/
 		var x = Math.floor(cw/2);
 		var y = Math.floor(ch/2);
-		
+		/*
+		if(i){
+			if(i%2==0){
+				y = y+distanceDown+Math.ceil(wordh/2);
+				//distanceDown+=wordh;
+			}else{
+				y = y-distanceUp-Math.ceil(wordh/2);
+				//distanceUp+=wordh;
+			}
+		}
+		*/
 		if(i){
 			if(i%2==0){
 				y = y+distanceDown+Math.ceil(wordh/2);
@@ -850,10 +852,8 @@ function rigidWordle(){
 		
 		//alert(rotateRate);
 		rotateDegree=Math.random()>rotateRate?(Math.random()>0.5?1:-1):0;
-		
-		
+
 		cxt.fillText(list[i][0],x,y);
-		//console.log("x="+x+",y="+y);
 		//cxt.fillRect(0,0,wordw,wordh);
 		cxt.restore();
 		
@@ -1790,7 +1790,7 @@ function getBorder2(x,y,wordw,wordh){
 			}
 		}
 		wordh--;
-	}
+	}ini
 	//alert(yyy);
 	var w=wordw;
 	var xxx=0;
@@ -2182,11 +2182,4 @@ function download(type) {
     var timestamp=new Date().getTime(); //new Date().toLocaleDateString();
     var filename = timestamp + '.' + type;
     saveFile(imgdata, filename);
-}
-
-function getPosition(word){
-	var position=new Array()
-	position[0]= word[3];
-	position[1]= word[4];
-	return position;
 }

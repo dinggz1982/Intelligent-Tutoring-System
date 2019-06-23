@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity(name="word")
 public class Word {
@@ -16,14 +18,26 @@ public class Word {
 	
 	private String word;
 	
-	@Column(name = "ifidf", columnDefinition = "float default 0")
-	private float ifidf;
+	@ManyToOne
+	@JoinColumn(name="topic_id")
+	private Topic topic;
+	
+	@Column(name = "tfidf", columnDefinition = "float default 0")
+	private float tfidf;
 	
 	@Column(name = "frequency", columnDefinition = "int(5) default 0")
 	private int frequency;
 	
-	private String weight;
+	private float weight;
 	
+	public Topic getTopic() {
+		return topic;
+	}
+
+	public void setTopic(Topic topic) {
+		this.topic = topic;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -49,23 +63,21 @@ public class Word {
 	}
 	
 
-	public String getWeight() {
+	public float getWeight() {
 		return weight;
 	}
 
-	public void setWeight(String weight) {
+	public void setWeight(float weight) {
 		this.weight = weight;
 	}
 
-	public float getIfidf() {
-		return ifidf;
+	public float getTfidf() {
+		return tfidf;
 	}
 
-	public void setIfidf(float ifidf) {
-		this.ifidf = ifidf;
+	public void setTfidf(float tfidf) {
+		this.tfidf = tfidf;
 	}
-	
-	
 	
 	
 

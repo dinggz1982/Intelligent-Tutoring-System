@@ -77,7 +77,12 @@ public interface BaseService<T,ID extends Serializable> {
      */
     List<Object[]> findByNaviteSql(String sql);
     
-    
+    /**
+     * 批量保存
+     * @param entitys
+     */
+    public void batchSave(List<T> entitys);
+
     /**
      * 根据字段，参数查询，拼接sql语句
      * @param  tablename 表名

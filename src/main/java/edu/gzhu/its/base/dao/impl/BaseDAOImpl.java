@@ -488,4 +488,21 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 		Query query = entityManager.createNativeQuery(sql);
 		return query.executeUpdate();
 	}
+
+	@Override
+	@Transactional
+	public void batchSave(List<T> entitys) {
+		for (int i = 0; i < entitys.size(); i++) {
+			entityManager.persist(entitys.get(i));
+			if (i % 20 == 0) {
+				// 20个对象后才清理缓存，写入数据库
+				entityManager.flush();
+				entityManager.clear();
+			}
+		}
+		// 最后清理一下----防止大于20小于40的不保存
+		entityManager.flush();
+		entityManager.clear();
+		
+	}
 }

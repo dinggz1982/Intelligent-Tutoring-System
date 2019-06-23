@@ -22,7 +22,7 @@
 		 
 	<div class="col-xs-10 col-md-offset-1">
 	<div style="margin-bottom: 10px">
-		<a class="btn btn-primary radius" href="/tag/editTag/${topic_id}" ><i class="Hui-iconfont"></i> 可视化操作</a>  
+		<a class="btn btn-primary radius" href="/tag/add" ><i class="Hui-iconfont"></i> 添加词汇</a>  
 	 </div>
 		<table class="table table-border table-bordered table-hover table-bg table-sort" style="width: 100%">
  		<tr>
@@ -30,28 +30,20 @@
  				序号
  			</th>
  			<th>
- 				词汇
+ 				主题
  			</th>
  			<th>
- 				频率
+ 				主题描述
  			</th>
  			<th>
- 				初始权重
+ 				详细查看
  			</th>
- 			<th>
- 				tfidf值
- 			</th>
- 			<th>
- 				用户标注
- 			</th>
- 			<c:forEach items="${dataList }" var="word" varStatus="status">
+ 			<c:forEach items="${dataList }" var="topic" varStatus="status">
  				<tr>
  					<td>${(pageIndex-1)*pageSize + status.index+1}</td>
- 					<td>${word.word}</td>
- 					<td>${word.frequency}</td>
- 					<td>${word.weight}</td>
- 					<td>${word.tfidf}</td>
- 					<td><a href="#">用户标注</a></td>
+ 					<td>${topic.topic}</td>
+ 					<td>${topic.description}</td>
+ 					<td><a href="/tag/topic/${topic.id}">详细查看</a></td>
  				</tr>
  			
  			</c:forEach>

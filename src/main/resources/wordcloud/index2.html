@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/zrender.js"></script>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row" style="text-align: center;">
+				<h2>标签云实验</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<table class="table">
+						<input id="wordId" type="hidden" />
+						<tbody>
+							<tr>
+								<td>选中的词汇：<span id="selectWord"></span></td>
+							</tr>
+							<tr>
+								<td>大小：<input type="number" id="wordSize"></td>
+							</tr>
+							<tr>
+								<td>颜色：<input type="color" id="wordColor" />&nbsp;&nbsp;<span id="colorValue"></span></td>
+							</tr>
+							<tr>
+								<td>词汇位置：[<span id="wordPosition"></span>]</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+				<div class="col-md-8" id="main" style="border:1px solid #000000;height: 600px;">
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		var zr = zrender.init(document.getElementById('main'));
+		var smText = new Array;
+		for (var i = 1; i < 6; i++) {
+			smText[i] = new zrender.Text({
+				id: i,
+				style: {
+					text: '計算機' + i,
+					textAlign: 'center',
+					textFill: '#FFA500',
+					fontSize: 20 + i * 2
+				},
+				position: [157 + i * 20, 28 + i * 20],
+				draggable: true,
+				//鼠标点击事情
+				onclick: function(e) {
+					console.log(e.target.style.text);
+					document.getElementById("selectWord").innerHTML = e.target.style.text;
+					document.getElementById("wordSize").value = e.target.style.fontSize;
+					document.getElementById("wordId").value = e.target.id;
+					document.getElementById("wordColor").value = e.target.style.textFill;
+					document.getElementById("wordPosition").innerHTML = e.target.position[0] + "," + e.target.position[1];
+					console.log(e.target.id);
+				},
+				//鼠标在松开移动的事件
+				onmouseup: function(e) {
+					console.log(e.target.position[0] + "," + e.target.position[1]);
+				},
+				//鼠标在移动中的事件
+				onmouseover: function(e) {
+
+					document.getElementById("selectWord").innerHTML = e.target.style.text;
+					document.getElementById("wordSize").value = e.target.style.fontSize;
+					document.getElementById("wordColor").value = e.target.style.textFill;
+					document.getElementById("wordPosition").innerHTML = e.target.position[0] + "," + e.target.position[1];
+				}
+			});
+			zr.add(smText[i]);
+		}
+		$(document).ready(function() {
+			$("#wordSize").on('change', function() {
+				if ($("#wordSize").val() !== '') {
+					console.log($("#wordSize").val());
+					var wordID = document.getElementById("wordId").value;
+					smText[wordID].attr('style', {
+						fontSize: $("#wordSize").val()
+					});
+				}
+			});
+		});
+	</script>
+</html>
