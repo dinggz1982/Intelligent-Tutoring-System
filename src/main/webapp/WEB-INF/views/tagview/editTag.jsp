@@ -107,6 +107,7 @@
 			});
 		});
 		
+		
 		//修改历史记录
 		function saveChange(e,type){
 			var header = $("meta[name='_csrf_header']").attr("content");
