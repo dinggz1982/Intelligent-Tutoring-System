@@ -30,9 +30,13 @@ public class TagEditHistory {
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User user;
+	
 	@ManyToOne
 	@JoinColumn(name="word_id")
 	private Word word;
+	
+	//修改的类型
+	private String changeType;
 	
 	private Date createTime;
 	
@@ -98,6 +102,14 @@ public class TagEditHistory {
 
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
+	}
+
+	public String getChangeType() {
+		return changeType;
+	}
+
+	public void setChangeType(String changeType) {
+		this.changeType = changeType;
 	}
 	
 }

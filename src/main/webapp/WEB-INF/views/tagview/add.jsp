@@ -40,6 +40,7 @@
 					<div class="row cl">
 						<label class="form-label col-xs-3">相关词汇：</label>
 						<div class="formControls col-xs-8">
+							<p>按照:词汇,权重,出现频率,TFIDF值  每行一个词汇</p>
 							<textarea cols="" rows="" class="textarea" name="words"
 								id="words" placeholder="按照:词汇,权重,出现频率,TFIDF值 "></textarea>
 						</div>

@@ -1,6 +1,7 @@
 package edu.gzhu.its.experiment.web;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -23,6 +24,7 @@ import edu.gzhu.its.base.model.PageData;
 import edu.gzhu.its.experiment.entity.MyWord;
 import edu.gzhu.its.experiment.entity.Topic;
 import edu.gzhu.its.experiment.entity.Word;
+import edu.gzhu.its.experiment.model.WordModel;
 import edu.gzhu.its.experiment.service.IMyWordService;
 import edu.gzhu.its.experiment.service.ITagEditHistoryService;
 import edu.gzhu.its.experiment.service.ITopicService;
@@ -149,19 +151,34 @@ public class TagViewController {
 	public String editTag(@PathVariable int id,Model model){
 		User currentUser=  (User) session.getAttribute("currentUser");
 		List<MyWord> wordString = this.myWordService.find(" where user_id="+currentUser.getId()+" and topic_id="+id);
-		
-		
-		
-		//String wordString = "['学习',467,'#33ff00',10,20],['学习动机',426,'#33ff00',40,50],['学生',246,'#33ff00',50,70],['知觉',122,'#33ff00',200,100],['动机',122,'#33ff00',400,200],['坚持',110,'#33ff00',150,90]";
-		model.addAttribute("wordString", wordString);
-		
+		int isTaged = 0;
+		if(wordString!=null&&wordString.size()>0) {
+			 isTaged = 1;
+			model.addAttribute("wordList", wordString);
+		}
+		else {
+			List<Word> wordList = this.wordService.find(" where topic_id="+id);
+			List<WordModel> wordModels = new ArrayList<WordModel>();
+			int i=1;
+			for (Iterator iterator = wordList.iterator(); iterator.hasNext();) {
+				Word word = (Word) iterator.next();
+				WordModel model2 = new WordModel();
+				model2.setColor("#000000");
+				model2.setWord(word.getWord());
+				model2.setPositionX(400);
+				model2.setPositionY(30*i);
+				model2.setSize("20");
+				wordModels.add(model2);
+				i=i+2;
+			}
+			model.addAttribute("wordList", wordModels);
+		}
 		return "/tagview/editTag";
 	}
 	
 	
 	@GetMapping("/tag/add")
 	public String tagAdd(){
-		
 		return "/tagview/add";
 	}
 	

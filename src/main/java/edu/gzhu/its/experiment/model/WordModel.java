@@ -4,7 +4,26 @@ public class WordModel {
 	
 	private String word;
 	
-	private String[] border;
+	private int positionX;
+	
+	public int getPositionX() {
+		return positionX;
+	}
+
+	public void setPositionX(int positionX) {
+		this.positionX = positionX;
+	}
+
+	public int getPositionY() {
+		return positionY;
+	}
+
+	public void setPositionY(int positionY) {
+		this.positionY = positionY;
+	}
+
+	private int positionY;
+	
 	
 	private String color;
 	
@@ -20,14 +39,6 @@ public class WordModel {
 
 	public void setWord(String word) {
 		this.word = word;
-	}
-
-	public String[] getBorder() {
-		return border;
-	}
-
-	public void setBorder(String[] border) {
-		this.border = border;
 	}
 
 	public String getColor() {

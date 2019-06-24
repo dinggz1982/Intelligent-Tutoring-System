@@ -36,16 +36,19 @@
  				主题描述
  			</th>
  			<th>
- 				详细查看
+ 				相关词汇
+ 			</th>
+ 			<th>
+ 				相关用户标注
  			</th>
  			<c:forEach items="${dataList }" var="topic" varStatus="status">
  				<tr>
  					<td>${(pageIndex-1)*pageSize + status.index+1}</td>
  					<td>${topic.topic}</td>
  					<td>${topic.description}</td>
- 					<td><a href="/tag/topic/${topic.id}">详细查看</a></td>
+ 					<td><a href="/tag/topic/${topic.id}">相关词汇</a></td>
+ 					<td><a href="#">相关用户标注</a></td>
  				</tr>
- 			
  			</c:forEach>
  		</tr>
 		</table>
