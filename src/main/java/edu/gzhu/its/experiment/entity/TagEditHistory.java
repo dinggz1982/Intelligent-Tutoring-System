@@ -31,16 +31,24 @@ public class TagEditHistory {
 	@JoinColumn(name="user_id")
 	private User user;
 	
+	private String wordString;
+	
 	@ManyToOne
 	@JoinColumn(name="word_id")
 	private Word word;
+	
+	@ManyToOne
+	@JoinColumn(name="topic_id")
+	private Topic topic;
 	
 	//修改的类型
 	private String changeType;
 	
 	private Date createTime;
 	
-	private String border;
+	private int positionX;
+	
+	private int positionY;
 	
 	private String size;
 	
@@ -56,20 +64,37 @@ public class TagEditHistory {
 		this.id = id;
 	}
 
-	public Word getWord() {
-		return word;
+
+	public User getUser() {
+		return user;
 	}
 
-	public void setWord(Word word) {
-		this.word = word;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public String getBorder() {
-		return border;
+	public Topic getTopic() {
+		return topic;
 	}
 
-	public void setBorder(String border) {
-		this.border = border;
+	public void setTopic(Topic topic) {
+		this.topic = topic;
+	}
+
+	public int getPositionX() {
+		return positionX;
+	}
+
+	public void setPositionX(int positionX) {
+		this.positionX = positionX;
+	}
+
+	public int getPositionY() {
+		return positionY;
+	}
+
+	public void setPositionY(int positionY) {
+		this.positionY = positionY;
 	}
 
 	public String getSize() {
@@ -110,6 +135,22 @@ public class TagEditHistory {
 
 	public void setChangeType(String changeType) {
 		this.changeType = changeType;
+	}
+
+	public String getWordString() {
+		return wordString;
+	}
+
+	public void setWordString(String wordString) {
+		this.wordString = wordString;
+	}
+
+	public Word getWord() {
+		return word;
+	}
+
+	public void setWord(Word word) {
+		this.word = word;
 	}
 	
 }

@@ -3,6 +3,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<head>
+	<meta name="_csrf" content="${_csrf.token}"/>
+<meta name="_csrf_header"  content="${_csrf.headerName}"/>
 		<title>标签编辑</title>
 				<script src="/tag/js/zrender.js"></script>
 		<link href="/tag/css/bootstrap.min.css" rel="stylesheet">
@@ -44,12 +46,12 @@
 		var smText = new Array;
 		 var words = new Array();
          <c:forEach items="${wordList }" var="word"> 
-         var word = {"word":"${word.word}","size":${word.size},"color":"${word.color}","positionX":${word.positionX},"positionY":${word.positionY}}
+         var word = {"id":${word.id},"word":"${word.word}","size":${word.size},"color":"${word.color}","positionX":${word.positionX},"positionY":${word.positionY}}
          words.push(word)
          </c:forEach>   
 		for (var i = 0; i < words.length; i++) {
 			smText[i] = new zrender.Text({
-				id: i,
+				id: words[i].id,
 				style: {
 					text: words[i].word,
 					textAlign: 'center',
@@ -70,7 +72,9 @@
 				},
 				//鼠标在松开移动的事件
 				onmouseup: function(e) {
-					console.log(e.target.position[0] + "," + e.target.position[1]);
+					//保存用户的移动操作
+					saveChange(e,"move");
+					//console.log(e.target.position[0] + "," + e.target.position[1]);
 				},
 				//鼠标在移动中的事件
 				onmouseover: function(e) {
@@ -88,7 +92,7 @@
 			$("#wordSize").on('change', function() {
 				if ($("#wordSize").val() !== '') {
 					var wordID = document.getElementById("wordId").value;
-					console.log("wordID:"+wordID);
+					//console.log("wordID:"+wordID);
 					smText[wordID].attr('style', {
 						fontSize: $("#wordSize").val()
 					});
@@ -109,23 +113,18 @@
 		
 		//修改历史记录
 		function saveChange(e,type){
+							var wordID = document.getElementById("wordId").value;
+		//console.log("wordID" + wordID);
 			var header = $("meta[name='_csrf_header']").attr("content");
 			var token =$("meta[name='_csrf']").attr("content");
+			var data = {id:wordID,word:e.target.style.text,positionX:e.target.position[0],positionY:e.target.position[1],color:e.target.style.textFill,size:e.target.style.fontSize,topic_id:${topic_id},type:type};
 			  $.ajax({
 		          type: "POST",
 		          url: "/saveTagEditHistory",
 		          dataType: "json",
-		          data: {wordModels:JSON.stringify(wordlist)},
+		          data: data,
 		          beforeSend : function(xhr) {
 		              xhr.setRequestHeader(header, token);
-		          },
-		          success: function (data, msg) {
-		              if (data.status == 1) {
-		                  alert(data.msg);
-		              }
-		              else {
-		                  alert(data.msg);
-		              }
 		          }
 		      })
 			

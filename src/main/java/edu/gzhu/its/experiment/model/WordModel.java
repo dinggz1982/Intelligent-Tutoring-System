@@ -2,6 +2,8 @@ package edu.gzhu.its.experiment.model;
 
 public class WordModel {
 	
+	private int id;
+	
 	private String word;
 	
 	private int positionX;
@@ -71,6 +73,14 @@ public class WordModel {
 
 	public void setFont(String font) {
 		this.font = font;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }
