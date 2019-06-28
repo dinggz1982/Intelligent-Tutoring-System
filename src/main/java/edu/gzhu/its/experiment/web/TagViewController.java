@@ -180,11 +180,18 @@ public class TagViewController {
 	}
 	
 	@GetMapping("/tag/history/{id}")
-	public String history(@PathVariable int id,Model model) {
+	public String history(Integer pageIndex, Integer pageSize,@PathVariable int id,Model model) {
 		User currentUser=  (User) session.getAttribute("currentUser");
-		List<TagEditHistory> editHistories = this.tagEditHistoryService.find(" where topic_id="+id +" and user_id="+currentUser.getId());
-		model.addAttribute("editHistories", editHistories);
 		
+		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
+		pageSize = 10;
+		PageData<TagEditHistory> pageData = this.tagEditHistoryService.getPageData(pageIndex, pageSize, " and topic_id="+id +" and user_id="+currentUser.getId());
+		model.addAttribute("dataList", pageData.getPageData());
+		model.addAttribute("total", pageData.getTotalCount());
+		model.addAttribute("pages", pageData.getTotalPage());
+		model.addAttribute("pagesize", pageData.getPageSize());
+		model.addAttribute("pageIndex", pageIndex);
+		model.addAttribute("topic_id", id);
 		return "/tagview/history";
 	}
 	
@@ -223,7 +230,7 @@ public class TagViewController {
 	@ResponseBody
 	public String saveTagEditHistory(Integer id,Integer topic_id,String type,String word,Integer positionX,Integer positionY,String color,String size){
 		User currentUser=  (User) session.getAttribute("currentUser");
-		TagEditHistory history = this.tagEditHistoryService.getByHql(" where topic_id="+topic_id +" and user_id="+currentUser.getId() +" order by id desc limit 1");
+		TagEditHistory history = this.tagEditHistoryService.getByHql("  topic_id="+topic_id +" and user_id="+currentUser.getId() +" order by id desc");
 
 		TagEditHistory editHistory = new TagEditHistory();
 		editHistory.setUser(currentUser);

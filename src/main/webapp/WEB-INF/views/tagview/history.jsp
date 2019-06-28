@@ -1,25 +1,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="its" uri="/WEB-INF/tlds/remark.tld" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 <title>编辑历史</title>
 <%@include file="/WEB-INF/views/include/top.jsp"%>
    <link rel="stylesheet" type="text/css" href="/static/lib/layerui/2.2.5/css/layui.css">
-<style type="text/css">
-.wrapper{ padding:20px;}
-.flow-steps{ position:relative; height:30px; list-style:none; font-size:14px; overflow:hidden;}
-.flow-steps li{ float:left; height:30px; margin-right:-32px; background:#d7d7d7; line-height:30px; overflow:hidden;}
-.flow-steps a{ display:block; float:left; width:80px; padding: 0 18px 0 0; text-align:center; color:#333; text-decoration:none;}
-.flow-steps b{ float:left; width:0px; height:0px; margin-top:-6px; border:21px solid #d7d7d7; border-left-color:#fff; font-size:0; line-height:0; z-index:9;}
-.flow-steps s{ position:relative; float:left; width:0px; height:0px; margin-top:-2px; border:17px solid transparent; /*For IE6*/ _border-color:snow; _filter:chroma(color=snow);/*For IE6*/ border-left-color:#d7d7d7; font-size:0; line-height:0; z-index:99;}
-.flow-steps .on{ background:#ff6600;}
-.flow-steps .on a{ color:#fff;}
-.flow-steps .on b{ border-color:#ff6600; border-left-color:#fff; }
-.flow-steps .on s{ border-left-color:#ff6600;}
-.flow-steps .f{ border-color:#d7d7d7!important;}
-</style>
 </head>
 <body>
 	<nav class="breadcrumb">
@@ -45,39 +33,35 @@
  				词汇
  			</th>
  			<th>
- 				操作类型
+ 				位置
  			</th>
  			<th>
- 				初始权重
+ 				颜色
  			</th>
  			<th>
- 				tfidf值
+ 				大小
  			</th>
  			<th>
- 				用户标注
+ 				修改时间
  			</th>
- 			<c:forEach items="${dataList }" var="word" varStatus="status">
+ 			<th>
+ 				修改内容
+ 			</th>
+ 			<c:forEach items="${dataList }" var="editHistory" varStatus="status">
  				<tr>
  					<td>${(pageIndex-1)*pageSize + status.index+1}</td>
- 					<td>${word.word}</td>
- 					<td>${word.frequency}</td>
- 					<td>${word.weight}</td>
- 					<td>${word.tfidf}</td>
- 					<td><a href="#">用户标注</a></td>
+ 					<td>${editHistory.word.word}</td>
+ 					<td>(${editHistory.positionX},${editHistory.positionY})</td>
+ 					<td>${editHistory.color}</td>
+ 					<td>${editHistory.size}</td>
+ 					<td><fmt:formatDate value="${editHistory.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+ 					<td>${editHistory.operateInfo}</td>
  				</tr>
  			
  			</c:forEach>
  		</tr>
 		</table>
 		<div style="float: right;margin-right: 50px;" id="page" class="page"></div>
-		<div class="wrapper">
-    <ul class="flow-steps">
-        <li><b class="f"></b><a href="#">步骤一</a><s></s></li>
-        <li class="on"><b></b><a href="#">步骤二</a><s></s></li>
-        <li><b></b><a href="#">步骤三</a><s></s></li>
-        <li><b></b><a href="#">iinterest.net</a><s></s></li>
-    </ul>
-</div>
  	</div>
  	  
  	<script type="text/javascript" src="${ctx }/static/lib/layerui/2.2.5/layui.js"></script>
@@ -95,7 +79,7 @@ layui.use(['laypage', 'layer'], function(){
                     if(!first) {
     　　　　　　　　　　　　//***第一次不执行,一定要记住,这个必须有,要不然就是死循环,哈哈
                         var pageIndex = obj.curr;
-                      self.location='/tag-setting?pageIndex='+pageIndex; 
+                      self.location='/tag/history/${id}?pageIndex='+pageIndex; 
                     }
                 }
   });
