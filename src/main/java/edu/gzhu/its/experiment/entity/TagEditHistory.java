@@ -41,6 +41,9 @@ public class TagEditHistory {
 	@JoinColumn(name="topic_id")
 	private Topic topic;
 	
+	@Column(name = "operateInfo", columnDefinition = "text")
+	private String operateInfo;
+	
 	//修改的类型
 	private String changeType;
 	
@@ -151,6 +154,14 @@ public class TagEditHistory {
 
 	public void setWord(Word word) {
 		this.word = word;
+	}
+
+	public String getOperateInfo() {
+		return operateInfo;
+	}
+
+	public void setOperateInfo(String operateInfo) {
+		this.operateInfo = operateInfo;
 	}
 	
 }

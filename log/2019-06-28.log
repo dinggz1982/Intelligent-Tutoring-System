@@ -1,0 +1,277 @@
+12:17:59.169 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Starting ITSApplication on DESKTOP-7SLUD0H with PID 14764 (D:\eclipse-workspace2019\Intelligent-Tutoring-System\target\classes started by Administrator in D:\eclipse-workspace2019\Intelligent-Tutoring-System)
+12:17:59.169 [restartedMain] INFO  edu.gzhu.its.ITSApplication - No active profile set, falling back to default profiles: default
+12:17:59.208 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@11480870: startup date [Fri Jun 28 12:17:59 CST 2019]; root of context hierarchy
+12:17:59.310 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+12:18:00.020 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+12:18:00.119 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+12:18:00.197 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.gzhu.its.emotion.dao.EmotionDao.
+12:18:00.959 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+12:18:00.968 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+12:18:00.968 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+12:18:01.179 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+12:18:01.186 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:18:01.187 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1979 ms
+12:18:01.768 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+12:18:01.776 [localhost-startStop-1] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+12:18:01.847 [localhost-startStop-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+12:18:01.848 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+12:18:01.849 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+12:18:01.883 [localhost-startStop-1] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+12:18:02.731 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+12:18:02.754 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+12:18:03.235 [localhost-startStop-1] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+12:18:08.586 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:18:08.636 [localhost-startStop-1] WARN  e.g.i.s.s.CtFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+12:18:08.679 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+12:18:08.679 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+12:18:08.680 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+12:18:08.680 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+12:18:08.680 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+12:18:08.680 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'ctFilterSecurityInterceptor' to: [/*]
+12:18:08.680 [localhost-startStop-1] INFO  o.s.b.w.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+12:18:09.257 [restartedMain] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+12:18:09.508 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36c510a3, org.springframework.security.web.context.SecurityContextPersistenceFilter@5b6e8c40, org.springframework.security.web.header.HeaderWriterFilter@3d423970, org.springframework.security.web.csrf.CsrfFilter@6d4f890f, org.springframework.security.web.authentication.logout.LogoutFilter@28ec147f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7b37c0c3, org.springframework.security.web.session.ConcurrentSessionFilter@5e3668f0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50508877, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21b1419a, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2713e379, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c144d1f, org.springframework.security.web.session.SessionManagementFilter@48e1bc26, org.springframework.security.web.access.ExceptionTranslationFilter@77012d28, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f9e7fbc]
+12:18:10.258 [restartedMain] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+12:18:10.332 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@11480870: startup date [Fri Jun 28 12:17:59 CST 2019]; root of context hierarchy
+12:18:10.397 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/apply],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.apply(org.springframework.ui.Model)
+12:18:10.398 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/create],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.create(org.springframework.ui.Model) throws java.sql.SQLException
+12:18:10.398 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+12:18:10.398 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/progress],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.progress(org.springframework.ui.Model)
+12:18:10.398 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/commentdetail/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.detail(java.lang.Long,org.springframework.ui.Model)
+12:18:10.398 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/detail/{userId}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.detail(org.springframework.ui.Model,long,java.lang.Integer,java.lang.Integer)
+12:18:10.399 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myJob],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myJob(org.springframework.ui.Model)
+12:18:10.399 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myAnnotations],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myAnnotations()
+12:18:10.399 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myRemark],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myRemark(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+12:18:10.399 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/saveUserComment],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.saveUserComment(java.lang.String,java.lang.Long,java.lang.Long,java.lang.String[],java.lang.String[],java.lang.String[])
+12:18:10.399 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/userComment],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.userComment()
+12:18:10.399 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/otherAnnotations],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.otherAnnotations()
+12:18:10.399 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/saveApply],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.saveApply(int)
+12:18:10.399 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/create2],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.create2(org.springframework.ui.Model) throws java.sql.SQLException
+12:18:10.402 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveTagEditHistory],methods=[POST]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.saveTagEditHistory(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String)
+12:18:10.402 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tag/editTag/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.editTag(int,org.springframework.ui.Model)
+12:18:10.402 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tagTest],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.tagTest(org.springframework.ui.Model) throws java.sql.SQLException
+12:18:10.402 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tag-setting],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.tagSetting(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model) throws java.sql.SQLException
+12:18:10.402 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tag/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.tagAdd()
+12:18:10.402 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveMytag],methods=[POST]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.saveMytag(java.lang.String)
+12:18:10.402 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tagView],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.tagView(org.springframework.ui.Model) throws java.sql.SQLException
+12:18:10.402 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tag/saveWord],methods=[POST]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.saveWord(edu.gzhu.its.experiment.entity.Topic,java.lang.String)
+12:18:10.403 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tag/topic/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.topicDetail(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model,java.lang.Integer) throws java.sql.SQLException
+12:18:10.403 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork || /homeWork/ || /homeWork/index],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.index(org.springframework.ui.Model)
+12:18:10.403 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.add(org.springframework.ui.Model)
+12:18:10.403 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork/home],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.home(org.springframework.ui.Model)
+12:18:10.404 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/humanism/index],methods=[GET]}" onto public java.lang.String edu.gzhu.its.humanism.web.HumanismController.index()
+12:18:10.404 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/class/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.ClassController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+12:18:10.404 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/course/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.CourseController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+12:18:10.404 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/course/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.CourseController.addCourse()
+12:18:10.405 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/institute/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.InstituteController.add(org.springframework.ui.Model)
+12:18:10.405 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/institute/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.InstituteController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+12:18:10.405 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/school/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.SchoolController.add()
+12:18:10.405 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/school/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.SchoolController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+12:18:10.405 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/school/save],methods=[POST]}" onto public java.lang.String edu.gzhu.its.profile.web.SchoolController.save(edu.gzhu.its.profile.entity.School)
+12:18:10.406 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa/group],methods=[GET]}" onto public java.lang.String edu.gzhu.its.qa.web.QaController.group()
+12:18:10.406 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa/groups],methods=[GET]}" onto public java.lang.String edu.gzhu.its.qa.web.QaController.groups()
+12:18:10.406 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa],methods=[GET]}" onto public java.lang.String edu.gzhu.its.qa.web.QaController.qa()
+12:18:10.406 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa/init],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> edu.gzhu.its.qa.web.QaController.inti()
+12:18:10.406 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa/question],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> edu.gzhu.its.qa.web.QaController.question(java.lang.String,java.lang.String,java.lang.String)
+12:18:10.407 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa/chatlog],methods=[GET]}" onto public java.lang.String edu.gzhu.its.qa.web.QaController.chatlog()
+12:18:10.407 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa/friend],methods=[GET]}" onto public java.lang.String edu.gzhu.its.qa.web.QaController.friend()
+12:18:10.407 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveRollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.saveRollCall(org.springframework.ui.Model)
+12:18:10.407 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rollCallList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.rollCallList(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+12:18:10.407 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.rollCall(org.springframework.ui.Model,java.lang.String)
+12:18:10.407 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/submitRollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.submitRollCall(org.springframework.ui.Model)
+12:18:10.407 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/showRollCall/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.showRollCall(int,org.springframework.ui.Model)
+12:18:10.408 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/userList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.userList()
+12:18:10.408 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.admin(org.springframework.ui.Model)
+12:18:10.408 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.system.web.IndexController.index()
+12:18:10.408 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/logout],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.security.core.Authentication)
+12:18:10.408 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.longin()
+12:18:10.408 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/doLogin],methods=[POST]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.doLogin()
+12:18:10.409 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/userOnline],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.OnlineController.onLineUser(org.springframework.ui.Model)
+12:18:10.409 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/resource/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.ResourceController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+12:18:10.409 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/resource/tree],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.ResourceController.tree()
+12:18:10.409 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/role/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.RoleController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+12:18:10.410 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.UserController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+12:18:10.410 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/user/userList1],methods=[GET]}" onto public edu.gzhu.its.base.model.TableSplitResult<edu.gzhu.its.system.entity.User> edu.gzhu.its.system.web.UserController.userList1(java.lang.Integer,java.lang.Integer)
+12:18:10.410 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/teacher/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.teacher.TeacherContoller.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+12:18:10.411 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+12:18:10.411 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+12:18:10.453 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+12:18:10.453 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+12:18:10.487 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+12:18:11.578 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:18:11.628 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+12:18:11.629 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+12:18:11.633 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+12:18:11.650 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+12:18:11.658 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+12:18:11.665 [restartedMain] INFO  o.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+12:18:11.695 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9090 (http)
+12:18:11.699 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Started ITSApplication in 12.791 seconds (JVM running for 13.421)
+12:18:11.765 [http-nio-9090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+12:18:11.765 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+12:18:11.779 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+12:18:15.347 [http-nio-9090-exec-7] WARN  o.h.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 57 in HQL: [from edu.gzhu.its.system.entity.User u WHERE u.username=?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+15:12:00.851 [http-nio-9090-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Failed to bind request element: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "百度"
+15:12:00.852 [http-nio-9090-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved exception caused by Handler execution: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "百度"
+15:15:14.868 [Thread-8] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@11480870: startup date [Fri Jun 28 12:17:59 CST 2019]; root of context hierarchy
+15:15:14.877 [Thread-8] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+15:15:14.878 [Thread-8] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+15:15:14.878 [Thread-8] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+15:15:14.891 [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+15:15:14.901 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+15:15:15.239 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Starting ITSApplication on DESKTOP-7SLUD0H with PID 14764 (D:\eclipse-workspace2019\Intelligent-Tutoring-System\target\classes started by Administrator in D:\eclipse-workspace2019\Intelligent-Tutoring-System)
+15:15:15.239 [restartedMain] INFO  edu.gzhu.its.ITSApplication - No active profile set, falling back to default profiles: default
+15:15:15.241 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@251e221b: startup date [Fri Jun 28 15:15:15 CST 2019]; root of context hierarchy
+15:15:15.824 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+15:15:15.924 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+15:15:16.012 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.gzhu.its.emotion.dao.EmotionDao.
+15:15:16.229 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+15:15:16.230 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+15:15:16.230 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+15:15:16.338 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15:15:16.343 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:15:16.343 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1102 ms
+15:15:16.640 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+15:15:16.640 [localhost-startStop-1] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+15:15:17.036 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+15:15:17.036 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+15:15:17.138 [localhost-startStop-1] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+15:15:21.015 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:15:21.036 [localhost-startStop-1] WARN  e.g.i.s.s.CtFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+15:15:21.051 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:15:21.051 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:15:21.051 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:15:21.051 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:15:21.051 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+15:15:21.051 [localhost-startStop-1] INFO  o.s.b.web.servlet.FilterRegistrationBean - Mapping filter: 'ctFilterSecurityInterceptor' to: [/*]
+15:15:21.051 [localhost-startStop-1] INFO  o.s.b.w.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+15:15:21.058 [localhost-startStop-1] WARN  o.a.c.c.C.[Tomcat].[localhost].[/] - Cannot deserialize session attribute [currentUser] for session [622C0B2E94C81E2CD3940B40DF095507]
+15:15:21.066 [localhost-startStop-1] ERROR o.a.catalina.session.StandardManager - Exception loading sessions from persistent storage
+java.lang.ClassCastException: java.io.ObjectStreamClass cannot be cast to java.lang.String
+	at java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1612)
+	at java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:719)
+	at java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:882)
+	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1815)
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1713)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2000)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1611)
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1077)
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218)
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:356)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5224)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1419)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1409)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+15:15:21.488 [restartedMain] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Initializing EhCache CacheManager
+15:15:21.532 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13c541ee, org.springframework.security.web.context.SecurityContextPersistenceFilter@6b84fc37, org.springframework.security.web.header.HeaderWriterFilter@cd4aa73, org.springframework.security.web.csrf.CsrfFilter@71e6567d, org.springframework.security.web.authentication.logout.LogoutFilter@363fd3ac, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5e3acc94, org.springframework.security.web.session.ConcurrentSessionFilter@6a0bf1b0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@42aa4406, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@30c240c, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3aeb810e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c387f09, org.springframework.security.web.session.SessionManagementFilter@299d1f40, org.springframework.security.web.access.ExceptionTranslationFilter@47f8ded8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@65e6f1]
+15:15:21.680 [restartedMain] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+15:15:21.692 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@251e221b: startup date [Fri Jun 28 15:15:15 CST 2019]; root of context hierarchy
+15:15:21.706 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/apply],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.apply(org.springframework.ui.Model)
+15:15:21.706 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/create],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.create(org.springframework.ui.Model) throws java.sql.SQLException
+15:15:21.706 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+15:15:21.706 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/progress],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.progress(org.springframework.ui.Model)
+15:15:21.706 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/commentdetail/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.detail(java.lang.Long,org.springframework.ui.Model)
+15:15:21.706 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/detail/{userId}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.detail(org.springframework.ui.Model,long,java.lang.Integer,java.lang.Integer)
+15:15:21.706 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myJob],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myJob(org.springframework.ui.Model)
+15:15:21.706 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myAnnotations],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myAnnotations()
+15:15:21.707 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/myRemark],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.myRemark(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+15:15:21.707 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/saveUserComment],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.saveUserComment(java.lang.String,java.lang.Long,java.lang.Long,java.lang.String[],java.lang.String[],java.lang.String[])
+15:15:21.707 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/userComment],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.userComment()
+15:15:21.707 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/otherAnnotations],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.otherAnnotations()
+15:15:21.707 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/saveApply],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.saveApply(int)
+15:15:21.707 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/corpus/create2],methods=[GET]}" onto public java.lang.String edu.gzhu.its.corpus.web.UserCommentController.create2(org.springframework.ui.Model) throws java.sql.SQLException
+15:15:21.708 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tag/history/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.history(int,org.springframework.ui.Model)
+15:15:21.708 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveTagEditHistory],methods=[POST]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.saveTagEditHistory(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String)
+15:15:21.708 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tag/editTag/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.editTag(int,org.springframework.ui.Model)
+15:15:21.708 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tagTest],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.tagTest(org.springframework.ui.Model) throws java.sql.SQLException
+15:15:21.708 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tag-setting],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.tagSetting(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model) throws java.sql.SQLException
+15:15:21.708 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tag/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.tagAdd()
+15:15:21.708 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveMytag],methods=[POST]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.saveMytag(java.lang.String)
+15:15:21.708 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tagView],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.tagView(org.springframework.ui.Model) throws java.sql.SQLException
+15:15:21.709 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tag/saveWord],methods=[POST]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.saveWord(edu.gzhu.its.experiment.entity.Topic,java.lang.String)
+15:15:21.709 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/tag/topic/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.experiment.web.TagViewController.topicDetail(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model,java.lang.Integer) throws java.sql.SQLException
+15:15:21.709 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork || /homeWork/ || /homeWork/index],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.index(org.springframework.ui.Model)
+15:15:21.709 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.add(org.springframework.ui.Model)
+15:15:21.709 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/homeWork/home],methods=[GET]}" onto public java.lang.String edu.gzhu.its.homework.web.HomeWorkController.home(org.springframework.ui.Model)
+15:15:21.709 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/humanism/index],methods=[GET]}" onto public java.lang.String edu.gzhu.its.humanism.web.HumanismController.index()
+15:15:21.709 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/class/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.ClassController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+15:15:21.710 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/course/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.CourseController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+15:15:21.710 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/course/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.CourseController.addCourse()
+15:15:21.710 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/institute/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.InstituteController.add(org.springframework.ui.Model)
+15:15:21.710 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/institute/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.InstituteController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+15:15:21.710 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/school/add],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.SchoolController.add()
+15:15:21.711 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/school/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.profile.web.SchoolController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+15:15:21.711 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/school/save],methods=[POST]}" onto public java.lang.String edu.gzhu.its.profile.web.SchoolController.save(edu.gzhu.its.profile.entity.School)
+15:15:21.711 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa/group],methods=[GET]}" onto public java.lang.String edu.gzhu.its.qa.web.QaController.group()
+15:15:21.711 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa/groups],methods=[GET]}" onto public java.lang.String edu.gzhu.its.qa.web.QaController.groups()
+15:15:21.711 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa],methods=[GET]}" onto public java.lang.String edu.gzhu.its.qa.web.QaController.qa()
+15:15:21.711 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa/init],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> edu.gzhu.its.qa.web.QaController.inti()
+15:15:21.711 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa/question],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> edu.gzhu.its.qa.web.QaController.question(java.lang.String,java.lang.String,java.lang.String)
+15:15:21.711 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa/chatlog],methods=[GET]}" onto public java.lang.String edu.gzhu.its.qa.web.QaController.chatlog()
+15:15:21.712 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/qa/friend],methods=[GET]}" onto public java.lang.String edu.gzhu.its.qa.web.QaController.friend()
+15:15:21.712 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveRollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.saveRollCall(org.springframework.ui.Model)
+15:15:21.712 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rollCallList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.rollCallList(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+15:15:21.712 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.rollCall(org.springframework.ui.Model,java.lang.String)
+15:15:21.712 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/submitRollCall],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.submitRollCall(org.springframework.ui.Model)
+15:15:21.712 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/showRollCall/{id}],methods=[GET]}" onto public java.lang.String edu.gzhu.its.study.web.RollCallController.showRollCall(int,org.springframework.ui.Model)
+15:15:21.713 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin/userList],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.userList()
+15:15:21.713 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/admin],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.AdminController.admin(org.springframework.ui.Model)
+15:15:21.713 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[ || / || /index]}" onto public java.lang.String edu.gzhu.its.system.web.IndexController.index()
+15:15:21.713 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/logout],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.security.core.Authentication)
+15:15:21.713 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.longin()
+15:15:21.713 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/doLogin],methods=[POST]}" onto public java.lang.String edu.gzhu.its.system.web.LoginController.doLogin()
+15:15:21.713 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/userOnline],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.OnlineController.onLineUser(org.springframework.ui.Model)
+15:15:21.714 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/resource/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.ResourceController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+15:15:21.714 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/resource/tree],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.ResourceController.tree()
+15:15:21.714 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/role/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.RoleController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+15:15:21.714 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.system.web.UserController.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+15:15:21.714 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/user/userList1],methods=[GET]}" onto public edu.gzhu.its.base.model.TableSplitResult<edu.gzhu.its.system.entity.User> edu.gzhu.its.system.web.UserController.userList1(java.lang.Integer,java.lang.Integer)
+15:15:21.714 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/teacher/list],methods=[GET]}" onto public java.lang.String edu.gzhu.its.teacher.TeacherContoller.list(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+15:15:21.715 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+15:15:21.715 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:15:21.734 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:15:21.734 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:15:21.752 [restartedMain] INFO  o.s.w.s.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:15:22.550 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:15:22.585 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+15:15:22.585 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+15:15:22.587 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+15:15:22.590 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+15:15:22.591 [restartedMain] INFO  o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+15:15:22.591 [restartedMain] INFO  o.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:15:22.595 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 9090 (http)
+15:15:22.597 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Started ITSApplication in 7.399 seconds (JVM running for 10644.339)
+15:16:10.614 [Thread-12] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@251e221b: startup date [Fri Jun 28 15:15:15 CST 2019]; root of context hierarchy
+15:16:10.616 [Thread-12] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+15:16:10.616 [Thread-12] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+15:16:10.616 [Thread-12] INFO  o.s.c.ehcache.EhCacheManagerFactoryBean - Shutting down EhCache CacheManager
+15:16:10.617 [Thread-12] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+15:16:10.620 [Thread-12] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+15:16:10.870 [restartedMain] INFO  edu.gzhu.its.ITSApplication - Starting ITSApplication on DESKTOP-7SLUD0H with PID 14764 (D:\eclipse-workspace2019\Intelligent-Tutoring-System\target\classes started by Administrator in D:\eclipse-workspace2019\Intelligent-Tutoring-System)
+15:16:10.870 [restartedMain] INFO  edu.gzhu.its.ITSApplication - No active profile set, falling back to default profiles: default
+15:16:10.871 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2dc44a0c: startup date [Fri Jun 28 15:16:10 CST 2019]; root of context hierarchy
+15:16:11.295 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+15:16:11.370 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+15:16:11.438 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.gzhu.its.emotion.dao.EmotionDao.
+15:16:11.607 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 9090 (http)
+15:16:11.608 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+15:16:11.608 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+15:16:11.699 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15:16:11.704 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:16:11.704 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 833 ms
+15:16:11.991 [localhost-startStop-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+15:16:11.991 [localhost-startStop-1] INFO  o.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]

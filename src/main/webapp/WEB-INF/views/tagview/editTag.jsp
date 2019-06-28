@@ -10,7 +10,8 @@
 		<link href="/tag/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="container">
+		
+		<div class="container" style="margin-top: 20px;margin-bottom: 13px;">
 			<div class="row" style="text-align: center;">
 				<h2>标签云实验</h2>
 			</div>
@@ -37,6 +38,13 @@
 				<div class="col-md-8" id="main" style="border:1px solid #000000;height: 600px;">
 				</div>
 			</div>
+		<div class="row" style="margin-top: 20px;margin-bottom: 15px;text-align: center;">
+				<button type="button" class="btn btn-primary" id="showHistory">编辑记录</button>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" class="btn btn-danger" id="saveMyTag">保存</button>
+				
+			</div>
+		
 		</div>
 	</body>
 	<script src="/tag/js/jquery.min.js"></script>
@@ -50,7 +58,7 @@
          words.push(word)
          </c:forEach>   
 		for (var i = 0; i < words.length; i++) {
-			smText[i] = new zrender.Text({
+			smText[words[i].id] = new zrender.Text({
 				id: words[i].id,
 				style: {
 					text: words[i].word,
@@ -86,9 +94,11 @@
 					document.getElementById("wordId").value = e.target.id;
 				}
 			});
-			zr.add(smText[i]);
+			zr.add(smText[words[i].id]);
 		}
+		
 		$(document).ready(function() {
+			//改变字体
 			$("#wordSize").on('change', function() {
 				if ($("#wordSize").val() !== '') {
 					var wordID = document.getElementById("wordId").value;
@@ -98,6 +108,7 @@
 					});
 				}
 			});
+			//改变颜色
 			$("#wordColor").on('change', function() {
 				console.log("change color="+$("#wordColor").val());
 				if ($("#wordColor").val() !== '') {
@@ -109,6 +120,12 @@
 					});
 				}
 			});
+			//查看编辑历史
+						$("#showHistory").on('click', function() {
+							window.top.open("http://www.baidu.com");
+							
+						});
+
 		});
 		
 		
@@ -128,8 +145,7 @@
 		              xhr.setRequestHeader(header, token);
 		          }
 		      })
-			
-			
 		}
+		
 	</script>
 </html>

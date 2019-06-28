@@ -179,6 +179,14 @@ public class TagViewController {
 		return "/tagview/editTag";
 	}
 	
+	@GetMapping("/tag/history/{id}")
+	public String history(@PathVariable int id,Model model) {
+		User currentUser=  (User) session.getAttribute("currentUser");
+		List<TagEditHistory> editHistories = this.tagEditHistoryService.find(" where topic_id="+id +" and user_id="+currentUser.getId());
+		model.addAttribute("editHistories", editHistories);
+		
+		return "/tagview/history";
+	}
 	
 	@GetMapping("/tag/add")
 	public String tagAdd(){
@@ -215,6 +223,8 @@ public class TagViewController {
 	@ResponseBody
 	public String saveTagEditHistory(Integer id,Integer topic_id,String type,String word,Integer positionX,Integer positionY,String color,String size){
 		User currentUser=  (User) session.getAttribute("currentUser");
+		TagEditHistory history = this.tagEditHistoryService.getByHql(" where topic_id="+topic_id +" and user_id="+currentUser.getId() +" order by id desc limit 1");
+
 		TagEditHistory editHistory = new TagEditHistory();
 		editHistory.setUser(currentUser);
 		editHistory.setCreateTime(new Date());
@@ -231,6 +241,19 @@ public class TagViewController {
 		Word word2 = new Word();
 		word2.setId(id);
 		editHistory.setWord(word2);
+		String operateInfo="";
+		if(history!=null) {
+			if(type.equals("move")) {
+				operateInfo = word + ":移动标签,("+history.getPositionX()+","+history.getPositionY()+")-->("+positionX+","+positionY+")";
+			}
+			if(type.equals("color")) {
+				operateInfo = word + ":修改颜色,"+history.getColor()+")-->"+color;
+			}
+			if(type.equals("size")) {
+				operateInfo = word + ":修改大小,"+history.getSize()+")-->"+size;
+			}
+		}
+		editHistory.setOperateInfo(operateInfo);
 		this.tagEditHistoryService.save(editHistory);
 		return "success";
 	}
