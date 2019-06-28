@@ -22,6 +22,7 @@ import com.alibaba.fastjson.JSONObject;
 
 import edu.gzhu.its.base.model.PageData;
 import edu.gzhu.its.experiment.entity.MyWord;
+import edu.gzhu.its.experiment.entity.TagEditHistory;
 import edu.gzhu.its.experiment.entity.Topic;
 import edu.gzhu.its.experiment.entity.Word;
 import edu.gzhu.its.experiment.model.WordModel;
@@ -168,11 +169,13 @@ public class TagViewController {
 				model2.setPositionX(400);
 				model2.setPositionY(30*i);
 				model2.setSize("20");
+				model2.setId(word.getId());
 				wordModels.add(model2);
 				i=i+2;
 			}
 			model.addAttribute("wordList", wordModels);
 		}
+		model.addAttribute("topic_id", id);
 		return "/tagview/editTag";
 	}
 	
@@ -200,5 +203,35 @@ public class TagViewController {
 		}
 		return "redirect:/tag-setting";
 		
+	}
+	
+	/**
+	 * 保存用户的操作记录
+	 * @param topic
+	 * @param words
+	 * @return
+	 */
+	@PostMapping("/saveTagEditHistory")
+	@ResponseBody
+	public String saveTagEditHistory(Integer id,Integer topic_id,String type,String word,Integer positionX,Integer positionY,String color,String size){
+		User currentUser=  (User) session.getAttribute("currentUser");
+		TagEditHistory editHistory = new TagEditHistory();
+		editHistory.setUser(currentUser);
+		editHistory.setCreateTime(new Date());
+		editHistory.setChangeType(type);
+		Topic topic = new Topic();
+		topic.setId(topic_id);
+		editHistory.setTopic(topic);
+		editHistory.setPositionX(positionX);
+		editHistory.setPositionY(positionY);
+		editHistory.setSize(size);
+		editHistory.setColor(color);
+		editHistory.setChangeType(type);
+		editHistory.setWordString(word);
+		Word word2 = new Word();
+		word2.setId(id);
+		editHistory.setWord(word2);
+		this.tagEditHistoryService.save(editHistory);
+		return "success";
 	}
 }
