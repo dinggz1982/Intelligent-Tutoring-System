@@ -1,0 +1,160 @@
+html,body{
+    width:100%;
+    height:100%;
+}
+.select-wrapper{
+    width: 100%;
+    height: 100%;
+}
+.width-53{
+    width: 53%;
+    padding: 8px;
+    box-sizing: border-box;
+    float: left;
+}
+.width-47{
+    width: 47%;
+    padding: 8px;
+    float: left;
+    box-sizing: border-box;
+}
+.form-content,.people-list{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: relative;
+    box-sizing: border-box;
+
+}
+
+.pink-border-color{
+    border: 1px solid #eedbdb;
+}
+.pink-bg-color{
+    background:#eedbdb;
+}
+
+.qblue-border-color{
+    border: 1px solid #dbe3ee;
+}
+.qblue-bg-color{
+    background:#dbe3ee;
+}
+.qyellow-border-color{
+    border: 1px solid #f3ebc7;
+}
+.qyellow-bg-color{
+    background:#f3ebc7;
+}
+.border-2px{
+    border-width: 2px;
+}
+
+
+.form-left{
+    position: absolute;
+    top: 50%;
+    margin-top: -60px;
+}
+.form-title{
+    width: 30px;
+    padding: 14px 5px;
+    box-sizing: border-box;
+    border-radius:15px;
+    text-align: center;
+    font-weight: bold;
+}
+.form-right{
+    padding-left: 70px;
+}
+.score-wrapper{
+    min-height: 40px;
+    position: relative;
+}
+.form-right .score-wrapper:not(:first-child){
+    margin-top: 10px;
+}
+.score-f{
+    float: left;
+    margin-top: 10px;
+}
+.score-span{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.blue-bg{
+    background: #3c8fe4;
+}
+.qi-bg{
+    background: #3ccee4;
+}
+.green-bg{
+    background: #3ce46f;
+}
+.yellow-bg{
+    background: #e4be3c;
+}
+.people-group{
+    min-height: 40px;
+    /* right: 65px; */
+    box-sizing: border-box;
+    padding: 0 10px;
+    z-index: 1;
+    margin-left: 80px;
+    margin-right: 65px;
+    position: relative;
+}
+.score-xz{
+    width: 55px;
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+.people-list{
+    width: 100%;
+    float: left;
+    /*height: 234px;*/
+}
+.list-wrapper li{
+    float: left;
+    height: 30px;
+    border: 1px solid #CFD8E3;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    z-index: 999;
+}
+.list-wrapper li span{
+    line-height: 30px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+    padding: 0 10px;
+    cursor: move;
+}
+.list-wrapper li .infor{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    cursor: pointer;
+    background:#CFD8E3 url("../images/infor.png") center center no-repeat;
+}
+.people-group>div{
+    display: inline-block;
+    margin-right: 15px;
+    padding: 9px;
+}
+span.del{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("../images/del.png") no-repeat;
+    margin-top: 2px;
+    margin-left: 5px;
+    vertical-align: top;
+    cursor: pointer;
+}

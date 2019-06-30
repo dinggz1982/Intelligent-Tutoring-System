@@ -484,6 +484,7 @@ public class BaseDAOImpl<T, ID extends Serializable> implements BaseDAO<T, ID> {
 	}
 	
 	@Override
+	@Transactional
 	public int executeSql(String sql) {
 		Query query = entityManager.createNativeQuery(sql);
 		return query.executeUpdate();

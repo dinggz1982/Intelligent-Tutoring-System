@@ -50,7 +50,8 @@
          words.push(word)
          </c:forEach>   
 		for (var i = 0; i < words.length; i++) {
-			smText[i] = new zrender.Text({
+			//console.log(i);
+			smText[words[i].id] = new zrender.Text({
 				id: words[i].id,
 				style: {
 					text: words[i].word,
@@ -62,7 +63,8 @@
 				draggable: true,
 				//鼠标点击事情
 				onclick: function(e) {
-					//console.log(e.target.style.text);
+					var wordID = document.getElementById("wordId").value;
+					console.log("wordID:"+wordID);
 					document.getElementById("selectWord").innerHTML = e.target.style.text;
 					//document.getElementById("colorValue").innerHTML = e.target.style.textFill;
 					document.getElementById("wordSize").value = e.target.style.fontSize;
@@ -74,6 +76,7 @@
 				onmouseup: function(e) {
 					//保存用户的移动操作
 					saveChange(e,"move");
+					document.getElementById("wordId").value = e.target.id;
 					//console.log(e.target.position[0] + "," + e.target.position[1]);
 				},
 				//鼠标在移动中的事件
@@ -86,20 +89,20 @@
 					document.getElementById("wordId").value = e.target.id;
 				}
 			});
-			zr.add(smText[i]);
+			zr.add(smText[words[i].id]);
 		}
 		$(document).ready(function() {
 			$("#wordSize").on('change', function() {
 				if ($("#wordSize").val() !== '') {
 					var wordID = document.getElementById("wordId").value;
-					//console.log("wordID:"+wordID);
+					console.log("wordID:"+wordID);
 					smText[wordID].attr('style', {
 						fontSize: $("#wordSize").val()
 					});
 				}
 			});
 			$("#wordColor").on('change', function() {
-				console.log("change color="+$("#wordColor").val());
+				//console.log("change color="+$("#wordColor").val());
 				if ($("#wordColor").val() !== '') {
 					document.getElementById("colorValue").innerHTML = $("#wordColor").val();
 					document.getElementById("wordColor").value= $("#wordColor").val();

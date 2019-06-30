@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpSession;
 
@@ -73,6 +75,7 @@ public class TagViewController {
 		}
 		return "tagview/tagTest";
 	}
+	
 	/**
 	 * 保存标签
 	 * @return
@@ -96,14 +99,11 @@ public class TagViewController {
 
 			MyWord myWord = new MyWord();
 			String[] borders = jsonObject.get("border").toString().split("\\{");
-			String res = borders[0].substring(1,borders[0].length()-1);
-			myWord.setBorder(res);
 			myWord.setColor(jsonObject.get("color").toString());
 			myWord.setFont(jsonObject.get("font").toString());
 			Word word =new Word();
 			word.setId(1);
 			//myWord.setWord(word);
-			myWord.setStr(jsonObject.get("word").toString());
 			myWord.setCreateTime(new Date());
 			myWord.setSize(jsonObject.get("size").toString());
 			myWord.setUser(currentUser);
@@ -177,6 +177,72 @@ public class TagViewController {
 		}
 		model.addAttribute("topic_id", id);
 		return "/tagview/editTag";
+	}
+	
+	/**
+	 * 设定我的标签
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/tag/editMyTag/{id}")
+	public String editMyTag(@PathVariable int id,Model model){
+		User currentUser=  (User) session.getAttribute("currentUser");
+		List<Word> words = this.wordService.find(" where topic_id="+id);
+		List<MyWord> wordString = this.myWordService.find(" where user_id="+currentUser.getId()+" and topic_id="+id);
+		model.addAttribute("words", words);
+		model.addAttribute("topic_id", id);
+		model.addAttribute("wordString", wordString);
+		return "/tagview/editMyTagStep1";
+	}
+	
+	/**
+	 * 保存标签
+	 * @param id
+	 * @param topic_id
+	 * @param word
+	 * @param model
+	 * @return
+	 */
+	@PostMapping("/tag/saveMyWord")
+	public String saveMyWord(int topic_id,String[] word,Model model){
+		User currentUser=  (User) session.getAttribute("currentUser");
+		int x=20;
+		int y=20;
+		this.myWordService.executeSql("delete from myword where topic_id="+topic_id+" and user_id="+currentUser.getId());
+		List<MyWord> list = new  ArrayList<MyWord>();
+		for (int i = 0; i < word.length; i++) {
+			if(word[i]!=null&&isNumber(word[i])){
+				int wordId = Integer.parseInt(word[i]);
+				Word word2  = new Word();
+				word2.setId(wordId);
+				MyWord myWord = new MyWord();
+				Topic topic = new Topic();
+				topic.setId(topic_id);
+				myWord.setTopic(topic);
+				myWord.setUser(currentUser);
+				myWord.setCreateTime(new Date());
+				myWord.setPositionX(x + 10*i);
+				myWord.setPositionY(y + 10*i);
+				myWord.setColor("#000000");
+				myWord.setSize("12");
+				myWord.setWord(word2);
+				list.add(myWord);
+			}
+		}
+		this.myWordService.batchSave(list);
+		
+		List<MyWord> mywords = this.myWordService.find(" where user_id="+currentUser.getId()+" and topic_id="+topic_id);
+		model.addAttribute("mywords", mywords);
+		
+		return "/tagview/editMyTagStep2";
+	}
+	
+	
+	public boolean isNumber(String str){
+		Pattern pattern = Pattern.compile("^[0-9]*$");  
+		Matcher matcher = pattern.matcher(str);  
+		return matcher.matches();  
 	}
 	
 	
