@@ -165,7 +165,7 @@ public class TagViewController {
 				Word word = (Word) iterator.next();
 				WordModel model2 = new WordModel();
 				model2.setColor("#000000");
-				model2.setWord(word.getWord());
+				model2.setWord(word);
 				model2.setPositionX(400);
 				model2.setPositionY(30*i);
 				model2.setSize("20");
@@ -231,11 +231,7 @@ public class TagViewController {
 			}
 		}
 		this.myWordService.batchSave(list);
-		
-		List<MyWord> mywords = this.myWordService.find(" where user_id="+currentUser.getId()+" and topic_id="+topic_id);
-		model.addAttribute("mywords", mywords);
-		
-		return "/tagview/editMyTagStep2";
+		return "redirect:/tag/editTag/"+topic_id;
 	}
 	
 	
@@ -253,9 +249,7 @@ public class TagViewController {
 	
 	@PostMapping("/tag/saveWord")
 	public String saveWord(Topic topic,String words){
-		
 		this.topicService.save(topic);
-		
 		String[] oneWord = words.split("\n|\r\n|\r");
 		for (int i = 0; i < oneWord.length; i++) {
 			Word word = new Word();
@@ -268,7 +262,6 @@ public class TagViewController {
 			wordService.save(word);
 		}
 		return "redirect:/tag-setting";
-		
 	}
 	
 	/**

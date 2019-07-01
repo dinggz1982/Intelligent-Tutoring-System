@@ -1,10 +1,12 @@
 package edu.gzhu.its.experiment.model;
 
+import edu.gzhu.its.experiment.entity.Word;
+
 public class WordModel {
 	
 	private int id;
 	
-	private String word;
+	private Word word;
 	
 	private int positionX;
 	
@@ -35,11 +37,11 @@ public class WordModel {
 	
 	private String font;
 
-	public String getWord() {
+	public Word getWord() {
 		return word;
 	}
 
-	public void setWord(String word) {
+	public void setWord(Word word) {
 		this.word = word;
 	}
 

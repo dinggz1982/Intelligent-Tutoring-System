@@ -46,7 +46,7 @@
 		var smText = new Array;
 		 var words = new Array();
          <c:forEach items="${wordList }" var="word"> 
-         var word = {"id":${word.id},"word":"${word.word}","size":${word.size},"color":"${word.color}","positionX":${word.positionX},"positionY":${word.positionY}}
+         var word = {"id":${word.word.id},"word":"${word.word.word}","size":${word.size},"color":"${word.color}","positionX":${word.positionX},"positionY":${word.positionY}}
          words.push(word)
          </c:forEach>   
 		for (var i = 0; i < words.length; i++) {
