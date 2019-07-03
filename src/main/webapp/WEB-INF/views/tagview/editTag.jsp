@@ -44,6 +44,7 @@
 				<button type="button" class="btn btn-danger" id="saveMyTag">保存</button>
 			</div>
 		</div>
+		
 	</body>
 	<script src="/tag/js/jquery.min.js"></script>
 	<script>
