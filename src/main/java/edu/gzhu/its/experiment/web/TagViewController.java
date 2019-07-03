@@ -179,6 +179,14 @@ public class TagViewController {
 		return "/tagview/editTag";
 	}
 	
+	/**
+	 * 查看历史
+	 * @param pageIndex
+	 * @param pageSize
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/tag/history/{id}")
 	public String history(Integer pageIndex, Integer pageSize,@PathVariable int id,Model model) {
 		User currentUser=  (User) session.getAttribute("currentUser");
