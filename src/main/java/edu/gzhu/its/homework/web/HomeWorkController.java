@@ -28,7 +28,6 @@ public class HomeWorkController {
 	@Autowired
 	private IUserService userService;
 	
-//@RequestMapping(method=Htpp)
 	@GetMapping("/home")
 	public String home(Model model){
 		//获取用户总数

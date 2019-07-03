@@ -40,11 +40,9 @@
 			exts :'xls',
 			size : 50,
 			before : function(obj) {
+			obj.setRequestHeader(header, token);
 				layer.load();
 			},
-			beforeSend : function(xhr) {
-		              xhr.setRequestHeader(header, token);
-		          },
 			done : function(res) { //上传完毕回调
 				layer.closeAll('loading');
 				var result = '';

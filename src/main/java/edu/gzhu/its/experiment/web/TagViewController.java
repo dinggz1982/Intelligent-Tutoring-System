@@ -36,6 +36,7 @@ import edu.gzhu.its.system.entity.User;
 
 @Controller
 public class TagViewController {
+	
 	@Autowired
 	private HttpSession session;
 	@Autowired
@@ -180,6 +181,7 @@ public class TagViewController {
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * 设定我的标签
 	 * @param id
 	 * @param model
@@ -241,6 +243,28 @@ public class TagViewController {
 		return matcher.matches();  
 	}
 	
+/* 查看历史
+	 * @param pageIndex
+	 * @param pageSize
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/tag/history/{id}")
+	public String history(Integer pageIndex, Integer pageSize,@PathVariable int id,Model model) {
+		User currentUser=  (User) session.getAttribute("currentUser");
+		
+		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
+		pageSize = 10;
+		PageData<TagEditHistory> pageData = this.tagEditHistoryService.getPageData(pageIndex, pageSize, " and topic_id="+id +" and user_id="+currentUser.getId());
+		model.addAttribute("dataList", pageData.getPageData());
+		model.addAttribute("total", pageData.getTotalCount());
+		model.addAttribute("pages", pageData.getTotalPage());
+		model.addAttribute("pagesize", pageData.getPageSize());
+		model.addAttribute("pageIndex", pageIndex);
+		model.addAttribute("topic_id", id);
+		return "/tagview/history";
+	}
 	
 	@GetMapping("/tag/add")
 	public String tagAdd(){
@@ -274,6 +298,8 @@ public class TagViewController {
 	@ResponseBody
 	public String saveTagEditHistory(Integer id,Integer topic_id,String type,String word,Integer positionX,Integer positionY,String color,String size){
 		User currentUser=  (User) session.getAttribute("currentUser");
+		TagEditHistory history = this.tagEditHistoryService.getByHql("  topic_id="+topic_id +" and user_id="+currentUser.getId() +" order by id desc");
+
 		TagEditHistory editHistory = new TagEditHistory();
 		editHistory.setUser(currentUser);
 		editHistory.setCreateTime(new Date());
@@ -290,6 +316,19 @@ public class TagViewController {
 		Word word2 = new Word();
 		word2.setId(id);
 		editHistory.setWord(word2);
+		String operateInfo="";
+		if(history!=null) {
+			if(type.equals("move")) {
+				operateInfo = word + ":移动标签,("+history.getPositionX()+","+history.getPositionY()+")-->("+positionX+","+positionY+")";
+			}
+			if(type.equals("color")) {
+				operateInfo = word + ":修改颜色,"+history.getColor()+")-->"+color;
+			}
+			if(type.equals("size")) {
+				operateInfo = word + ":修改大小,"+history.getSize()+")-->"+size;
+			}
+		}
+		editHistory.setOperateInfo(operateInfo);
 		this.tagEditHistoryService.save(editHistory);
 		return "success";
 	}

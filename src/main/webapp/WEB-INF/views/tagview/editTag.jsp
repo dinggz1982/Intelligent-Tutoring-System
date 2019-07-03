@@ -10,7 +10,8 @@
 		<link href="/tag/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="container">
+		
+		<div class="container" style="margin-top: 20px;margin-bottom: 13px;">
 			<div class="row" style="text-align: center;">
 				<h2>标签云实验</h2>
 			</div>
@@ -37,6 +38,12 @@
 				<div class="col-md-8" id="main" style="border:1px solid #000000;height: 600px;">
 				</div>
 			</div>
+		<div class="row" style="margin-top: 20px;margin-bottom: 15px;text-align: center;">
+				<button type="button" class="btn btn-primary" id="showHistory">编辑记录</button>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" class="btn btn-danger" id="saveMyTag">保存</button>
+			</div>
+			
 		</div>
 	</body>
 	<script src="/tag/js/jquery.min.js"></script>
@@ -50,7 +57,10 @@
          words.push(word)
          </c:forEach>   
 		for (var i = 0; i < words.length; i++) {
+<<<<<<< HEAD
 			//console.log(i);
+=======
+>>>>>>> branch 'master' of https://github.com/dinggz1982/Intelligent-Tutoring-System.git
 			smText[words[i].id] = new zrender.Text({
 				id: words[i].id,
 				style: {
@@ -75,8 +85,13 @@
 				//鼠标在松开移动的事件
 				onmouseup: function(e) {
 					//保存用户的移动操作
+<<<<<<< HEAD
 					saveChange(e,"move");
 					document.getElementById("wordId").value = e.target.id;
+=======
+					//console.log(e.target);
+					saveChange(e.target,"move");
+>>>>>>> branch 'master' of https://github.com/dinggz1982/Intelligent-Tutoring-System.git
 					//console.log(e.target.position[0] + "," + e.target.position[1]);
 				},
 				//鼠标在移动中的事件
@@ -91,7 +106,9 @@
 			});
 			zr.add(smText[words[i].id]);
 		}
+		
 		$(document).ready(function() {
+			//改变字体
 			$("#wordSize").on('change', function() {
 				if ($("#wordSize").val() !== '') {
 					var wordID = document.getElementById("wordId").value;
@@ -99,8 +116,11 @@
 					smText[wordID].attr('style', {
 						fontSize: $("#wordSize").val()
 					});
+					saveChange(smText[wordID],"size");
+					//console.log(smText[wordID]);
 				}
 			});
+			//改变颜色
 			$("#wordColor").on('change', function() {
 				//console.log("change color="+$("#wordColor").val());
 				if ($("#wordColor").val() !== '') {
@@ -110,17 +130,25 @@
 					smText[wordID].attr('style', {
 						textFill: $("#wordColor").val()
 					});
+					saveChange(smText[wordID],"color");
 				}
 			});
+			//查看编辑历史
+						$("#showHistory").on('click', function() {
+							window.top.open("/tag/history/${topic_id}");
+							
+						});
+
 		});
+		
 		
 		//修改历史记录
 		function saveChange(e,type){
-							var wordID = document.getElementById("wordId").value;
+		var wordID = document.getElementById("wordId").value;
 		//console.log("wordID" + wordID);
 			var header = $("meta[name='_csrf_header']").attr("content");
 			var token =$("meta[name='_csrf']").attr("content");
-			var data = {id:wordID,word:e.target.style.text,positionX:e.target.position[0],positionY:e.target.position[1],color:e.target.style.textFill,size:e.target.style.fontSize,topic_id:${topic_id},type:type};
+			var data = {id:wordID,word:e.style.text,positionX:e.position[0],positionY:e.position[1],color:e.style.textFill,size:e.style.fontSize,topic_id:${topic_id},type:type};
 			  $.ajax({
 		          type: "POST",
 		          url: "/saveTagEditHistory",
@@ -130,8 +158,7 @@
 		              xhr.setRequestHeader(header, token);
 		          }
 		      })
-			
-			
 		}
+		
 	</script>
 </html>
