@@ -42,9 +42,7 @@
 				<button type="button" class="btn btn-primary" id="showHistory">编辑记录</button>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<button type="button" class="btn btn-danger" id="saveMyTag">保存</button>
-				
 			</div>
-		
 		</div>
 	</body>
 	<script src="/tag/js/jquery.min.js"></script>
