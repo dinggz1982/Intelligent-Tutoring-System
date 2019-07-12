@@ -68,6 +68,8 @@ public class User implements java.io.Serializable {
 
 	@Column(name = "username", unique = true, columnDefinition = ("varchar(255) comment '用户名'"))
 	private String username;
+	
+	private String realname;
 
 	@Column(name = "password")
 	private String password;
@@ -80,6 +82,17 @@ public class User implements java.io.Serializable {
 
 	@Column(name = "nickname")
 	private String nickName;
+	
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	@Column(name = "url")
+	private String url;
 
 	public String getSex() {
 		return sex;
@@ -198,6 +211,15 @@ public class User implements java.io.Serializable {
 
 	public void setGrantedAuths(Collection<GrantedAuthority> grantedAuths) {
 		this.grantedAuths = grantedAuths;
+	}
+
+
+	public String getRealname() {
+		return realname;
+	}
+
+	public void setRealname(String realname) {
+		this.realname = realname;
 	}
 
 }

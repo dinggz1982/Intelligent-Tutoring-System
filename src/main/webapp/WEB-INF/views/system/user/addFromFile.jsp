@@ -19,7 +19,7 @@
 		<div class="panel panel-default">
 			<div class="panel-header"></div>
 			<div class="panel-body">
-				<form action="/user/upload" method="post" id="userForm" enctype="multipart/form-data"
+				<form action="/user/saveUserFromFile" method="post" id="userForm" enctype="multipart/form-data"
 					class="form form-horizontal responsive">
 					<input type="hidden" name="${_csrf.parameterName}"
 						value="${_csrf.token}" />

@@ -10,6 +10,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
+import edu.gzhu.its.system.entity.User;
 import edu.gzhu.its.system.service.IUserService;
 
 public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
@@ -26,14 +27,20 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
 
 		// 获得授权后可得到用户信息 可使用SUserService进行数据库操作
 		UserDetails user =  (UserDetails) authentication.getPrincipal();
-		
-		session.setAttribute("currentUser", this.userService.findByName(user.getUsername()));
+		User currentUser =  this.userService.findByName(user.getUsername());
+		session.setAttribute("currentUser",currentUser);
 		/* Set<SysRole> roles = userDetails.getSysRoles(); */
 		
 		// forward ： 可以隐藏url
 		// request.getRequestDispatcher("/admin").forward(request, response);
 		// 可以针对不同的用户跳转到不同的页面
-		response.sendRedirect("/admin");
+		String url =currentUser.getUrl();
+		if(url!=null&&!url.equals("")){
+			response.sendRedirect(url);
+		}else{
+			response.sendRedirect("/admin");
+		}
+		
 		// super.onAuthenticationSuccess(request, response, authentication);
 	}
 

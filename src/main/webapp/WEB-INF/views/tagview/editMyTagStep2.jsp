@@ -130,8 +130,6 @@
 		              xhr.setRequestHeader(header, token);
 		          }
 		      })
-			
-			
 		}
 	</script>
 </html>

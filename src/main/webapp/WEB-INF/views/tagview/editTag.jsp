@@ -1,59 +1,63 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-	<head>
-	<meta name="_csrf" content="${_csrf.token}"/>
-<meta name="_csrf_header"  content="${_csrf.headerName}"/>
-		<title>标签编辑</title>
-				<script src="/tag/js/zrender.js"></script>
-		<link href="/tag/css/bootstrap.min.css" rel="stylesheet">
-	</head>
-	<body>
-		
-		<div class="container" style="margin-top: 20px;margin-bottom: 13px;">
-			<div class="row" style="text-align: center;">
-				<h2>标签云实验</h2>
-			</div>
-			<div class="row">
-				<div class="col-md-3">
-					<table class="table">
-						<input id="wordId" type="hidden" />
-						<tbody>
-							<tr>
-								<td>选中的词汇：<span id="selectWord"></span></td>
-							</tr>
-							<tr>
-								<td>大小：<input type="number" id="wordSize"></td>
-							</tr>
-							<tr>
-								<td>颜色：<input type="color" id="wordColor" />&nbsp;&nbsp;<span id="colorValue"></span></td>
-							</tr>
-							<tr>
-								<td>词汇位置：[<span id="wordPosition"></span>]</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="col-md-8" id="main" style="border:1px solid #000000;height: 600px;">
-				</div>
-			</div>
-		<div class="row" style="margin-top: 20px;margin-bottom: 15px;text-align: center;">
-				<button type="button" class="btn btn-primary" id="showHistory">编辑记录</button>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<button type="button" class="btn btn-danger" id="saveMyTag">保存</button>
-			</div>
-			
+<head>
+<meta name="_csrf" content="${_csrf.token}" />
+<meta name="_csrf_header" content="${_csrf.headerName}" />
+<title>标签编辑</title>
+<script src="/tag/js/zrender.js"></script>
+<link href="/tag/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container" style="margin-top: 20px;margin-bottom: 13px;">
+		<div class="row" style="text-align: center;">
+			<h2>标签云实验</h2>
 		</div>
-	</body>
-	<script src="/tag/js/jquery.min.js"></script>
-	<script>
+		<div class="row">
+			<div class="col-md-3">
+				<table class="table">
+					<input id="wordId" type="hidden" />
+					<tbody>
+						<tr>
+							<td>选中的词汇：<span id="selectWord"></span></td>
+						</tr>
+						<tr>
+							<td>大小：<input type="number" id="wordSize"></td>
+						</tr>
+						<tr>
+							<td>颜色：<input type="color" id="wordColor" />&nbsp;&nbsp;<span
+								id="colorValue"></span></td>
+						</tr>
+						<tr>
+							<td>词汇位置：[<span id="wordPosition"></span>]
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-8" id="main"
+				style="border:1px solid #000000;height: 600px;"></div>
+		</div>
+		<div class="row"
+			style="margin-top: 20px;margin-bottom: 15px;text-align: center;">
+			<button type="button" class="btn btn-primary" id="showHistory">编辑记录</button>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button type="button" class="btn btn-danger" onclick="saveMyTag()"
+				id="saveMyTagBtn">保存</button>
+		</div>
+
+	</div>
+</body>
+<script src="/tag/js/jquery.min.js"></script>
+<script>
 		var zr = zrender.init(document.getElementById('main'));
 		
 		var smText = new Array;
 		 var words = new Array();
          <c:forEach items="${wordList }" var="word"> 
-         var word = {"id":${word.word.id},"word":"${word.word.word}","size":${word.size},"color":"${word.color}","positionX":${word.positionX},"positionY":${word.positionY}}
+         var word = {"id":${word.id},"word":"${word.word.word}","size":${word.size},"color":"${word.color}","positionX":${word.positionX},"positionY":${word.positionY}}
          words.push(word)
          </c:forEach>   
 		for (var i = 0; i < words.length; i++) {
@@ -149,6 +153,37 @@
 		          }
 		      })
 		}
-		
+		//保存标签状态
+		function saveMyTag(){
+		var wordList=[];  
+			for (var i = 0; i < smText.length; i++) {
+				if (smText[i] != null && typeof(smText[i]) != undefined && smText[i] != '') {
+					myWordId=smText[i].id;
+					positionX=smText[i].position[0];
+					positionY=smText[i].position[1];
+					wordString=smText[i].style.text;
+					color=smText[i].style.textFill;
+					size=smText[i].style.fontSize;
+					var data={myWordId:myWordId,"positionX":positionX,"positionY":positionY,"wordString":wordString,"color":color,"size":size};  
+				wordList.push(data);
+				}
+			}
+			console.log(JSON.stringify(wordList));
+			//保存编辑记录
+			var header = $("meta[name='_csrf_header']").attr("content");
+			var token =$("meta[name='_csrf']").attr("content");
+			  $.ajax({
+		          type: "POST",
+		          url: "/saveMyTag",
+		          dataType: "json",
+		          data: {"myWords":wordList,"topic_id":${topic_id}},
+		          beforeSend : function(xhr) {
+		              xhr.setRequestHeader(header, token);
+		          },
+    				error: function (data) {
+        			console.log(data);
+    				}
+		      });
+		}
 	</script>
 </html>

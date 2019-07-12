@@ -4,9 +4,11 @@ import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -88,22 +90,23 @@ public class TagViewController {
 	 */
 	@PostMapping("/saveMytag")
 	@ResponseBody
-	public String saveMytag(String wordModels) {
+	public Map<String,Object> saveMytag(List<MyWord> myWords, int topic_id) {
 		// 获取当前用户
 		User currentUser = (User) session.getAttribute("currentUser");
-		JSONArray myJsonArray = JSONArray.parseArray(wordModels);
+		Map<String,Object> map =new HashMap<>();
+		/*JSONArray myJsonArray = JSONArray.parseArray(wordModels);
 		System.out.println(myJsonArray.size());
 		List<MyWord> myWords = new LinkedList<MyWord>();
 		for (Iterator iterator = myJsonArray.iterator(); iterator.hasNext();) {
 
 			JSONObject jsonObject = (JSONObject) iterator.next();
-			/*
+			
 			 * System.out.println(jsonObject.get("word"));
 			 * System.out.println(jsonObject.get("border"));
 			 * System.out.println(jsonObject.get("font"));
 			 * System.out.println(jsonObject.get("size"));
 			 * System.out.println(jsonObject.get("color"));
-			 */
+			 
 
 			MyWord myWord = new MyWord();
 			String[] borders = jsonObject.get("border").toString().split("\\{");
@@ -117,8 +120,9 @@ public class TagViewController {
 			myWord.setUser(currentUser);
 			myWords.add(myWord);
 		}
-		this.myWordService.batchSave(myWords);
-		return "";
+		this.myWordService.batchSave(myWords);*/
+		map.put("status", "success");
+		return map;
 	}
 
 	/**
@@ -161,39 +165,28 @@ public class TagViewController {
 		User currentUser = (User) session.getAttribute("currentUser");
 		List<MyWord> wordString = this.myWordService
 				.find(" where user_id=" + currentUser.getId() + " and topic_id=" + id);
-		int isTaged = 0;
 		if (wordString != null && wordString.size() > 0) {
-			isTaged = 1;
 			model.addAttribute("wordList", wordString);
+			model.addAttribute("topic_id", id);
+			model.addAttribute("isTaged", 1);
+			return "/tagview/editTag";
 		} else {
-			List<Word> wordList = this.wordService.find(" where topic_id=" + id);
-			List<WordModel> wordModels = new ArrayList<WordModel>();
-			int i = 1;
-			for (Iterator iterator = wordList.iterator(); iterator.hasNext();) {
-				Word word = (Word) iterator.next();
-				WordModel model2 = new WordModel();
-				model2.setColor("#000000");
-				model2.setWord(word);
-				model2.setPositionX(400);
-				model2.setPositionY(30 * i);
-				model2.setSize("20");
-				model2.setId(word.getId());
-				wordModels.add(model2);
-				i = i + 2;
-			}
-			model.addAttribute("wordList", wordModels);
+			List<Word> words = this.wordService.find(" where topic_id=" + id);
+			model.addAttribute("words", words);
+			model.addAttribute("topic_id", id);
+			model.addAttribute("isTaged", 0);
+			return "/tagview/editMyTagStep1";
 		}
-		model.addAttribute("topic_id", id);
-		return "/tagview/editTag";
+		
 	}
 
 	/**
-	 * 
+	 * 选择相关词汇
 	 * @param id
 	 * @param model
 	 * @return
 	 */
-	@GetMapping("/tag/editMyTag/{id}")
+	@GetMapping("/tag/selectMyWord/{id}")
 	public String editMyTag(@PathVariable int id, Model model) {
 		User currentUser = (User) session.getAttribute("currentUser");
 		List<Word> words = this.wordService.find(" where topic_id=" + id);
@@ -331,9 +324,8 @@ public class TagViewController {
 		editHistory.setColor(color);
 		editHistory.setChangeType(type);
 		editHistory.setWordString(word);
-		Word word2 = new Word();
-		word2.setId(id);
-		editHistory.setWord(word2);
+		MyWord myWord = this.myWordService.findById(id);
+		editHistory.setWord(myWord.getWord());
 		String operateInfo = "";
 		if (history != null) {
 			if (type.equals("move")) {
@@ -406,6 +398,27 @@ public class TagViewController {
 		
 		
 		return "redirect:/tag/editTopic/"+topic.getId();
+	}
+	
+	/**
+	 * topic List
+	 * @param pageIndex
+	 * @param pageSize
+	 * @param model
+	 * @return
+	 * @throws SQLException
+	 */
+	@GetMapping("/tag/topicList")
+	public String topicList(Integer pageIndex, Integer pageSize, Model model) throws SQLException {
+		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
+		pageSize = 10;
+		PageData<Topic> pageData = this.topicService.getPageData(pageIndex, pageSize, "");
+		model.addAttribute("dataList", pageData.getPageData());
+		model.addAttribute("total", pageData.getTotalCount());
+		model.addAttribute("pages", pageData.getTotalPage());
+		model.addAttribute("pagesize", pageData.getPageSize());
+		model.addAttribute("pageIndex", pageIndex);
+		return "/tagview/topList2";
 	}
 	
 }
