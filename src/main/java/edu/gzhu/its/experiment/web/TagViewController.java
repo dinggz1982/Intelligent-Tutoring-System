@@ -90,37 +90,20 @@ public class TagViewController {
 	 */
 	@PostMapping("/saveMytag")
 	@ResponseBody
-	public Map<String,Object> saveMytag(List<MyWord> myWords, int topic_id) {
+	public Map<String,Object> saveMytag(String myWords, int topic_id) {
 		// 获取当前用户
 		User currentUser = (User) session.getAttribute("currentUser");
 		Map<String,Object> map =new HashMap<>();
-		/*JSONArray myJsonArray = JSONArray.parseArray(wordModels);
-		System.out.println(myJsonArray.size());
-		List<MyWord> myWords = new LinkedList<MyWord>();
+		JSONArray myJsonArray = JSONArray.parseArray(myWords);
 		for (Iterator iterator = myJsonArray.iterator(); iterator.hasNext();) {
-
-			JSONObject jsonObject = (JSONObject) iterator.next();
-			
-			 * System.out.println(jsonObject.get("word"));
-			 * System.out.println(jsonObject.get("border"));
-			 * System.out.println(jsonObject.get("font"));
-			 * System.out.println(jsonObject.get("size"));
-			 * System.out.println(jsonObject.get("color"));
-			 
-
-			MyWord myWord = new MyWord();
-			String[] borders = jsonObject.get("border").toString().split("\\{");
-			myWord.setColor(jsonObject.get("color").toString());
-			myWord.setFont(jsonObject.get("font").toString());
-			Word word = new Word();
-			word.setId(1);
-			// myWord.setWord(word);
-			myWord.setCreateTime(new Date());
-			myWord.setSize(jsonObject.get("size").toString());
-			myWord.setUser(currentUser);
-			myWords.add(myWord);
+			JSONObject object = (JSONObject) iterator.next();
+			int id = Integer.parseInt(object.get("id").toString());
+			int positionX = Integer.parseInt(object.get("positionX").toString());
+			int positionY = Integer.parseInt(object.get("positionY").toString());
+			String color = object.get("color").toString();
+			String size = object.get("size").toString();
+			this.myWordService.executeSql("update myword set positionX="+positionX+",positionY="+positionY +",color='" + color+"',size='" + size+"', createTime=now() where id="+id);
 		}
-		this.myWordService.batchSave(myWords);*/
 		map.put("status", "success");
 		return map;
 	}

@@ -21,8 +21,6 @@ public class MyWord {
 	@Column(name = "id", unique = true, nullable = false)
 	private int id;
 	
-	private String myweight;
-	
 	
 	public User getUser() {
 		return user;
@@ -121,14 +119,6 @@ public class MyWord {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getMyweight() {
-		return myweight;
-	}
-
-	public void setMyweight(String myweight) {
-		this.myweight = myweight;
 	}
 
 	public Topic getTopic() {

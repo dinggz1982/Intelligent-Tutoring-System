@@ -42,6 +42,9 @@
  			<th>
  				相关用户标注
  			</th>
+ 			<th>
+ 				我编辑的标签云
+ 			</th>
  			<c:forEach items="${dataList }" var="topic" varStatus="status">
  				<tr>
  					<td>${(pageIndex-1)*pageSize + status.index+1}</td>
@@ -49,6 +52,7 @@
  					<td>${topic.description}</td>
  					<td><a href="/tag/topic/${topic.id}">主题对应的标签</a></td>
  					<td><a href="#">相关用户标注</a></td>
+ 					<td><a href="/tag/editTag/${topic.id}" target="_blank">我编辑的标签云</a></td>
  				</tr>
  			</c:forEach>
  		</tr>

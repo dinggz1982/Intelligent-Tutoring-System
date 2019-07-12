@@ -164,7 +164,7 @@
 					wordString=smText[i].style.text;
 					color=smText[i].style.textFill;
 					size=smText[i].style.fontSize;
-					var data={myWordId:myWordId,"positionX":positionX,"positionY":positionY,"wordString":wordString,"color":color,"size":size};  
+					var data={id:myWordId,"positionX":positionX,"positionY":positionY,"wordString":wordString,"color":color,"size":size};  
 				wordList.push(data);
 				}
 			}
@@ -174,15 +174,17 @@
 			var token =$("meta[name='_csrf']").attr("content");
 			  $.ajax({
 		          type: "POST",
-		          url: "/saveMyTag",
+		          url: "/saveMytag",
 		          dataType: "json",
-		          data: {"myWords":wordList,"topic_id":${topic_id}},
+		          data: {"myWords":JSON.stringify(wordList),"topic_id":${topic_id}},
 		          beforeSend : function(xhr) {
 		              xhr.setRequestHeader(header, token);
-		          },
-    				error: function (data) {
-        			console.log(data);
-    				}
+		          },success: function (data) {
+              if (data.status == "success") {
+                  alert("保存成功！");
+              }
+             
+          }
 		      });
 		}
 	</script>
