@@ -19,7 +19,7 @@
 		<div class="panel panel-default">
 			<div class="panel-header"></div>
 			<div class="panel-body">
-				<form action="saveWord" method="post"
+				<form action="/tag/uploadTag" method="post" id="tagForm" enctype="multipart/form-data"
 					class="form form-horizontal responsive">
 					<input type="hidden" name="${_csrf.parameterName}"
 						value="${_csrf.token}" />
@@ -27,17 +27,18 @@
 					<div class="row cl">
 						<label class="form-label col-xs-3">词汇主题：</label>
 						<div class="formControls col-xs-8">
-							<input type="text" class="input-text" placeholder="描述词汇的主题，如教育技术"
-								name="topic" id="topic">
+							<input type="text" class="input-text" required placeholder="描述词汇的主题，如教育技术"
+								name="topic" id="topic" aria-required="true">
 						</div>
 					</div>
 					<div class="row cl">
 						<label class="form-label col-xs-3">主题描述信息：</label>
 						<div class="formControls col-xs-8">
-							<textarea cols="" rows="" class="textarea" name="description"
-								id="description" placeholder="主题描述信息"></textarea>
+							<textarea cols="" rows="" class="textarea" name="description" aria-required="true"
+								id="description" required placeholder="主题描述信息"></textarea>
 						</div>
 					</div>
+					<!-- 
 					<div class="row cl">
 						<label class="form-label col-xs-3">相关词汇：</label>
 						<div class="formControls col-xs-8">
@@ -46,6 +47,15 @@
 								id="words" placeholder="按照:词汇,权重,出现频率,TFIDF值 "></textarea>
 						</div>
 					</div>
+					 -->
+					 <div class="row cl">
+						<label class="form-label col-xs-3">上传词汇：</label>
+						<div class="formControls col-xs-8">
+							<p>文件模板</p>
+							<input type="file" required id="file" name="file" accept=".xls,.xlsx" aria-required="true">
+						</div>
+					</div>
+					<!-- 
 					<div class="row cl">
 							<label class="form-label col-xs-3">相关词汇：</label>
 							<div class="formControls col-xs-8">
@@ -62,6 +72,7 @@
 						</table>
 						</div>
 					</div>
+					 -->
 					<div class="row cl">
 						<div class="col-xs-8 col-xs-offset-3">
 							<input class="btn btn-primary" type="submit"
@@ -93,5 +104,39 @@ function delThis(obj){
 	console.log(tr);
     tr.parentNode.removeChild(tr);
 }
+//上传附件
+function uploadFile(){
+        var form = new FormData(document.getElementById("tagForm"));
+        var fileName = $("#file").val();
+        if(fileName.lastIndexOf(".")==-1){
+        	alert("上传的文件必须是excel格式");
+        	return;
+        }
+        else{
+        	var index = fileName.lastIndexOf(".");
+            var suffix = fileName.substr(index+1);
+            if(suffix=="xls"||suffix=="xlsx"){
+            	$.ajax({
+                    url:"/tag/uploadTag",
+                    type:"post",
+                    data:form,
+                    processData:false,
+                    contentType:false,
+                    success:function(data){
+                        if(data=="1"){
+                            alert("上传成功")
+                        }else {
+                            alert("上传失败")
+                        }
+                    }
+                });	
+            }else{
+            	alert("上传的文件必须是excel格式");
+            	return;
+            }
+        }
+        
+    }
+
 </script>
 </html>
