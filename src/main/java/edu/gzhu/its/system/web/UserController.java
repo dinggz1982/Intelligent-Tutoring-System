@@ -1,15 +1,29 @@
 package edu.gzhu.its.system.web;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import edu.gzhu.its.base.model.PageData;
 import edu.gzhu.its.base.model.TableSplitResult;
@@ -38,6 +52,14 @@ public class UserController {
 	@Autowired
 	private HttpServletRequest request;
 	
+	/**
+	 * 通过文件导入用户
+	 * @return
+	 */
+	@GetMapping("/addFromFile")
+	public String addFromFile(){
+		return "system/user/addFromFile";
+	}
 	
 	
 	/**
@@ -88,5 +110,62 @@ public class UserController {
 		pageJson.setPage(pageIndex);
 		return pageJson;
 	}
+	
+	/**
+     * 实现文件上传
+     * */
+	@PostMapping("/addUserFromFile")
+	@ResponseBody
+    public List<Map<String,String>> ramanage(@RequestParam("file") MultipartFile file){
+        List<Map<String,String>> result = new ArrayList<>();
+        Workbook wb = null;
+        InputStream input  = null;
+        try {
+             input = file.getInputStream();
+
+             wb = new HSSFWorkbook(input);
+
+            Sheet sheet = wb.getSheetAt(0);
+
+            int rowNum = sheet.getLastRowNum()+1;
+
+            Map<String,String> map;
+            for(int i=1; i<rowNum; i++){
+                Row row = sheet.getRow(i);
+
+                //容器名称
+                Cell containerCell = row.getCell(0);
+                String container = containerCell.getStringCellValue();
+
+                //税号
+                Cell nsrsbhCell = row.getCell(1);
+                String nsrsbh = nsrsbhCell.getStringCellValue();
+
+                map = new HashMap<>();
+                map.put("nsrsbh", nsrsbh);
+                map.put("container", container);
+
+                result.add(map);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+        	try {
+        		if(wb!=null){
+        			wb.close();	
+        		}
+        		if(input!=null){
+        			input.close();
+        		}
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	
+        }
+
+        return result;
+    }
 
 }

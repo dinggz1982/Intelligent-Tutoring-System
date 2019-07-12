@@ -22,7 +22,8 @@
 		 
 	<div class="col-xs-10 col-md-offset-1">
 	<div style="margin-bottom: 10px">
-		<a class="btn btn-primary radius" href="/tag/add" ><i class="Hui-iconfont"></i> 添加词汇</a>  
+		<a class="btn btn-primary radius" href="/tag/add" ><i class="Hui-iconfont"></i> 添加主题与标签信息</a>  
+			<a class="btn btn-primary radius" href="/user/addFromFile" ><i class="Hui-iconfont"></i> 添加实验人员</a>  
 	 </div>
 		<table class="table table-border table-bordered table-hover table-bg table-sort" style="width: 100%">
  		<tr>

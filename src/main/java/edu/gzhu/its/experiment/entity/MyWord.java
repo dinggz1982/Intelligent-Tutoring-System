@@ -23,7 +23,6 @@ public class MyWord {
 	
 	private String myweight;
 	
-	private String str;
 	
 	public User getUser() {
 		return user;
@@ -39,14 +38,6 @@ public class MyWord {
 
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
-	}
-
-	public String getBorder() {
-		return border;
-	}
-
-	public void setBorder(String border) {
-		this.border = border;
 	}
 
 	public String getSize() {
@@ -68,13 +59,46 @@ public class MyWord {
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User user;
+	
+	@ManyToOne
+	@JoinColumn(name="word_id")
+	private Word word;
+	
+	
+	public Word getWord() {
+		return word;
+	}
+
+	public void setWord(Word word) {
+		this.word = word;
+	}
+
+	public int getPositionX() {
+		return positionX;
+	}
+
+	public void setPositionX(int positionX) {
+		this.positionX = positionX;
+	}
+
+	public int getPositionY() {
+		return positionY;
+	}
+
+	public void setPositionY(int positionY) {
+		this.positionY = positionY;
+	}
+
 	@ManyToOne
 	@JoinColumn(name="topic_id")
 	private Topic topic;
 	
 	private Date createTime;
 	
-	private String border;
+	
+	private int positionX;
+	
+	private int positionY;
 	
 	private String size;
 	
@@ -113,14 +137,6 @@ public class MyWord {
 
 	public void setTopic(Topic topic) {
 		this.topic = topic;
-	}
-
-	public String getStr() {
-		return str;
-	}
-
-	public void setStr(String str) {
-		this.str = str;
 	}
 
 }
