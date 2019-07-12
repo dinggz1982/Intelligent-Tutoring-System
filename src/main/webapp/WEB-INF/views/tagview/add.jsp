@@ -9,7 +9,7 @@
 	<nav class="breadcrumb"> <i class="Hui-iconfont">&#xe67f;</i> 首页
 	<span class="c-gray en">&gt;</span> 新增词汇<span class="c-gray en">&gt;</span>
 	<a class="btn btn-success radius r"
-		style="line-height:1.6em;margin-top:3px"
+		style="line-height: 1.6em; margin-top: 3px"
 		href="javascript:location.replace(location.href);" title="刷新"><i
 		class="Hui-iconfont">&#xe68f;</i></a></nav>
 	<div class="pd-20 col-xs-10 col-md-offset-1"></div>
@@ -21,8 +21,9 @@
 			<div class="panel-body">
 				<form action="saveWord" method="post"
 					class="form form-horizontal responsive">
-								                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-					
+					<input type="hidden" name="${_csrf.parameterName}"
+						value="${_csrf.token}" />
+
 					<div class="row cl">
 						<label class="form-label col-xs-3">词汇主题：</label>
 						<div class="formControls col-xs-8">
@@ -40,9 +41,25 @@
 					<div class="row cl">
 						<label class="form-label col-xs-3">相关词汇：</label>
 						<div class="formControls col-xs-8">
-							<p>按照:词汇,权重,出现频率,TFIDF值  每行一个词汇</p>
+							<p>按照:词汇,权重,出现频率,TFIDF值 每行一个词汇</p>
 							<textarea cols="" rows="" class="textarea" name="words"
 								id="words" placeholder="按照:词汇,权重,出现频率,TFIDF值 "></textarea>
+						</div>
+					</div>
+					<div class="row cl">
+							<label class="form-label col-xs-3">相关词汇：</label>
+							<div class="formControls col-xs-8">
+						<table class="table table-border table-bordered radius" id="tagTable">
+							<thead>
+								<tr>
+									<th width="20%">标签</th>
+									<th width="20%">权重</th>
+									<th width="20%">频率</th>
+									<th width="20%">TFIDF</th>
+									<th width="20%"><input id="addTag" class="btn btn-success radius" type="button" value="新增"></th>
+								</tr>
+							</thead>
+						</table>
 						</div>
 					</div>
 					<div class="row cl">
@@ -56,4 +73,24 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="/validation/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/validation/validate-methods.js"></script>
+<script type="text/javascript" src="/validation/messages_zh.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$("#addTag").click(function(){
+		//alert();
+		var tr="<tr><td><input aria-required='true' class='input-text'  type='text' name='word'/>"+
+        "</td><td><input aria-required='true' class='input-text'	 type='text' name='weight'/></td><td><input class='input-text'"+
+       "type='text' aria-required='true' name='frequency'/></td><td><input aria-required='true' class='input-text'	 type='text' name='tfidf'/></td>" +
+       "<td><input onclick='delThis(this)' class='btn btn-danger radius' type='button' value='删除'></td></tr>";
+		$("#tagTable").append(tr);
+	});
+}); 
+function delThis(obj){
+	var tr = obj.parentNode.parentNode;
+	console.log(tr);
+    tr.parentNode.removeChild(tr);
+}
+</script>
 </html>
