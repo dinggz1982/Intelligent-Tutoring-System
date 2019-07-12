@@ -57,10 +57,6 @@
          words.push(word)
          </c:forEach>   
 		for (var i = 0; i < words.length; i++) {
-<<<<<<< HEAD
-			//console.log(i);
-=======
->>>>>>> branch 'master' of https://github.com/dinggz1982/Intelligent-Tutoring-System.git
 			smText[words[i].id] = new zrender.Text({
 				id: words[i].id,
 				style: {
@@ -85,14 +81,8 @@
 				//鼠标在松开移动的事件
 				onmouseup: function(e) {
 					//保存用户的移动操作
-<<<<<<< HEAD
-					saveChange(e,"move");
 					document.getElementById("wordId").value = e.target.id;
-=======
-					//console.log(e.target);
 					saveChange(e.target,"move");
->>>>>>> branch 'master' of https://github.com/dinggz1982/Intelligent-Tutoring-System.git
-					//console.log(e.target.position[0] + "," + e.target.position[1]);
 				},
 				//鼠标在移动中的事件
 				onmouseover: function(e) {

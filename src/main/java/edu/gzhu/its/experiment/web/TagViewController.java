@@ -188,7 +188,6 @@ public class TagViewController {
 	}
 
 	/**
-	 * <<<<<<< HEAD 设定我的标签
 	 * 
 	 * @param id
 	 * @param model
@@ -377,6 +376,37 @@ public class TagViewController {
 			wordService.batchSave(words);
 
 		}
-		return "redirect:/tag-setting";
+		return "redirect:/tag/editTopic/"+topic.getId();
 	}
+	
+	@GetMapping("/tag/editTopic/{id}")
+	public String editTopic(@PathVariable Integer id,Model model){
+		Topic topic = this.topicService.findById(id);
+		model.addAttribute("topic", topic);
+		List<Word> words  =this.wordService.find(" where topic_id=" + id);
+		model.addAttribute("words", words);
+		return "/tagview/editTopic";
+	}
+	
+	/**
+	 * 更新主题
+	 * @param request
+	 * @param topic
+	 * @param file
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping("/tag/updateTopic")
+	public String updateTopic(HttpServletRequest request, Topic topic,String[] words,String[] weigths,String[] frequencys,String[] tfidfs)
+			throws Exception {
+		
+		this.topicService.update(topic);
+		
+		this.wordService.executeSql("delete from word where tpoic_id="+topic.getId());
+		
+		
+		return "redirect:/tag/editTopic/"+topic.getId();
+	}
+	
 }
+
