@@ -87,6 +87,7 @@ $(document).ready(function(){
 		$("#tagTable").append(tr);
 	});
 }); 
+//删除一行
 function delThis(obj){
 	var tr = obj.parentNode.parentNode;
 	console.log(tr);
