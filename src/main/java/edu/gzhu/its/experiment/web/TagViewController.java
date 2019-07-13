@@ -40,6 +40,7 @@ import edu.gzhu.its.experiment.service.ITagEditHistoryService;
 import edu.gzhu.its.experiment.service.ITopicService;
 import edu.gzhu.its.experiment.service.IWordService;
 import edu.gzhu.its.system.entity.User;
+import edu.gzhu.its.system.service.IUserService;
 
 @Controller
 public class TagViewController {
@@ -48,10 +49,16 @@ public class TagViewController {
 	private HttpSession session;
 	@Autowired
 	private IWordService wordService;
+
+	@Autowired
+	private IUserService userService;
+
 	@Autowired
 	private IMyWordService myWordService;
+
 	@Autowired
 	private ITopicService topicService;
+
 	@Autowired
 	private ITagEditHistoryService tagEditHistoryService;
 
@@ -90,10 +97,10 @@ public class TagViewController {
 	 */
 	@PostMapping("/saveMytag")
 	@ResponseBody
-	public Map<String,Object> saveMytag(String myWords, int topic_id) {
+	public Map<String, Object> saveMytag(String myWords, int topic_id) {
 		// 获取当前用户
 		User currentUser = (User) session.getAttribute("currentUser");
-		Map<String,Object> map =new HashMap<>();
+		Map<String, Object> map = new HashMap<>();
 		JSONArray myJsonArray = JSONArray.parseArray(myWords);
 		for (Iterator iterator = myJsonArray.iterator(); iterator.hasNext();) {
 			JSONObject object = (JSONObject) iterator.next();
@@ -102,7 +109,8 @@ public class TagViewController {
 			int positionY = Integer.parseInt(object.get("positionY").toString());
 			String color = object.get("color").toString();
 			String size = object.get("size").toString();
-			this.myWordService.executeSql("update myword set positionX="+positionX+",positionY="+positionY +",color='" + color+"',size='" + size+"', createTime=now() where id="+id);
+			this.myWordService.executeSql("update myword set positionX=" + positionX + ",positionY=" + positionY
+					+ ",color='" + color + "',size='" + size + "', createTime=now() where id=" + id);
 		}
 		map.put("status", "success");
 		return map;
@@ -160,11 +168,12 @@ public class TagViewController {
 			model.addAttribute("isTaged", 0);
 			return "/tagview/editMyTagStep1";
 		}
-		
+
 	}
 
 	/**
 	 * 选择相关词汇
+	 * 
 	 * @param id
 	 * @param model
 	 * @return
@@ -346,25 +355,26 @@ public class TagViewController {
 			file.transferTo(new File(path + File.separator + filename));
 			this.topicService.save(topic);
 			// 输出文件上传最终的路径 测试查看
-			List<Word> words = TagUtils.getTags(path + File.separator + filename,topic);
-			
+			List<Word> words = TagUtils.getTags(path + File.separator + filename, topic);
+
 			wordService.batchSave(words);
 
 		}
-		return "redirect:/tag/editTopic/"+topic.getId();
+		return "redirect:/tag/editTopic/" + topic.getId();
 	}
-	
+
 	@GetMapping("/tag/editTopic/{id}")
-	public String editTopic(@PathVariable Integer id,Model model){
+	public String editTopic(@PathVariable Integer id, Model model) {
 		Topic topic = this.topicService.findById(id);
 		model.addAttribute("topic", topic);
-		List<Word> words  =this.wordService.find(" where topic_id=" + id);
+		List<Word> words = this.wordService.find(" where topic_id=" + id);
 		model.addAttribute("words", words);
 		return "/tagview/editTopic";
 	}
-	
+
 	/**
 	 * 更新主题
+	 * 
 	 * @param request
 	 * @param topic
 	 * @param file
@@ -372,19 +382,19 @@ public class TagViewController {
 	 * @throws Exception
 	 */
 	@PostMapping("/tag/updateTopic")
-	public String updateTopic(HttpServletRequest request, Topic topic,String[] words,String[] weigths,String[] frequencys,String[] tfidfs)
-			throws Exception {
-		
+	public String updateTopic(HttpServletRequest request, Topic topic, String[] words, String[] weigths,
+			String[] frequencys, String[] tfidfs) throws Exception {
+
 		this.topicService.update(topic);
-		
-		this.wordService.executeSql("delete from word where tpoic_id="+topic.getId());
-		
-		
-		return "redirect:/tag/editTopic/"+topic.getId();
+
+		this.wordService.executeSql("delete from word where tpoic_id=" + topic.getId());
+
+		return "redirect:/tag/editTopic/" + topic.getId();
 	}
-	
+
 	/**
 	 * topic List
+	 * 
 	 * @param pageIndex
 	 * @param pageSize
 	 * @param model
@@ -401,8 +411,83 @@ public class TagViewController {
 		model.addAttribute("pages", pageData.getTotalPage());
 		model.addAttribute("pagesize", pageData.getPageSize());
 		model.addAttribute("pageIndex", pageIndex);
-		return "/tagview/topList2";
+		return "/tagview/topicList";
+	}
+
+	/**
+	 * 显示每个主题的标签对应的用户
+	 * 
+	 * @param id
+	 * @param pageIndex
+	 * @param pageSize
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/userTag/{id}")
+	public String userTag(@PathVariable Integer id, Integer pageIndex, Integer pageSize, Model model) {
+		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
+		pageSize = 10;
+		PageData<User> pageData = this.userService.getPageData(pageIndex, pageSize,
+				" and id in (select DISTINCT user.id from edu.gzhu.its.experiment.entity.MyWord  where topic.id=" + id
+						+ ")");
+		Topic topic = this.topicService.findById(id);
+		model.addAttribute("topic", topic);
+		model.addAttribute("dataList", pageData.getPageData());
+		model.addAttribute("total", pageData.getTotalCount());
+		model.addAttribute("pages", pageData.getTotalPage());
+		model.addAttribute("pagesize", pageData.getPageSize());
+		model.addAttribute("pageIndex", pageIndex);
+		return "/tagview/userTagList";
+	}
+
+	/**
+	 * 根据用户和主题新显示对应的标签操作
+	 * 
+	 * @param topic_id
+	 * @param user_id
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/showUserTag/{topic_id}/{user_id}")
+	public String showUserTag(@PathVariable int topic_id, @PathVariable long user_id, Model model) {
+		List<MyWord> wordString = this.myWordService.find(" where user_id=" + user_id + " and topic_id=" + topic_id);
+		User user = this.userService.findById(user_id);
+		model.addAttribute("user", user);
+		Topic topic = this.topicService.findById(topic_id);
+		model.addAttribute("topic", topic);
+		model.addAttribute("wordList", wordString);
+		model.addAttribute("topic_id", topic_id);
+		model.addAttribute("user_id", user_id);
+		model.addAttribute("isTaged", 1);
+		return "/tagview/showUserTag";
+	}
+
+	/**
+	 * 显示用户的操作记录
+	 * @param pageIndex
+	 * @param pageSize
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/tag/userhistory/{topic_id}/{user_id}")
+	public String userhistory(Integer pageIndex, Integer pageSize, @PathVariable int topic_id, @PathVariable long user_id,Model model) {
+		pageIndex = pageIndex == null ? 1 : pageIndex < 1 ? 1 : pageIndex;
+		pageSize = 10;
+		User user = this.userService.findById(user_id);
+		model.addAttribute("user", user);
+		Topic topic = this.topicService.findById(topic_id);
+		model.addAttribute("topic", topic);
+		PageData<TagEditHistory> pageData = this.tagEditHistoryService.getPageData(pageIndex, pageSize,
+				" and topic_id=" + topic_id + " and user_id=" + user_id);
+		model.addAttribute("dataList", pageData.getPageData());
+		model.addAttribute("total", pageData.getTotalCount());
+		model.addAttribute("pages", pageData.getTotalPage());
+		model.addAttribute("pagesize", pageData.getPageSize());
+		model.addAttribute("pageIndex", pageIndex);
+		model.addAttribute("topic_id", topic_id);
+		model.addAttribute("user_id", user_id);
+		return "/tagview/userhistory";
 	}
 	
 }
-
